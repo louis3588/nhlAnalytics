@@ -2,7 +2,7 @@
 
 Python data foundation for player, game and season predictions. Currently imports
 NHL rosters and skater/goalie season summary statistics into linked JSON snapshots.
-PostgreSQL/TimescaleDB storage is supported. Scheduling, EDGE, advanced-stat imports,
+PostgreSQL/TimescaleDB storage and chunked MoneyPuck CSV imports are supported. Scheduling, EDGE,
 Parquet and ML are future work.
 
 ## Setup on Windows / PyCharm
@@ -126,3 +126,39 @@ startup is separate; `--database` optionally loads completed importer snapshots.
 
 See [the downloaded CSV inspection](docs/downloaded-data.md) for sample findings,
 including a possible prior-season lines file mismatch and CSV header/ID caveats.
+
+Import downloaded MoneyPuck CSVs (safe to rerun/resume):
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.moneypuck data --chunk-size 3000
+```
+
+See [MoneyPuck loading and queries](docs/moneypuck.md) for supported grains,
+player links, checkpoints and complete/latest views.
+
+Fetch and load NHL player game logs for both regular seasons:
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.game_logs --seasons 20252026 20262027
+```
+
+See [game-log imports and queries](docs/game-logs.md) for resume commands,
+player/game relationships, duplicate prevention and correction history.
+
+Refresh league schedules and results in the database, retaining JSON snapshots:
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.schedules --seasons 20252026 20262027
+```
+
+See [schedules and results](docs/schedules.md) for status fields, final scores,
+upcoming games and replay commands. Regular season and available playoffs are included.
+
+Refresh standings and optional team tracking features:
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.team_context --seasons 20252026 20262027 --edge
+```
+
+See [team standings, EDGE and name cleanup](docs/team-context.md) for table names,
+metric units, historical dates, name-inference flags and example queries.

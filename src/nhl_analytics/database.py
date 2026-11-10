@@ -137,6 +137,8 @@ def load_snapshot(connection, path):
                 full_name=COALESCE(EXCLUDED.full_name,players.full_name),
                 birth_date=COALESCE(EXCLUDED.birth_date,players.birth_date),
                 birth_country=COALESCE(EXCLUDED.birth_country,players.birth_country),
+                first_name_inferred=CASE WHEN EXCLUDED.first_name IS NOT NULL THEN false ELSE players.first_name_inferred END,
+                last_name_inferred=CASE WHEN EXCLUDED.last_name IS NOT NULL THEN false ELSE players.last_name_inferred END,
                 updated_at=EXCLUDED.updated_at WHERE EXCLUDED.updated_at >= players.updated_at''',
                 [(p['id'], p.get('firstName'), p.get('lastName'),
                   p.get('fullName') or ' '.join(filter(None, [p.get('firstName'), p.get('lastName')])) or None,

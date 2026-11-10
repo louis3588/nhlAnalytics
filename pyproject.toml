@@ -12,6 +12,11 @@ dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=
 [project.scripts]
 nhl-fetch = "nhl_analytics.ingest:main"
 nhl-db = "nhl_analytics.database:main"
+nhl-moneypuck = "nhl_analytics.moneypuck:main"
+nhl-game-logs = "nhl_analytics.game_logs:main"
+nhl-schedules = "nhl_analytics.schedules:main"
+nhl-standings = "nhl_analytics.team_context:main"
+nhl-names = "nhl_analytics.names:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
