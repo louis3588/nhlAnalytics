@@ -1,0 +1,7156 @@
+{
+  "players": {
+    "8465009": {
+      "name": "Zdeno Chara",
+      "kind": "skater"
+    },
+    "8466138": {
+      "name": "Joe Thornton",
+      "kind": "skater"
+    },
+    "8467950": {
+      "name": "Craig Anderson",
+      "kind": "goalie"
+    },
+    "8469455": {
+      "name": "Jason Spezza",
+      "kind": "skater"
+    },
+    "8469608": {
+      "name": "Mike Smith",
+      "kind": "goalie"
+    },
+    "8470281": {
+      "name": "Duncan Keith",
+      "kind": "skater"
+    },
+    "8470594": {
+      "name": "Marc-Andre Fleury",
+      "kind": "goalie"
+    },
+    "8470595": {
+      "name": "Eric Staal",
+      "kind": "skater"
+    },
+    "8470600": {
+      "name": "Ryan Suter",
+      "kind": "skater"
+    },
+    "8470604": {
+      "name": "Jeff Carter",
+      "kind": "skater"
+    },
+    "8470606": {
+      "name": "Dustin Brown",
+      "kind": "skater"
+    },
+    "8470610": {
+      "name": "Zach Parise",
+      "kind": "skater"
+    },
+    "8470612": {
+      "name": "Ryan Getzlaf",
+      "kind": "skater"
+    },
+    "8470613": {
+      "name": "Brent Burns",
+      "kind": "skater"
+    },
+    "8470619": {
+      "name": "Brian Boyle",
+      "kind": "skater"
+    },
+    "8470621": {
+      "name": "Corey Perry",
+      "kind": "skater"
+    },
+    "8470626": {
+      "name": "Loui Eriksson",
+      "kind": "skater"
+    },
+    "8470638": {
+      "name": "Patrice Bergeron",
+      "kind": "skater"
+    },
+    "8470755": {
+      "name": "Brad Richardson",
+      "kind": "skater"
+    },
+    "8470775": {
+      "name": "Nate Thompson",
+      "kind": "skater"
+    },
+    "8470794": {
+      "name": "Joe Pavelski",
+      "kind": "skater"
+    },
+    "8470860": {
+      "name": "Jaroslav Halak",
+      "kind": "goalie"
+    },
+    "8470880": {
+      "name": "Brian Elliott",
+      "kind": "goalie"
+    },
+    "8470966": {
+      "name": "Mark Giordano",
+      "kind": "skater"
+    },
+    "8471214": {
+      "name": "Alex Ovechkin",
+      "kind": "skater"
+    },
+    "8471215": {
+      "name": "Evgeni Malkin",
+      "kind": "skater"
+    },
+    "8471217": {
+      "name": "Andrew Ladd",
+      "kind": "skater"
+    },
+    "8471218": {
+      "name": "Blake Wheeler",
+      "kind": "skater"
+    },
+    "8471228": {
+      "name": "Alexander Radulov",
+      "kind": "skater"
+    },
+    "8471239": {
+      "name": "Cory Schneider",
+      "kind": "goalie"
+    },
+    "8471260": {
+      "name": "Blake Comeau",
+      "kind": "skater"
+    },
+    "8471274": {
+      "name": "Alex Goligoski",
+      "kind": "skater"
+    },
+    "8471276": {
+      "name": "David Krejci",
+      "kind": "skater"
+    },
+    "8471284": {
+      "name": "Andrej Sekera",
+      "kind": "skater"
+    },
+    "8471303": {
+      "name": "Alexander Edler",
+      "kind": "skater"
+    },
+    "8471306": {
+      "name": "Thomas Greiss",
+      "kind": "goalie"
+    },
+    "8471418": {
+      "name": "Anton Khudobin",
+      "kind": "goalie"
+    },
+    "8471669": {
+      "name": "Paul Stastny",
+      "kind": "skater"
+    },
+    "8471675": {
+      "name": "Sidney Crosby",
+      "kind": "skater"
+    },
+    "8471677": {
+      "name": "Jack Johnson",
+      "kind": "skater"
+    },
+    "8471679": {
+      "name": "Carey Price",
+      "kind": "goalie"
+    },
+    "8471685": {
+      "name": "Anze Kopitar",
+      "kind": "skater"
+    },
+    "8471686": {
+      "name": "Marc Staal",
+      "kind": "skater"
+    },
+    "8471695": {
+      "name": "Tuukka Rask",
+      "kind": "goalie"
+    },
+    "8471698": {
+      "name": "T.J. Oshie",
+      "kind": "skater"
+    },
+    "8471699": {
+      "name": "Andrew Cogliano",
+      "kind": "skater"
+    },
+    "8471707": {
+      "name": "James Neal",
+      "kind": "skater"
+    },
+    "8471709": {
+      "name": "Marc-Edouard Vlasic",
+      "kind": "skater"
+    },
+    "8471724": {
+      "name": "Kris Letang",
+      "kind": "skater"
+    },
+    "8471729": {
+      "name": "Kris Russell",
+      "kind": "skater"
+    },
+    "8471734": {
+      "name": "Jonathan Quick",
+      "kind": "goalie"
+    },
+    "8471735": {
+      "name": "Keith Yandle",
+      "kind": "skater"
+    },
+    "8471774": {
+      "name": "Alex Stalock",
+      "kind": "goalie"
+    },
+    "8471794": {
+      "name": "Darren Helm",
+      "kind": "skater"
+    },
+    "8471817": {
+      "name": "Ryan Reaves",
+      "kind": "skater"
+    },
+    "8471873": {
+      "name": "Anton Stralman",
+      "kind": "skater"
+    },
+    "8471887": {
+      "name": "Patric Hornqvist",
+      "kind": "skater"
+    },
+    "8472382": {
+      "name": "Andy Greene",
+      "kind": "skater"
+    },
+    "8473415": {
+      "name": "Alex Biega",
+      "kind": "skater"
+    },
+    "8473419": {
+      "name": "Brad Marchand",
+      "kind": "skater"
+    },
+    "8473422": {
+      "name": "Nick Foligno",
+      "kind": "skater"
+    },
+    "8473446": {
+      "name": "Erik Johnson",
+      "kind": "skater"
+    },
+    "8473449": {
+      "name": "Kyle Okposo",
+      "kind": "skater"
+    },
+    "8473453": {
+      "name": "Trevor Lewis",
+      "kind": "skater"
+    },
+    "8473463": {
+      "name": "Leo Komarov",
+      "kind": "skater"
+    },
+    "8473473": {
+      "name": "Milan Lucic",
+      "kind": "skater"
+    },
+    "8473503": {
+      "name": "James Reimer",
+      "kind": "goalie"
+    },
+    "8473504": {
+      "name": "Cal Clutterbuck",
+      "kind": "skater"
+    },
+    "8473507": {
+      "name": "Jeff Petry",
+      "kind": "skater"
+    },
+    "8473512": {
+      "name": "Claude Giroux",
+      "kind": "skater"
+    },
+    "8473533": {
+      "name": "Jordan Staal",
+      "kind": "skater"
+    },
+    "8473541": {
+      "name": "Jonathan Bernier",
+      "kind": "goalie"
+    },
+    "8473544": {
+      "name": "Derick Brassard",
+      "kind": "skater"
+    },
+    "8473548": {
+      "name": "Phil Kessel",
+      "kind": "skater"
+    },
+    "8473563": {
+      "name": "Nicklas Backstrom",
+      "kind": "skater"
+    },
+    "8473575": {
+      "name": "Semyon Varlamov",
+      "kind": "goalie"
+    },
+    "8473604": {
+      "name": "Jonathan Toews",
+      "kind": "skater"
+    },
+    "8473618": {
+      "name": "Mathieu Perreault",
+      "kind": "skater"
+    },
+    "8473986": {
+      "name": "Alex Killorn",
+      "kind": "skater"
+    },
+    "8473994": {
+      "name": "Jamie Benn",
+      "kind": "skater"
+    },
+    "8474009": {
+      "name": "Nick Bonino",
+      "kind": "skater"
+    },
+    "8474013": {
+      "name": "Ian Cole",
+      "kind": "skater"
+    },
+    "8474027": {
+      "name": "Justin Braun",
+      "kind": "skater"
+    },
+    "8474031": {
+      "name": "Kevin Shattenkirk",
+      "kind": "skater"
+    },
+    "8474034": {
+      "name": "Patrick Maroon",
+      "kind": "skater"
+    },
+    "8474037": {
+      "name": "James van Riemsdyk",
+      "kind": "skater"
+    },
+    "8474038": {
+      "name": "Paul Byron",
+      "kind": "skater"
+    },
+    "8474040": {
+      "name": "Sam Gagner",
+      "kind": "skater"
+    },
+    "8474053": {
+      "name": "Logan Couture",
+      "kind": "skater"
+    },
+    "8474056": {
+      "name": "P.K. Subban",
+      "kind": "skater"
+    },
+    "8474062": {
+      "name": "Riley Nash",
+      "kind": "skater"
+    },
+    "8474066": {
+      "name": "Thomas Hickey",
+      "kind": "skater"
+    },
+    "8474068": {
+      "name": "Kyle Turris",
+      "kind": "skater"
+    },
+    "8474089": {
+      "name": "Brad Malone",
+      "kind": "skater"
+    },
+    "8474090": {
+      "name": "Brendan Smith",
+      "kind": "skater"
+    },
+    "8474098": {
+      "name": "Colton Sceviour",
+      "kind": "skater"
+    },
+    "8474102": {
+      "name": "David Perron",
+      "kind": "skater"
+    },
+    "8474141": {
+      "name": "Patrick Kane",
+      "kind": "skater"
+    },
+    "8474145": {
+      "name": "Robert Bortuzzo",
+      "kind": "skater"
+    },
+    "8474149": {
+      "name": "Evgenii Dadonov",
+      "kind": "skater"
+    },
+    "8474150": {
+      "name": "Mikael Backlund",
+      "kind": "skater"
+    },
+    "8474151": {
+      "name": "Ryan McDonagh",
+      "kind": "skater"
+    },
+    "8474157": {
+      "name": "Max Pacioretty",
+      "kind": "skater"
+    },
+    "8474161": {
+      "name": "Jakub Voracek",
+      "kind": "skater"
+    },
+    "8474162": {
+      "name": "Jake Muzzin",
+      "kind": "skater"
+    },
+    "8474166": {
+      "name": "Alec Martinez",
+      "kind": "skater"
+    },
+    "8474176": {
+      "name": "Carl Hagelin",
+      "kind": "skater"
+    },
+    "8474189": {
+      "name": "Lars Eller",
+      "kind": "skater"
+    },
+    "8474190": {
+      "name": "Wayne Simmonds",
+      "kind": "skater"
+    },
+    "8474207": {
+      "name": "Nick Holden",
+      "kind": "skater"
+    },
+    "8474218": {
+      "name": "Jason Demers",
+      "kind": "skater"
+    },
+    "8474291": {
+      "name": "Jay Beagle",
+      "kind": "skater"
+    },
+    "8474563": {
+      "name": "Drew Doughty",
+      "kind": "skater"
+    },
+    "8474564": {
+      "name": "Steven Stamkos",
+      "kind": "skater"
+    },
+    "8474565": {
+      "name": "Alex Pietrangelo",
+      "kind": "skater"
+    },
+    "8474567": {
+      "name": "Zach Bogosian",
+      "kind": "skater"
+    },
+    "8474568": {
+      "name": "Luke Schenn",
+      "kind": "skater"
+    },
+    "8474573": {
+      "name": "Josh Bailey",
+      "kind": "skater"
+    },
+    "8474574": {
+      "name": "Tyler Myers",
+      "kind": "skater"
+    },
+    "8474578": {
+      "name": "Erik Karlsson",
+      "kind": "skater"
+    },
+    "8474584": {
+      "name": "Michael Del Zotto",
+      "kind": "skater"
+    },
+    "8474586": {
+      "name": "Jordan Eberle",
+      "kind": "skater"
+    },
+    "8474589": {
+      "name": "Tyler Ennis",
+      "kind": "skater"
+    },
+    "8474590": {
+      "name": "John Carlson",
+      "kind": "skater"
+    },
+    "8474593": {
+      "name": "Jacob Markstrom",
+      "kind": "goalie"
+    },
+    "8474596": {
+      "name": "Jake Allen",
+      "kind": "goalie"
+    },
+    "8474600": {
+      "name": "Roman Josi",
+      "kind": "skater"
+    },
+    "8474602": {
+      "name": "Justin Schultz",
+      "kind": "skater"
+    },
+    "8474610": {
+      "name": "Zac Dalpe",
+      "kind": "skater"
+    },
+    "8474612": {
+      "name": "Travis Hamonic",
+      "kind": "skater"
+    },
+    "8474613": {
+      "name": "Derek Stepan",
+      "kind": "skater"
+    },
+    "8474618": {
+      "name": "Marco Scandella",
+      "kind": "skater"
+    },
+    "8474628": {
+      "name": "Michael Stone",
+      "kind": "skater"
+    },
+    "8474636": {
+      "name": "Michael Hutchinson",
+      "kind": "goalie"
+    },
+    "8474641": {
+      "name": "Adam Henrique",
+      "kind": "skater"
+    },
+    "8474651": {
+      "name": "Braden Holtby",
+      "kind": "goalie"
+    },
+    "8474667": {
+      "name": "Harri Sateri",
+      "kind": "goalie"
+    },
+    "8474673": {
+      "name": "TJ Brodie",
+      "kind": "skater"
+    },
+    "8474679": {
+      "name": "Gustav Nyquist",
+      "kind": "skater"
+    },
+    "8474682": {
+      "name": "Dustin Tokarski",
+      "kind": "goalie"
+    },
+    "8474683": {
+      "name": "Derek Grant",
+      "kind": "skater"
+    },
+    "8474688": {
+      "name": "Greg Pateryn",
+      "kind": "skater"
+    },
+    "8474697": {
+      "name": "Mark Borowiecki",
+      "kind": "skater"
+    },
+    "8474709": {
+      "name": "Matt Martin",
+      "kind": "skater"
+    },
+    "8474715": {
+      "name": "Cam Atkinson",
+      "kind": "skater"
+    },
+    "8474716": {
+      "name": "Jared Spurgeon",
+      "kind": "skater"
+    },
+    "8474722": {
+      "name": "Luke Witkowski",
+      "kind": "skater"
+    },
+    "8474818": {
+      "name": "Jordie Benn",
+      "kind": "skater"
+    },
+    "8474849": {
+      "name": "Antoine Roussel",
+      "kind": "skater"
+    },
+    "8474870": {
+      "name": "Tyler Johnson",
+      "kind": "skater"
+    },
+    "8474884": {
+      "name": "Mike Hoffman",
+      "kind": "skater"
+    },
+    "8474889": {
+      "name": "Martin Jones",
+      "kind": "goalie"
+    },
+    "8475098": {
+      "name": "Tyler Bozak",
+      "kind": "skater"
+    },
+    "8475149": {
+      "name": "Marcus Johansson",
+      "kind": "skater"
+    },
+    "8475151": {
+      "name": "Kyle Palmieri",
+      "kind": "skater"
+    },
+    "8475156": {
+      "name": "Mikko Koskinen",
+      "kind": "goalie"
+    },
+    "8475158": {
+      "name": "Ryan O'Reilly",
+      "kind": "skater"
+    },
+    "8475160": {
+      "name": "Kyle Clifford",
+      "kind": "skater"
+    },
+    "8475163": {
+      "name": "Alex Chiasson",
+      "kind": "skater"
+    },
+    "8475164": {
+      "name": "Jakob Silfverberg",
+      "kind": "skater"
+    },
+    "8475166": {
+      "name": "John Tavares",
+      "kind": "skater"
+    },
+    "8475167": {
+      "name": "Victor Hedman",
+      "kind": "skater"
+    },
+    "8475168": {
+      "name": "Matt Duchene",
+      "kind": "skater"
+    },
+    "8475169": {
+      "name": "Evander Kane",
+      "kind": "skater"
+    },
+    "8475170": {
+      "name": "Brayden Schenn",
+      "kind": "skater"
+    },
+    "8475171": {
+      "name": "Oliver Ekman-Larsson",
+      "kind": "skater"
+    },
+    "8475172": {
+      "name": "Nazem Kadri",
+      "kind": "skater"
+    },
+    "8475176": {
+      "name": "Ryan Ellis",
+      "kind": "skater"
+    },
+    "8475177": {
+      "name": "Calvin de Haan",
+      "kind": "skater"
+    },
+    "8475178": {
+      "name": "Zack Kassian",
+      "kind": "skater"
+    },
+    "8475179": {
+      "name": "Dmitry Kulikov",
+      "kind": "skater"
+    },
+    "8475181": {
+      "name": "Nick Leddy",
+      "kind": "skater"
+    },
+    "8475184": {
+      "name": "Chris Kreider",
+      "kind": "skater"
+    },
+    "8475186": {
+      "name": "John Moore",
+      "kind": "skater"
+    },
+    "8475188": {
+      "name": "Brayden McNabb",
+      "kind": "skater"
+    },
+    "8475191": {
+      "name": "Reilly Smith",
+      "kind": "skater"
+    },
+    "8475193": {
+      "name": "Tomas Tatar",
+      "kind": "skater"
+    },
+    "8475197": {
+      "name": "Tyson Barrie",
+      "kind": "skater"
+    },
+    "8475200": {
+      "name": "Dmitry Orlov",
+      "kind": "skater"
+    },
+    "8475208": {
+      "name": "Brian Dumoulin",
+      "kind": "skater"
+    },
+    "8475209": {
+      "name": "Richard Panik",
+      "kind": "skater"
+    },
+    "8475215": {
+      "name": "Robin Lehner",
+      "kind": "goalie"
+    },
+    "8475218": {
+      "name": "Mattias Ekholm",
+      "kind": "skater"
+    },
+    "8475220": {
+      "name": "Marcus Foligno",
+      "kind": "skater"
+    },
+    "8475225": {
+      "name": "Craig Smith",
+      "kind": "skater"
+    },
+    "8475227": {
+      "name": "Chris Wideman",
+      "kind": "skater"
+    },
+    "8475231": {
+      "name": "Casey Cizikas",
+      "kind": "skater"
+    },
+    "8475233": {
+      "name": "David Savard",
+      "kind": "skater"
+    },
+    "8475234": {
+      "name": "J-F Berube",
+      "kind": "goalie"
+    },
+    "8475235": {
+      "name": "Nicolas Deslauriers",
+      "kind": "skater"
+    },
+    "8475236": {
+      "name": "Cody Eakin",
+      "kind": "skater"
+    },
+    "8475246": {
+      "name": "Kevin Connauton",
+      "kind": "skater"
+    },
+    "8475253": {
+      "name": "Garrett Wilson",
+      "kind": "skater"
+    },
+    "8475278": {
+      "name": "Byron Froese",
+      "kind": "skater"
+    },
+    "8475279": {
+      "name": "Ben Chiarot",
+      "kind": "skater"
+    },
+    "8475287": {
+      "name": "Erik Haula",
+      "kind": "skater"
+    },
+    "8475311": {
+      "name": "Darcy Kuemper",
+      "kind": "goalie"
+    },
+    "8475314": {
+      "name": "Anders Lee",
+      "kind": "skater"
+    },
+    "8475324": {
+      "name": "Nick Jensen",
+      "kind": "skater"
+    },
+    "8475343": {
+      "name": "Nic Dowd",
+      "kind": "skater"
+    },
+    "8475413": {
+      "name": "Justin Dowling",
+      "kind": "skater"
+    },
+    "8475455": {
+      "name": "Brenden Dillon",
+      "kind": "skater"
+    },
+    "8475461": {
+      "name": "Andrew Agozzino",
+      "kind": "skater"
+    },
+    "8475462": {
+      "name": "Radko Gudas",
+      "kind": "skater"
+    },
+    "8475622": {
+      "name": "Carter Hutton",
+      "kind": "goalie"
+    },
+    "8475625": {
+      "name": "Matt Irwin",
+      "kind": "skater"
+    },
+    "8475660": {
+      "name": "Cam Talbot",
+      "kind": "goalie"
+    },
+    "8475683": {
+      "name": "Sergei Bobrovsky",
+      "kind": "goalie"
+    },
+    "8475690": {
+      "name": "Chris Tanev",
+      "kind": "skater"
+    },
+    "8475692": {
+      "name": "Mats Zuccarello",
+      "kind": "skater"
+    },
+    "8475714": {
+      "name": "Calle Jarnkrok",
+      "kind": "skater"
+    },
+    "8475717": {
+      "name": "Calvin Pickard",
+      "kind": "goalie"
+    },
+    "8475718": {
+      "name": "Justin Holl",
+      "kind": "skater"
+    },
+    "8475722": {
+      "name": "Jason Zucker",
+      "kind": "skater"
+    },
+    "8475726": {
+      "name": "Tyler Toffoli",
+      "kind": "skater"
+    },
+    "8475728": {
+      "name": "Johan Larsson",
+      "kind": "skater"
+    },
+    "8475735": {
+      "name": "Greg McKegg",
+      "kind": "skater"
+    },
+    "8475744": {
+      "name": "Evgeny Kuznetsov",
+      "kind": "skater"
+    },
+    "8475745": {
+      "name": "Charlie Coyle",
+      "kind": "skater"
+    },
+    "8475747": {
+      "name": "Patrik Nemeth",
+      "kind": "skater"
+    },
+    "8475750": {
+      "name": "Jon Merrill",
+      "kind": "skater"
+    },
+    "8475752": {
+      "name": "Tyler Pitlick",
+      "kind": "skater"
+    },
+    "8475753": {
+      "name": "Justin Faulk",
+      "kind": "skater"
+    },
+    "8475754": {
+      "name": "Brock Nelson",
+      "kind": "skater"
+    },
+    "8475755": {
+      "name": "Alexander Petrovic",
+      "kind": "skater"
+    },
+    "8475760": {
+      "name": "Nick Bjugstad",
+      "kind": "skater"
+    },
+    "8475762": {
+      "name": "Derek Forbort",
+      "kind": "skater"
+    },
+    "8475763": {
+      "name": "Kevin Hayes",
+      "kind": "skater"
+    },
+    "8475764": {
+      "name": "Cam Fowler",
+      "kind": "skater"
+    },
+    "8475765": {
+      "name": "Vladimir Tarasenko",
+      "kind": "skater"
+    },
+    "8475766": {
+      "name": "Austin Watson",
+      "kind": "skater"
+    },
+    "8475768": {
+      "name": "Jaden Schwartz",
+      "kind": "skater"
+    },
+    "8475772": {
+      "name": "Riley Sheahan",
+      "kind": "skater"
+    },
+    "8475780": {
+      "name": "Chris Wagner",
+      "kind": "skater"
+    },
+    "8475784": {
+      "name": "Jeff Skinner",
+      "kind": "skater"
+    },
+    "8475786": {
+      "name": "Zach Hyman",
+      "kind": "skater"
+    },
+    "8475789": {
+      "name": "Jack Campbell",
+      "kind": "goalie"
+    },
+    "8475790": {
+      "name": "Erik Gudbranson",
+      "kind": "skater"
+    },
+    "8475791": {
+      "name": "Taylor Hall",
+      "kind": "skater"
+    },
+    "8475792": {
+      "name": "Brett Connolly",
+      "kind": "skater"
+    },
+    "8475793": {
+      "name": "Ryan Johansen",
+      "kind": "skater"
+    },
+    "8475794": {
+      "name": "Tyler Seguin",
+      "kind": "skater"
+    },
+    "8475795": {
+      "name": "Dylan McIlrath",
+      "kind": "skater"
+    },
+    "8475796": {
+      "name": "Mark Pysyk",
+      "kind": "skater"
+    },
+    "8475797": {
+      "name": "Jarred Tinordi",
+      "kind": "skater"
+    },
+    "8475798": {
+      "name": "Mikael Granlund",
+      "kind": "skater"
+    },
+    "8475799": {
+      "name": "Nino Niederreiter",
+      "kind": "skater"
+    },
+    "8475809": {
+      "name": "Scott Wedgewood",
+      "kind": "goalie"
+    },
+    "8475810": {
+      "name": "Bryan Rust",
+      "kind": "skater"
+    },
+    "8475820": {
+      "name": "Joonas Donskoi",
+      "kind": "skater"
+    },
+    "8475825": {
+      "name": "Jani Hakanpää",
+      "kind": "skater"
+    },
+    "8475831": {
+      "name": "Philipp Grubauer",
+      "kind": "goalie"
+    },
+    "8475839": {
+      "name": "Louis Domingue",
+      "kind": "goalie"
+    },
+    "8475842": {
+      "name": "Sam Carrick",
+      "kind": "skater"
+    },
+    "8475848": {
+      "name": "Brendan Gallagher",
+      "kind": "skater"
+    },
+    "8475852": {
+      "name": "Petr Mrazek",
+      "kind": "goalie"
+    },
+    "8475855": {
+      "name": "Jesper Fast",
+      "kind": "skater"
+    },
+    "8475857": {
+      "name": "Kevin Gravel",
+      "kind": "skater"
+    },
+    "8475883": {
+      "name": "Frederik Andersen",
+      "kind": "goalie"
+    },
+    "8475906": {
+      "name": "John Klingberg",
+      "kind": "skater"
+    },
+    "8475913": {
+      "name": "Mark Stone",
+      "kind": "skater"
+    },
+    "8475920": {
+      "name": "Michael Houser",
+      "kind": "goalie"
+    },
+    "8475958": {
+      "name": "Michael Sgarbossa",
+      "kind": "skater"
+    },
+    "8475968": {
+      "name": "Alex Belzile",
+      "kind": "skater"
+    },
+    "8476166": {
+      "name": "Taylor Fedun",
+      "kind": "skater"
+    },
+    "8476234": {
+      "name": "Keith Kinkaid",
+      "kind": "goalie"
+    },
+    "8476278": {
+      "name": "Colin Blackwell",
+      "kind": "skater"
+    },
+    "8476285": {
+      "name": "Matthew Peca",
+      "kind": "skater"
+    },
+    "8476288": {
+      "name": "Ryan Dzingel",
+      "kind": "skater"
+    },
+    "8476292": {
+      "name": "Ondrej Palat",
+      "kind": "skater"
+    },
+    "8476310": {
+      "name": "Lukas Sedlak",
+      "kind": "skater"
+    },
+    "8476312": {
+      "name": "Josh Manson",
+      "kind": "skater"
+    },
+    "8476316": {
+      "name": "Laurent Brossoit",
+      "kind": "goalie"
+    },
+    "8476323": {
+      "name": "Max McCormick",
+      "kind": "skater"
+    },
+    "8476326": {
+      "name": "Josh Archibald",
+      "kind": "skater"
+    },
+    "8476329": {
+      "name": "Travis Boyd",
+      "kind": "skater"
+    },
+    "8476331": {
+      "name": "Dylan DeMelo",
+      "kind": "skater"
+    },
+    "8476341": {
+      "name": "Anton Forsberg",
+      "kind": "goalie"
+    },
+    "8476343": {
+      "name": "Garret Sparks",
+      "kind": "goalie"
+    },
+    "8476345": {
+      "name": "Gregory Hofmann",
+      "kind": "skater"
+    },
+    "8476346": {
+      "name": "Johnny Gaudreau",
+      "kind": "skater"
+    },
+    "8476368": {
+      "name": "Fredrik Claesson",
+      "kind": "skater"
+    },
+    "8476372": {
+      "name": "Nick Seeler",
+      "kind": "skater"
+    },
+    "8476374": {
+      "name": "Sean Kuraly",
+      "kind": "skater"
+    },
+    "8476389": {
+      "name": "Vincent Trocheck",
+      "kind": "skater"
+    },
+    "8476390": {
+      "name": "Joseph Cramarossa",
+      "kind": "skater"
+    },
+    "8476391": {
+      "name": "T.J. Tynan",
+      "kind": "skater"
+    },
+    "8476392": {
+      "name": "Adam Lowry",
+      "kind": "skater"
+    },
+    "8476393": {
+      "name": "Nick Cousins",
+      "kind": "skater"
+    },
+    "8476396": {
+      "name": "Steven Fogarty",
+      "kind": "skater"
+    },
+    "8476399": {
+      "name": "Blake Coleman",
+      "kind": "skater"
+    },
+    "8476400": {
+      "name": "Logan Shaw",
+      "kind": "skater"
+    },
+    "8476404": {
+      "name": "Andy Andreoff",
+      "kind": "skater"
+    },
+    "8476410": {
+      "name": "Josh Leivo",
+      "kind": "skater"
+    },
+    "8476412": {
+      "name": "Jordan Binnington",
+      "kind": "goalie"
+    },
+    "8476415": {
+      "name": "Kyle Rau",
+      "kind": "skater"
+    },
+    "8476419": {
+      "name": "Jean-Gabriel Pageau",
+      "kind": "skater"
+    },
+    "8476422": {
+      "name": "Mike Reilly",
+      "kind": "skater"
+    },
+    "8476425": {
+      "name": "Joseph LaBate",
+      "kind": "skater"
+    },
+    "8476428": {
+      "name": "Rocco Grimaldi",
+      "kind": "skater"
+    },
+    "8476429": {
+      "name": "Scott Mayfield",
+      "kind": "skater"
+    },
+    "8476432": {
+      "name": "Boone Jenner",
+      "kind": "skater"
+    },
+    "8476433": {
+      "name": "Magnus Hellberg",
+      "kind": "goalie"
+    },
+    "8476434": {
+      "name": "John Gibson",
+      "kind": "goalie"
+    },
+    "8476436": {
+      "name": "Dmitrij Jaskin",
+      "kind": "skater"
+    },
+    "8476437": {
+      "name": "Victor Rask",
+      "kind": "skater"
+    },
+    "8476438": {
+      "name": "Brandon Saad",
+      "kind": "skater"
+    },
+    "8476439": {
+      "name": "Brett Ritchie",
+      "kind": "skater"
+    },
+    "8476441": {
+      "name": "Joel Edmundson",
+      "kind": "skater"
+    },
+    "8476442": {
+      "name": "Matt Nieto",
+      "kind": "skater"
+    },
+    "8476448": {
+      "name": "William Karlsson",
+      "kind": "skater"
+    },
+    "8476449": {
+      "name": "Scott Harrington",
+      "kind": "skater"
+    },
+    "8476453": {
+      "name": "Nikita Kucherov",
+      "kind": "skater"
+    },
+    "8476454": {
+      "name": "Ryan Nugent-Hopkins",
+      "kind": "skater"
+    },
+    "8476455": {
+      "name": "Gabriel Landeskog",
+      "kind": "skater"
+    },
+    "8476456": {
+      "name": "Jonathan Huberdeau",
+      "kind": "skater"
+    },
+    "8476457": {
+      "name": "Adam Larsson",
+      "kind": "skater"
+    },
+    "8476458": {
+      "name": "Ryan Strome",
+      "kind": "skater"
+    },
+    "8476459": {
+      "name": "Mika Zibanejad",
+      "kind": "skater"
+    },
+    "8476460": {
+      "name": "Mark Scheifele",
+      "kind": "skater"
+    },
+    "8476461": {
+      "name": "Sean Couturier",
+      "kind": "skater"
+    },
+    "8476462": {
+      "name": "Dougie Hamilton",
+      "kind": "skater"
+    },
+    "8476463": {
+      "name": "Jonas Brodin",
+      "kind": "skater"
+    },
+    "8476466": {
+      "name": "Sven Baertschi",
+      "kind": "skater"
+    },
+    "8476467": {
+      "name": "Jamie Oleksiak",
+      "kind": "skater"
+    },
+    "8476468": {
+      "name": "J.T. Miller",
+      "kind": "skater"
+    },
+    "8476469": {
+      "name": "Joel Armia",
+      "kind": "skater"
+    },
+    "8476470": {
+      "name": "Nathan Beaulieu",
+      "kind": "skater"
+    },
+    "8476473": {
+      "name": "Connor Murphy",
+      "kind": "skater"
+    },
+    "8476474": {
+      "name": "Stefan Noesen",
+      "kind": "skater"
+    },
+    "8476479": {
+      "name": "Phillip Danault",
+      "kind": "skater"
+    },
+    "8476480": {
+      "name": "Vladislav Namestnikov",
+      "kind": "skater"
+    },
+    "8476483": {
+      "name": "Rickard Rakell",
+      "kind": "skater"
+    },
+    "8476495": {
+      "name": "Seth Griffith",
+      "kind": "skater"
+    },
+    "8476505": {
+      "name": "Turner Elson",
+      "kind": "skater"
+    },
+    "8476509": {
+      "name": "Maxime Lagace",
+      "kind": "goalie"
+    },
+    "8476525": {
+      "name": "Colin Miller",
+      "kind": "skater"
+    },
+    "8476539": {
+      "name": "Jonathan Marchessault",
+      "kind": "skater"
+    },
+    "8476545": {
+      "name": "Kurtis Gabriel",
+      "kind": "skater"
+    },
+    "8476624": {
+      "name": "Barclay Goodrow",
+      "kind": "skater"
+    },
+    "8476779": {
+      "name": "Brad Hunt",
+      "kind": "skater"
+    },
+    "8476792": {
+      "name": "Torey Krug",
+      "kind": "skater"
+    },
+    "8476807": {
+      "name": "Matt Tennyson",
+      "kind": "skater"
+    },
+    "8476822": {
+      "name": "Luke Glendening",
+      "kind": "skater"
+    },
+    "8476826": {
+      "name": "Yanni Gourde",
+      "kind": "skater"
+    },
+    "8476850": {
+      "name": "Ryan Murray",
+      "kind": "skater"
+    },
+    "8476851": {
+      "name": "Alex Galchenyuk",
+      "kind": "skater"
+    },
+    "8476853": {
+      "name": "Morgan Rielly",
+      "kind": "skater"
+    },
+    "8476854": {
+      "name": "Hampus Lindholm",
+      "kind": "skater"
+    },
+    "8476856": {
+      "name": "Mathew Dumba",
+      "kind": "skater"
+    },
+    "8476858": {
+      "name": "Phillip Di Giuseppe",
+      "kind": "skater"
+    },
+    "8476867": {
+      "name": "Brendan Gaunce",
+      "kind": "skater"
+    },
+    "8476869": {
+      "name": "Brady Skjei",
+      "kind": "skater"
+    },
+    "8476870": {
+      "name": "Stefan Matteau",
+      "kind": "skater"
+    },
+    "8476871": {
+      "name": "Tanner Pearson",
+      "kind": "skater"
+    },
+    "8476872": {
+      "name": "Scott Laughton",
+      "kind": "skater"
+    },
+    "8476873": {
+      "name": "Mark Jankowski",
+      "kind": "skater"
+    },
+    "8476874": {
+      "name": "Olli Maatta",
+      "kind": "skater"
+    },
+    "8476875": {
+      "name": "Mike Matheson",
+      "kind": "skater"
+    },
+    "8476876": {
+      "name": "Malcolm Subban",
+      "kind": "goalie"
+    },
+    "8476878": {
+      "name": "Zemgus Girgensons",
+      "kind": "skater"
+    },
+    "8476879": {
+      "name": "Cody Ceci",
+      "kind": "skater"
+    },
+    "8476880": {
+      "name": "Tom Wilson",
+      "kind": "skater"
+    },
+    "8476881": {
+      "name": "Tomas Hertl",
+      "kind": "skater"
+    },
+    "8476882": {
+      "name": "Teuvo Teravainen",
+      "kind": "skater"
+    },
+    "8476883": {
+      "name": "Andrei Vasilevskiy",
+      "kind": "goalie"
+    },
+    "8476884": {
+      "name": "Derrick Pouliot",
+      "kind": "skater"
+    },
+    "8476885": {
+      "name": "Jacob Trouba",
+      "kind": "skater"
+    },
+    "8476886": {
+      "name": "Slater Koekkoek",
+      "kind": "skater"
+    },
+    "8476887": {
+      "name": "Filip Forsberg",
+      "kind": "skater"
+    },
+    "8476889": {
+      "name": "Radek Faksa",
+      "kind": "skater"
+    },
+    "8476891": {
+      "name": "Matt Grzelcyk",
+      "kind": "skater"
+    },
+    "8476892": {
+      "name": "Colton Parayko",
+      "kind": "skater"
+    },
+    "8476897": {
+      "name": "Oskar Sundqvist",
+      "kind": "skater"
+    },
+    "8476899": {
+      "name": "Matt Murray",
+      "kind": "goalie"
+    },
+    "8476902": {
+      "name": "Esa Lindell",
+      "kind": "skater"
+    },
+    "8476903": {
+      "name": "Jon Gillies",
+      "kind": "goalie"
+    },
+    "8476904": {
+      "name": "Chris Driedger",
+      "kind": "goalie"
+    },
+    "8476905": {
+      "name": "Chandler Stephenson",
+      "kind": "skater"
+    },
+    "8476906": {
+      "name": "Shayne Gostisbehere",
+      "kind": "skater"
+    },
+    "8476907": {
+      "name": "Mackenzie MacEachern",
+      "kind": "skater"
+    },
+    "8476913": {
+      "name": "Devin Shore",
+      "kind": "skater"
+    },
+    "8476914": {
+      "name": "Joonas Korpisalo",
+      "kind": "goalie"
+    },
+    "8476915": {
+      "name": "Jujhar Khaira",
+      "kind": "skater"
+    },
+    "8476917": {
+      "name": "Adam Pelech",
+      "kind": "skater"
+    },
+    "8476918": {
+      "name": "Jimmy Vesey",
+      "kind": "skater"
+    },
+    "8476919": {
+      "name": "Chris Tierney",
+      "kind": "skater"
+    },
+    "8476921": {
+      "name": "Jordan Martinook",
+      "kind": "skater"
+    },
+    "8476923": {
+      "name": "Damon Severson",
+      "kind": "skater"
+    },
+    "8476924": {
+      "name": "Martin Frk",
+      "kind": "skater"
+    },
+    "8476925": {
+      "name": "Colton Sissons",
+      "kind": "skater"
+    },
+    "8476927": {
+      "name": "Teddy Blueger",
+      "kind": "skater"
+    },
+    "8476931": {
+      "name": "Jake McCabe",
+      "kind": "skater"
+    },
+    "8476932": {
+      "name": "Anthony Stolarz",
+      "kind": "goalie"
+    },
+    "8476934": {
+      "name": "Brock McGinn",
+      "kind": "skater"
+    },
+    "8476941": {
+      "name": "Connor Carrick",
+      "kind": "skater"
+    },
+    "8476945": {
+      "name": "Connor Hellebuyck",
+      "kind": "goalie"
+    },
+    "8476948": {
+      "name": "Charles Hudon",
+      "kind": "skater"
+    },
+    "8476952": {
+      "name": "Dominic Toninato",
+      "kind": "skater"
+    },
+    "8476958": {
+      "name": "Jaccob Slavin",
+      "kind": "skater"
+    },
+    "8476960": {
+      "name": "Andreas Athanasiou",
+      "kind": "skater"
+    },
+    "8476966": {
+      "name": "Gemel Smith",
+      "kind": "skater"
+    },
+    "8476967": {
+      "name": "Brett Kulak",
+      "kind": "skater"
+    },
+    "8476975": {
+      "name": "Cedric Paquette",
+      "kind": "skater"
+    },
+    "8476979": {
+      "name": "Erik Gustafsson",
+      "kind": "skater"
+    },
+    "8476981": {
+      "name": "Josh Anderson",
+      "kind": "skater"
+    },
+    "8476982": {
+      "name": "Danny O'Regan",
+      "kind": "skater"
+    },
+    "8476983": {
+      "name": "Paul LaDue",
+      "kind": "skater"
+    },
+    "8476988": {
+      "name": "Matthew Benning",
+      "kind": "skater"
+    },
+    "8476989": {
+      "name": "Petteri Lindbohm",
+      "kind": "skater"
+    },
+    "8476994": {
+      "name": "Vincent Hinostroza",
+      "kind": "skater"
+    },
+    "8476999": {
+      "name": "Linus Ullmark",
+      "kind": "goalie"
+    },
+    "8477003": {
+      "name": "Riley Barber",
+      "kind": "skater"
+    },
+    "8477015": {
+      "name": "Connor Brown",
+      "kind": "skater"
+    },
+    "8477018": {
+      "name": "Ben Hutton",
+      "kind": "skater"
+    },
+    "8477021": {
+      "name": "Alexander Kerfoot",
+      "kind": "skater"
+    },
+    "8477034": {
+      "name": "Jaycob Megna",
+      "kind": "skater"
+    },
+    "8477035": {
+      "name": "Matt Tomkins",
+      "kind": "goalie"
+    },
+    "8477070": {
+      "name": "Liam O'Brien",
+      "kind": "skater"
+    },
+    "8477073": {
+      "name": "Kurtis MacDermid",
+      "kind": "skater"
+    },
+    "8477126": {
+      "name": "Jayson Megna",
+      "kind": "skater"
+    },
+    "8477149": {
+      "name": "Scott Sabourin",
+      "kind": "skater"
+    },
+    "8477180": {
+      "name": "Aaron Dell",
+      "kind": "goalie"
+    },
+    "8477202": {
+      "name": "Andrew Hammond",
+      "kind": "goalie"
+    },
+    "8477205": {
+      "name": "Andrej Sustr",
+      "kind": "skater"
+    },
+    "8477210": {
+      "name": "Buddy Robinson",
+      "kind": "skater"
+    },
+    "8477215": {
+      "name": "Danny DeKeyser",
+      "kind": "skater"
+    },
+    "8477220": {
+      "name": "Nate Schmidt",
+      "kind": "skater"
+    },
+    "8477240": {
+      "name": "Carter Rowney",
+      "kind": "skater"
+    },
+    "8477244": {
+      "name": "Chad Ruhwedel",
+      "kind": "skater"
+    },
+    "8477290": {
+      "name": "Michael Raffl",
+      "kind": "skater"
+    },
+    "8477293": {
+      "name": "Antti Raanta",
+      "kind": "goalie"
+    },
+    "8477320": {
+      "name": "Anton Blidh",
+      "kind": "skater"
+    },
+    "8477330": {
+      "name": "Dominik Kubalik",
+      "kind": "skater"
+    },
+    "8477335": {
+      "name": "Kyle Burroughs",
+      "kind": "skater"
+    },
+    "8477341": {
+      "name": "Andreas Johnsson",
+      "kind": "skater"
+    },
+    "8477343": {
+      "name": "Tyler Lewington",
+      "kind": "skater"
+    },
+    "8477346": {
+      "name": "MacKenzie Weegar",
+      "kind": "skater"
+    },
+    "8477353": {
+      "name": "Tyler Motte",
+      "kind": "skater"
+    },
+    "8477355": {
+      "name": "Will Butcher",
+      "kind": "skater"
+    },
+    "8477357": {
+      "name": "Saku Maenalanen",
+      "kind": "skater"
+    },
+    "8477359": {
+      "name": "Tucker Poolman",
+      "kind": "skater"
+    },
+    "8477361": {
+      "name": "Calvin Petersen",
+      "kind": "goalie"
+    },
+    "8477365": {
+      "name": "Connor Clifton",
+      "kind": "skater"
+    },
+    "8477369": {
+      "name": "Carson Soucy",
+      "kind": "skater"
+    },
+    "8477380": {
+      "name": "Jonny Brodzinski",
+      "kind": "skater"
+    },
+    "8477384": {
+      "name": "Joshua Brown",
+      "kind": "skater"
+    },
+    "8477392": {
+      "name": "Hudson Fasching",
+      "kind": "skater"
+    },
+    "8477401": {
+      "name": "John Hayden",
+      "kind": "skater"
+    },
+    "8477402": {
+      "name": "Pavel Buchnevich",
+      "kind": "skater"
+    },
+    "8477404": {
+      "name": "Jake Guentzel",
+      "kind": "skater"
+    },
+    "8477405": {
+      "name": "Marcus Hogberg",
+      "kind": "goalie"
+    },
+    "8477406": {
+      "name": "Mattias Janmark",
+      "kind": "skater"
+    },
+    "8477407": {
+      "name": "Anthony Duclair",
+      "kind": "skater"
+    },
+    "8477409": {
+      "name": "Carter Verhaeghe",
+      "kind": "skater"
+    },
+    "8477416": {
+      "name": "Oliver Bjorkstrand",
+      "kind": "skater"
+    },
+    "8477419": {
+      "name": "Mason Geertsen",
+      "kind": "skater"
+    },
+    "8477424": {
+      "name": "Juuse Saros",
+      "kind": "goalie"
+    },
+    "8477425": {
+      "name": "Miles Wood",
+      "kind": "skater"
+    },
+    "8477426": {
+      "name": "Nick Paul",
+      "kind": "skater"
+    },
+    "8477429": {
+      "name": "Andrew Copp",
+      "kind": "skater"
+    },
+    "8477433": {
+      "name": "Ben Harpur",
+      "kind": "skater"
+    },
+    "8477435": {
+      "name": "Ryan Graves",
+      "kind": "skater"
+    },
+    "8477444": {
+      "name": "Andre Burakovsky",
+      "kind": "skater"
+    },
+    "8477446": {
+      "name": "Michael McCarron",
+      "kind": "skater"
+    },
+    "8477447": {
+      "name": "Shea Theodore",
+      "kind": "skater"
+    },
+    "8477450": {
+      "name": "Jason Dickinson",
+      "kind": "skater"
+    },
+    "8477451": {
+      "name": "Ryan Hartman",
+      "kind": "skater"
+    },
+    "8477454": {
+      "name": "Adam Erne",
+      "kind": "skater"
+    },
+    "8477456": {
+      "name": "J.T. Compher",
+      "kind": "skater"
+    },
+    "8477457": {
+      "name": "Zach Fucale",
+      "kind": "goalie"
+    },
+    "8477460": {
+      "name": "Laurent Dauphin",
+      "kind": "skater"
+    },
+    "8477461": {
+      "name": "Remi Elie",
+      "kind": "skater"
+    },
+    "8477462": {
+      "name": "Robert Hagg",
+      "kind": "skater"
+    },
+    "8477463": {
+      "name": "Steven Santini",
+      "kind": "skater"
+    },
+    "8477464": {
+      "name": "Nic Petan",
+      "kind": "skater"
+    },
+    "8477465": {
+      "name": "Tristan Jarry",
+      "kind": "goalie"
+    },
+    "8477467": {
+      "name": "Gustav Olofsson",
+      "kind": "skater"
+    },
+    "8477471": {
+      "name": "Dillon Heatherington",
+      "kind": "skater"
+    },
+    "8477472": {
+      "name": "Carl Dahlstrom",
+      "kind": "skater"
+    },
+    "8477473": {
+      "name": "Justin Bailey",
+      "kind": "skater"
+    },
+    "8477474": {
+      "name": "Madison Bowey",
+      "kind": "skater"
+    },
+    "8477476": {
+      "name": "Artturi Lehkonen",
+      "kind": "skater"
+    },
+    "8477478": {
+      "name": "William Carrier",
+      "kind": "skater"
+    },
+    "8477479": {
+      "name": "Tyler Bertuzzi",
+      "kind": "skater"
+    },
+    "8477480": {
+      "name": "Eric Comrie",
+      "kind": "goalie"
+    },
+    "8477482": {
+      "name": "Zachary Sanford",
+      "kind": "skater"
+    },
+    "8477484": {
+      "name": "Spencer Martin",
+      "kind": "goalie"
+    },
+    "8477488": {
+      "name": "Brett Pesce",
+      "kind": "skater"
+    },
+    "8477492": {
+      "name": "Nathan MacKinnon",
+      "kind": "skater"
+    },
+    "8477493": {
+      "name": "Aleksander Barkov",
+      "kind": "skater"
+    },
+    "8477494": {
+      "name": "Jonathan Drouin",
+      "kind": "skater"
+    },
+    "8477495": {
+      "name": "Seth Jones",
+      "kind": "skater"
+    },
+    "8477496": {
+      "name": "Elias Lindholm",
+      "kind": "skater"
+    },
+    "8477497": {
+      "name": "Sean Monahan",
+      "kind": "skater"
+    },
+    "8477498": {
+      "name": "Darnell Nurse",
+      "kind": "skater"
+    },
+    "8477499": {
+      "name": "Rasmus Ristolainen",
+      "kind": "skater"
+    },
+    "8477500": {
+      "name": "Bo Horvat",
+      "kind": "skater"
+    },
+    "8477501": {
+      "name": "Valeri Nichushkin",
+      "kind": "skater"
+    },
+    "8477503": {
+      "name": "Max Domi",
+      "kind": "skater"
+    },
+    "8477504": {
+      "name": "Josh Morrissey",
+      "kind": "skater"
+    },
+    "8477505": {
+      "name": "Alexander Wennberg",
+      "kind": "skater"
+    },
+    "8477506": {
+      "name": "Ryan Pulock",
+      "kind": "skater"
+    },
+    "8477507": {
+      "name": "Nikita Zadorov",
+      "kind": "skater"
+    },
+    "8477508": {
+      "name": "Curtis Lazar",
+      "kind": "skater"
+    },
+    "8477511": {
+      "name": "Anthony Mantha",
+      "kind": "skater"
+    },
+    "8477512": {
+      "name": "Frederik Gauthier",
+      "kind": "skater"
+    },
+    "8477520": {
+      "name": "Jean-Sebastien Dea",
+      "kind": "skater"
+    },
+    "8477527": {
+      "name": "Ross Johnston",
+      "kind": "skater"
+    },
+    "8477541": {
+      "name": "Dakota Mermis",
+      "kind": "skater"
+    },
+    "8477573": {
+      "name": "Nathan Walker",
+      "kind": "skater"
+    },
+    "8477631": {
+      "name": "Brandon Baddock",
+      "kind": "skater"
+    },
+    "8477810": {
+      "name": "Joel Hanley",
+      "kind": "skater"
+    },
+    "8477831": {
+      "name": "Pheonix Copley",
+      "kind": "goalie"
+    },
+    "8477839": {
+      "name": "Conor Sheary",
+      "kind": "skater"
+    },
+    "8477845": {
+      "name": "Trevor van Riemsdyk",
+      "kind": "skater"
+    },
+    "8477846": {
+      "name": "Ryan Carpenter",
+      "kind": "skater"
+    },
+    "8477851": {
+      "name": "Jordan Oesterle",
+      "kind": "skater"
+    },
+    "8477887": {
+      "name": "Patrick Brown",
+      "kind": "skater"
+    },
+    "8477903": {
+      "name": "Garnet Hathaway",
+      "kind": "skater"
+    },
+    "8477919": {
+      "name": "Freddy Gaudreau",
+      "kind": "skater"
+    },
+    "8477930": {
+      "name": "Pierre-Edouard Bellemare",
+      "kind": "skater"
+    },
+    "8477931": {
+      "name": "Tomas Nosek",
+      "kind": "skater"
+    },
+    "8477932": {
+      "name": "Aaron Ekblad",
+      "kind": "skater"
+    },
+    "8477933": {
+      "name": "Sam Reinhart",
+      "kind": "skater"
+    },
+    "8477934": {
+      "name": "Leon Draisaitl",
+      "kind": "skater"
+    },
+    "8477935": {
+      "name": "Sam Bennett",
+      "kind": "skater"
+    },
+    "8477936": {
+      "name": "Michael Dal Colle",
+      "kind": "skater"
+    },
+    "8477938": {
+      "name": "Haydn Fleury",
+      "kind": "skater"
+    },
+    "8477939": {
+      "name": "William Nylander",
+      "kind": "skater"
+    },
+    "8477940": {
+      "name": "Nikolaj Ehlers",
+      "kind": "skater"
+    },
+    "8477941": {
+      "name": "Nick Ritchie",
+      "kind": "skater"
+    },
+    "8477942": {
+      "name": "Kevin Fiala",
+      "kind": "skater"
+    },
+    "8477943": {
+      "name": "Brendan Perlini",
+      "kind": "skater"
+    },
+    "8477944": {
+      "name": "Jakub Vrana",
+      "kind": "skater"
+    },
+    "8477946": {
+      "name": "Dylan Larkin",
+      "kind": "skater"
+    },
+    "8477947": {
+      "name": "Sonny Milano",
+      "kind": "skater"
+    },
+    "8477948": {
+      "name": "Travis Sanheim",
+      "kind": "skater"
+    },
+    "8477949": {
+      "name": "Alex Tuch",
+      "kind": "skater"
+    },
+    "8477950": {
+      "name": "Tony DeAngelo",
+      "kind": "skater"
+    },
+    "8477951": {
+      "name": "Nick Schmaltz",
+      "kind": "skater"
+    },
+    "8477952": {
+      "name": "Robby Fabbri",
+      "kind": "skater"
+    },
+    "8477953": {
+      "name": "Kasperi Kapanen",
+      "kind": "skater"
+    },
+    "8477955": {
+      "name": "Jared McCann",
+      "kind": "skater"
+    },
+    "8477956": {
+      "name": "David Pastrnak",
+      "kind": "skater"
+    },
+    "8477960": {
+      "name": "Adrian Kempe",
+      "kind": "skater"
+    },
+    "8477962": {
+      "name": "Brendan Lemieux",
+      "kind": "skater"
+    },
+    "8477964": {
+      "name": "Ivan Barbashev",
+      "kind": "skater"
+    },
+    "8477967": {
+      "name": "Thatcher Demko",
+      "kind": "goalie"
+    },
+    "8477968": {
+      "name": "Alex Nedeljkovic",
+      "kind": "goalie"
+    },
+    "8477969": {
+      "name": "Marcus Pettersson",
+      "kind": "skater"
+    },
+    "8477970": {
+      "name": "Vitek Vanecek",
+      "kind": "goalie"
+    },
+    "8477971": {
+      "name": "Andreas Englund",
+      "kind": "skater"
+    },
+    "8477974": {
+      "name": "Ryan MacInnis",
+      "kind": "skater"
+    },
+    "8477979": {
+      "name": "Nicolas Aube-Kubel",
+      "kind": "skater"
+    },
+    "8477981": {
+      "name": "Roland McKeown",
+      "kind": "skater"
+    },
+    "8477986": {
+      "name": "Brandon Montour",
+      "kind": "skater"
+    },
+    "8477987": {
+      "name": "Ryan Donato",
+      "kind": "skater"
+    },
+    "8477989": {
+      "name": "Christian Dvorak",
+      "kind": "skater"
+    },
+    "8477990": {
+      "name": "Brandon Halverson",
+      "kind": "goalie"
+    },
+    "8477992": {
+      "name": "Jonas Johansson",
+      "kind": "goalie"
+    },
+    "8477993": {
+      "name": "Justin Kirkland",
+      "kind": "skater"
+    },
+    "8477996": {
+      "name": "Juho Lammikko",
+      "kind": "skater"
+    },
+    "8477998": {
+      "name": "Warren Foegele",
+      "kind": "skater"
+    },
+    "8478007": {
+      "name": "Elvis Merzlikins",
+      "kind": "goalie"
+    },
+    "8478009": {
+      "name": "Ilya Sorokin",
+      "kind": "goalie"
+    },
+    "8478010": {
+      "name": "Brayden Point",
+      "kind": "skater"
+    },
+    "8478011": {
+      "name": "Louis Belpedio",
+      "kind": "skater"
+    },
+    "8478013": {
+      "name": "Jake Walman",
+      "kind": "skater"
+    },
+    "8478017": {
+      "name": "Mark Friedman",
+      "kind": "skater"
+    },
+    "8478020": {
+      "name": "Michael Amadio",
+      "kind": "skater"
+    },
+    "8478021": {
+      "name": "William Lagesson",
+      "kind": "skater"
+    },
+    "8478024": {
+      "name": "Ville Husso",
+      "kind": "goalie"
+    },
+    "8478028": {
+      "name": "Fredrik Olofsson",
+      "kind": "skater"
+    },
+    "8478029": {
+      "name": "Chase De Leo",
+      "kind": "skater"
+    },
+    "8478038": {
+      "name": "Devon Toews",
+      "kind": "skater"
+    },
+    "8478039": {
+      "name": "Kaapo Kahkonen",
+      "kind": "goalie"
+    },
+    "8478040": {
+      "name": "Austin Poganski",
+      "kind": "skater"
+    },
+    "8478042": {
+      "name": "Viktor Arvidsson",
+      "kind": "skater"
+    },
+    "8478043": {
+      "name": "Sam Lafferty",
+      "kind": "skater"
+    },
+    "8478046": {
+      "name": "Danton Heinen",
+      "kind": "skater"
+    },
+    "8478047": {
+      "name": "Michael Bunting",
+      "kind": "skater"
+    },
+    "8478048": {
+      "name": "Igor Shesterkin",
+      "kind": "goalie"
+    },
+    "8478051": {
+      "name": "Max Willman",
+      "kind": "skater"
+    },
+    "8478055": {
+      "name": "Gustav Forsling",
+      "kind": "skater"
+    },
+    "8478056": {
+      "name": "Clark Bishop",
+      "kind": "skater"
+    },
+    "8478057": {
+      "name": "Dakota Joshua",
+      "kind": "skater"
+    },
+    "8478058": {
+      "name": "CJ Suess",
+      "kind": "skater"
+    },
+    "8478062": {
+      "name": "Dysin Mayo",
+      "kind": "skater"
+    },
+    "8478067": {
+      "name": "Oskar Lindblom",
+      "kind": "skater"
+    },
+    "8478074": {
+      "name": "Anthony Angello",
+      "kind": "skater"
+    },
+    "8478075": {
+      "name": "Anders Bjork",
+      "kind": "skater"
+    },
+    "8478078": {
+      "name": "Rourke Chartier",
+      "kind": "skater"
+    },
+    "8478099": {
+      "name": "Kevin Labanc",
+      "kind": "skater"
+    },
+    "8478104": {
+      "name": "Samuel Blais",
+      "kind": "skater"
+    },
+    "8478106": {
+      "name": "Dylan Sikura",
+      "kind": "skater"
+    },
+    "8478109": {
+      "name": "Victor Olofsson",
+      "kind": "skater"
+    },
+    "8478115": {
+      "name": "Pierre Engvall",
+      "kind": "skater"
+    },
+    "8478131": {
+      "name": "Ondrej Kase",
+      "kind": "skater"
+    },
+    "8478133": {
+      "name": "Jake Evans",
+      "kind": "skater"
+    },
+    "8478136": {
+      "name": "Jacob Middleton",
+      "kind": "skater"
+    },
+    "8478146": {
+      "name": "Matthew Highmore",
+      "kind": "skater"
+    },
+    "8478147": {
+      "name": "Bokondji Imama",
+      "kind": "skater"
+    },
+    "8478173": {
+      "name": "Hayden Hodgson",
+      "kind": "skater"
+    },
+    "8478178": {
+      "name": "Darren Raddysh",
+      "kind": "skater"
+    },
+    "8478211": {
+      "name": "Dryden Hunt",
+      "kind": "skater"
+    },
+    "8478224": {
+      "name": "Luke Philp",
+      "kind": "skater"
+    },
+    "8478233": {
+      "name": "Andrew Mangiapane",
+      "kind": "skater"
+    },
+    "8478250": {
+      "name": "Vladimir Tkachev",
+      "kind": "skater"
+    },
+    "8478366": {
+      "name": "Frank Vatrano",
+      "kind": "skater"
+    },
+    "8478367": {
+      "name": "Cole Bardreau",
+      "kind": "skater"
+    },
+    "8478373": {
+      "name": "Nikita Soshnikov",
+      "kind": "skater"
+    },
+    "8478396": {
+      "name": "Noah Hanifin",
+      "kind": "skater"
+    },
+    "8478397": {
+      "name": "Rasmus Andersson",
+      "kind": "skater"
+    },
+    "8478398": {
+      "name": "Kyle Connor",
+      "kind": "skater"
+    },
+    "8478399": {
+      "name": "Jonas Siegenthaler",
+      "kind": "skater"
+    },
+    "8478400": {
+      "name": "Colin White",
+      "kind": "skater"
+    },
+    "8478401": {
+      "name": "Pavel Zacha",
+      "kind": "skater"
+    },
+    "8478402": {
+      "name": "Connor McDavid",
+      "kind": "skater"
+    },
+    "8478403": {
+      "name": "Jack Eichel",
+      "kind": "skater"
+    },
+    "8478406": {
+      "name": "Mackenzie Blackwood",
+      "kind": "goalie"
+    },
+    "8478407": {
+      "name": "Vince Dunn",
+      "kind": "skater"
+    },
+    "8478408": {
+      "name": "Travis Dermott",
+      "kind": "skater"
+    },
+    "8478409": {
+      "name": "Anthony Richard",
+      "kind": "skater"
+    },
+    "8478413": {
+      "name": "Jordan Greenway",
+      "kind": "skater"
+    },
+    "8478414": {
+      "name": "Timo Meier",
+      "kind": "skater"
+    },
+    "8478415": {
+      "name": "Jakub Zboril",
+      "kind": "skater"
+    },
+    "8478416": {
+      "name": "Erik Cernak",
+      "kind": "skater"
+    },
+    "8478420": {
+      "name": "Mikko Rantanen",
+      "kind": "skater"
+    },
+    "8478421": {
+      "name": "A.J. Greer",
+      "kind": "skater"
+    },
+    "8478424": {
+      "name": "Jansen Harkins",
+      "kind": "skater"
+    },
+    "8478425": {
+      "name": "Brendan Guhle",
+      "kind": "skater"
+    },
+    "8478427": {
+      "name": "Sebastian Aho",
+      "kind": "skater"
+    },
+    "8478430": {
+      "name": "Oliver Kylington",
+      "kind": "skater"
+    },
+    "8478431": {
+      "name": "Evgeny Svechnikov",
+      "kind": "skater"
+    },
+    "8478432": {
+      "name": "Christian Fischer",
+      "kind": "skater"
+    },
+    "8478433": {
+      "name": "Felix Sandstrom",
+      "kind": "goalie"
+    },
+    "8478434": {
+      "name": "Keegan Kolesar",
+      "kind": "skater"
+    },
+    "8478435": {
+      "name": "Dan Vladar",
+      "kind": "goalie"
+    },
+    "8478438": {
+      "name": "Tommy Novak",
+      "kind": "skater"
+    },
+    "8478439": {
+      "name": "Travis Konecny",
+      "kind": "skater"
+    },
+    "8478440": {
+      "name": "Dylan Strome",
+      "kind": "skater"
+    },
+    "8478442": {
+      "name": "Cooper Marody",
+      "kind": "skater"
+    },
+    "8478443": {
+      "name": "Brandon Carlo",
+      "kind": "skater"
+    },
+    "8478444": {
+      "name": "Brock Boeser",
+      "kind": "skater"
+    },
+    "8478445": {
+      "name": "Mathew Barzal",
+      "kind": "skater"
+    },
+    "8478446": {
+      "name": "Glenn Gawdin",
+      "kind": "skater"
+    },
+    "8478447": {
+      "name": "Nick Merkley",
+      "kind": "skater"
+    },
+    "8478449": {
+      "name": "Roope Hintz",
+      "kind": "skater"
+    },
+    "8478450": {
+      "name": "Parker Wotherspoon",
+      "kind": "skater"
+    },
+    "8478451": {
+      "name": "Ethan Bear",
+      "kind": "skater"
+    },
+    "8478452": {
+      "name": "Caleb Jones",
+      "kind": "skater"
+    },
+    "8478454": {
+      "name": "Noah Juulsen",
+      "kind": "skater"
+    },
+    "8478455": {
+      "name": "Austin Wagner",
+      "kind": "skater"
+    },
+    "8478458": {
+      "name": "Jack Roslovic",
+      "kind": "skater"
+    },
+    "8478460": {
+      "name": "Zach Werenski",
+      "kind": "skater"
+    },
+    "8478462": {
+      "name": "Nicolas Roy",
+      "kind": "skater"
+    },
+    "8478463": {
+      "name": "Anthony Beauvillier",
+      "kind": "skater"
+    },
+    "8478465": {
+      "name": "Guillaume Brisebois",
+      "kind": "skater"
+    },
+    "8478466": {
+      "name": "Daniel Sprong",
+      "kind": "skater"
+    },
+    "8478467": {
+      "name": "Nicolas Meloche",
+      "kind": "skater"
+    },
+    "8478468": {
+      "name": "Jeremy Lauzon",
+      "kind": "skater"
+    },
+    "8478469": {
+      "name": "Thomas Chabot",
+      "kind": "skater"
+    },
+    "8478470": {
+      "name": "Samuel Montembeault",
+      "kind": "goalie"
+    },
+    "8478472": {
+      "name": "Mathieu Joseph",
+      "kind": "skater"
+    },
+    "8478474": {
+      "name": "Lawson Crouse",
+      "kind": "skater"
+    },
+    "8478476": {
+      "name": "Kyle Capobianco",
+      "kind": "skater"
+    },
+    "8478477": {
+      "name": "Mitchell Stephens",
+      "kind": "skater"
+    },
+    "8478480": {
+      "name": "Blake Speers",
+      "kind": "skater"
+    },
+    "8478483": {
+      "name": "Mitch Marner",
+      "kind": "skater"
+    },
+    "8478485": {
+      "name": "Zach Senyshyn",
+      "kind": "skater"
+    },
+    "8478486": {
+      "name": "Chase Pearson",
+      "kind": "skater"
+    },
+    "8478491": {
+      "name": "Jacob Larsson",
+      "kind": "skater"
+    },
+    "8478492": {
+      "name": "Ilya Samsonov",
+      "kind": "goalie"
+    },
+    "8478493": {
+      "name": "Joel Eriksson Ek",
+      "kind": "skater"
+    },
+    "8478495": {
+      "name": "Denis Gurianov",
+      "kind": "skater"
+    },
+    "8478498": {
+      "name": "Jake DeBrusk",
+      "kind": "skater"
+    },
+    "8478499": {
+      "name": "Adin Hill",
+      "kind": "goalie"
+    },
+    "8478500": {
+      "name": "Ivan Provorov",
+      "kind": "skater"
+    },
+    "8478502": {
+      "name": "Dennis Gilbert",
+      "kind": "skater"
+    },
+    "8478506": {
+      "name": "Gabriel Carlsson",
+      "kind": "skater"
+    },
+    "8478507": {
+      "name": "John Marino",
+      "kind": "skater"
+    },
+    "8478508": {
+      "name": "Yakov Trenin",
+      "kind": "skater"
+    },
+    "8478512": {
+      "name": "Austin Czarnik",
+      "kind": "skater"
+    },
+    "8478519": {
+      "name": "Anthony Cirelli",
+      "kind": "skater"
+    },
+    "8478528": {
+      "name": "Tanner Kero",
+      "kind": "skater"
+    },
+    "8478542": {
+      "name": "Evan Rodrigues",
+      "kind": "skater"
+    },
+    "8478550": {
+      "name": "Artemi Panarin",
+      "kind": "skater"
+    },
+    "8478567": {
+      "name": "Dean Kukan",
+      "kind": "skater"
+    },
+    "8478569": {
+      "name": "Noel Acciari",
+      "kind": "skater"
+    },
+    "8478585": {
+      "name": "Derek Ryan",
+      "kind": "skater"
+    },
+    "8478831": {
+      "name": "Kevin Stenlund",
+      "kind": "skater"
+    },
+    "8478838": {
+      "name": "Lukas Vejdemo",
+      "kind": "skater"
+    },
+    "8478840": {
+      "name": "William Borgen",
+      "kind": "skater"
+    },
+    "8478841": {
+      "name": "Colton White",
+      "kind": "skater"
+    },
+    "8478843": {
+      "name": "Denis Malgin",
+      "kind": "skater"
+    },
+    "8478846": {
+      "name": "Christian Wolanin",
+      "kind": "skater"
+    },
+    "8478848": {
+      "name": "Ales Stezka",
+      "kind": "goalie"
+    },
+    "8478851": {
+      "name": "Alexandre Carrier",
+      "kind": "skater"
+    },
+    "8478854": {
+      "name": "Ryan Shea",
+      "kind": "skater"
+    },
+    "8478856": {
+      "name": "Conor Garland",
+      "kind": "skater"
+    },
+    "8478859": {
+      "name": "Niko Mikkola",
+      "kind": "skater"
+    },
+    "8478864": {
+      "name": "Kirill Kaprizov",
+      "kind": "skater"
+    },
+    "8478866": {
+      "name": "Dominik Simon",
+      "kind": "skater"
+    },
+    "8478868": {
+      "name": "Christian Jaros",
+      "kind": "skater"
+    },
+    "8478870": {
+      "name": "Rudolfs Balcers",
+      "kind": "skater"
+    },
+    "8478872": {
+      "name": "Karel Vejmelka",
+      "kind": "goalie"
+    },
+    "8478873": {
+      "name": "Troy Terry",
+      "kind": "skater"
+    },
+    "8478874": {
+      "name": "Adam Gaudette",
+      "kind": "skater"
+    },
+    "8478881": {
+      "name": "Brett Seney",
+      "kind": "skater"
+    },
+    "8478882": {
+      "name": "Vladislav Gavrikov",
+      "kind": "skater"
+    },
+    "8478888": {
+      "name": "Cameron Hughes",
+      "kind": "skater"
+    },
+    "8478891": {
+      "name": "Mason Appleton",
+      "kind": "skater"
+    },
+    "8478902": {
+      "name": "Erik Kallgren",
+      "kind": "goalie"
+    },
+    "8478903": {
+      "name": "Adam Huska",
+      "kind": "goalie"
+    },
+    "8478904": {
+      "name": "Steven Lorentz",
+      "kind": "skater"
+    },
+    "8478905": {
+      "name": "Ivan Fedotov",
+      "kind": "goalie"
+    },
+    "8478906": {
+      "name": "Markus Nutivaara",
+      "kind": "skater"
+    },
+    "8478911": {
+      "name": "Matt Roy",
+      "kind": "skater"
+    },
+    "8478915": {
+      "name": "Sami Niku",
+      "kind": "skater"
+    },
+    "8478916": {
+      "name": "Joey Daccord",
+      "kind": "goalie"
+    },
+    "8478933": {
+      "name": "Michael McNiven",
+      "kind": "goalie"
+    },
+    "8478949": {
+      "name": "Kole Sherwood",
+      "kind": "skater"
+    },
+    "8478956": {
+      "name": "Samuel Laberge",
+      "kind": "skater"
+    },
+    "8478965": {
+      "name": "Kenneth Appleby",
+      "kind": "goalie"
+    },
+    "8478967": {
+      "name": "Lane Pederson",
+      "kind": "skater"
+    },
+    "8478970": {
+      "name": "Jalen Chatfield",
+      "kind": "skater"
+    },
+    "8478971": {
+      "name": "Connor Ingram",
+      "kind": "goalie"
+    },
+    "8478975": {
+      "name": "Mason Marchment",
+      "kind": "skater"
+    },
+    "8478996": {
+      "name": "Adam Brooks",
+      "kind": "skater"
+    },
+    "8479022": {
+      "name": "Rodrigo Abols",
+      "kind": "skater"
+    },
+    "8479026": {
+      "name": "Philippe Myers",
+      "kind": "skater"
+    },
+    "8479066": {
+      "name": "Ryan Lomberg",
+      "kind": "skater"
+    },
+    "8479193": {
+      "name": "Casey DeSmith",
+      "kind": "goalie"
+    },
+    "8479249": {
+      "name": "Andrew Poturalski",
+      "kind": "skater"
+    },
+    "8479252": {
+      "name": "Dan Renouf",
+      "kind": "skater"
+    },
+    "8479289": {
+      "name": "Ethan Prow",
+      "kind": "skater"
+    },
+    "8479291": {
+      "name": "Kevin Rooney",
+      "kind": "skater"
+    },
+    "8479292": {
+      "name": "Charlie Lindgren",
+      "kind": "goalie"
+    },
+    "8479293": {
+      "name": "Brandon Tanev",
+      "kind": "skater"
+    },
+    "8479304": {
+      "name": "Kyle Criscuolo",
+      "kind": "skater"
+    },
+    "8479312": {
+      "name": "Alex Lyon",
+      "kind": "goalie"
+    },
+    "8479313": {
+      "name": "Zach Sawchenko",
+      "kind": "goalie"
+    },
+    "8479314": {
+      "name": "Matthew Tkachuk",
+      "kind": "skater"
+    },
+    "8479315": {
+      "name": "Joey Anderson",
+      "kind": "skater"
+    },
+    "8479316": {
+      "name": "Luke Kunin",
+      "kind": "skater"
+    },
+    "8479318": {
+      "name": "Auston Matthews",
+      "kind": "skater"
+    },
+    "8479320": {
+      "name": "Maxime Lajoie",
+      "kind": "skater"
+    },
+    "8479321": {
+      "name": "Lucas Johansen",
+      "kind": "skater"
+    },
+    "8479322": {
+      "name": "Wade Allison",
+      "kind": "skater"
+    },
+    "8479323": {
+      "name": "Adam Fox",
+      "kind": "skater"
+    },
+    "8479324": {
+      "name": "Ryan Lindgren",
+      "kind": "skater"
+    },
+    "8479325": {
+      "name": "Charlie McAvoy",
+      "kind": "skater"
+    },
+    "8479328": {
+      "name": "Julien Gauthier",
+      "kind": "skater"
+    },
+    "8479329": {
+      "name": "Frederic Allard",
+      "kind": "skater"
+    },
+    "8479330": {
+      "name": "Brandon Gignac",
+      "kind": "skater"
+    },
+    "8479333": {
+      "name": "Libor Hajek",
+      "kind": "skater"
+    },
+    "8479335": {
+      "name": "Rasmus Asplund",
+      "kind": "skater"
+    },
+    "8479336": {
+      "name": "Carl Grundstrom",
+      "kind": "skater"
+    },
+    "8479337": {
+      "name": "Alex DeBrincat",
+      "kind": "skater"
+    },
+    "8479338": {
+      "name": "Markus Niemelainen",
+      "kind": "skater"
+    },
+    "8479339": {
+      "name": "Patrik Laine",
+      "kind": "skater"
+    },
+    "8479341": {
+      "name": "Cam Dineen",
+      "kind": "skater"
+    },
+    "8479343": {
+      "name": "Clayton Keller",
+      "kind": "skater"
+    },
+    "8479344": {
+      "name": "Jesse Puljujarvi",
+      "kind": "skater"
+    },
+    "8479345": {
+      "name": "Jakob Chychrun",
+      "kind": "skater"
+    },
+    "8479346": {
+      "name": "Dillon Dube",
+      "kind": "skater"
+    },
+    "8479347": {
+      "name": "Tyler Benson",
+      "kind": "skater"
+    },
+    "8479348": {
+      "name": "Kale Clague",
+      "kind": "skater"
+    },
+    "8479351": {
+      "name": "Sam Steel",
+      "kind": "skater"
+    },
+    "8479353": {
+      "name": "Brett Howden",
+      "kind": "skater"
+    },
+    "8479355": {
+      "name": "Olli Juolevi",
+      "kind": "skater"
+    },
+    "8479356": {
+      "name": "Kieffer Bellows",
+      "kind": "skater"
+    },
+    "8479359": {
+      "name": "Beck Malenstyn",
+      "kind": "skater"
+    },
+    "8479361": {
+      "name": "Joseph Woll",
+      "kind": "goalie"
+    },
+    "8479362": {
+      "name": "Riley Tufte",
+      "kind": "skater"
+    },
+    "8479364": {
+      "name": "Tim Gettinger",
+      "kind": "skater"
+    },
+    "8479365": {
+      "name": "Trent Frederic",
+      "kind": "skater"
+    },
+    "8479366": {
+      "name": "Logan Brown",
+      "kind": "skater"
+    },
+    "8479367": {
+      "name": "William Lockwood",
+      "kind": "skater"
+    },
+    "8479368": {
+      "name": "Max Jones",
+      "kind": "skater"
+    },
+    "8479369": {
+      "name": "Andrew Peeke",
+      "kind": "skater"
+    },
+    "8479370": {
+      "name": "Tyson Jost",
+      "kind": "skater"
+    },
+    "8479371": {
+      "name": "Dante Fabbro",
+      "kind": "skater"
+    },
+    "8479372": {
+      "name": "Josh Mahura",
+      "kind": "skater"
+    },
+    "8479373": {
+      "name": "Jonathan Dahlen",
+      "kind": "skater"
+    },
+    "8479375": {
+      "name": "William Bitten",
+      "kind": "skater"
+    },
+    "8479376": {
+      "name": "Victor Mete",
+      "kind": "skater"
+    },
+    "8479378": {
+      "name": "Logan Stanley",
+      "kind": "skater"
+    },
+    "8479379": {
+      "name": "Givani Smith",
+      "kind": "skater"
+    },
+    "8479380": {
+      "name": "Dylan Wells",
+      "kind": "goalie"
+    },
+    "8479382": {
+      "name": "Connor Bunnaman",
+      "kind": "skater"
+    },
+    "8479383": {
+      "name": "Boris Katchouk",
+      "kind": "skater"
+    },
+    "8479385": {
+      "name": "Jordan Kyrou",
+      "kind": "skater"
+    },
+    "8479387": {
+      "name": "Keaton Middleton",
+      "kind": "skater"
+    },
+    "8479388": {
+      "name": "Riley Stillman",
+      "kind": "skater"
+    },
+    "8479390": {
+      "name": "Taylor Raddysh",
+      "kind": "skater"
+    },
+    "8479393": {
+      "name": "Noah Gregor",
+      "kind": "skater"
+    },
+    "8479394": {
+      "name": "Carter Hart",
+      "kind": "goalie"
+    },
+    "8479395": {
+      "name": "Dennis Cholowski",
+      "kind": "skater"
+    },
+    "8479398": {
+      "name": "Samuel Girard",
+      "kind": "skater"
+    },
+    "8479400": {
+      "name": "Pierre-Luc Dubois",
+      "kind": "skater"
+    },
+    "8479402": {
+      "name": "Jake Bean",
+      "kind": "skater"
+    },
+    "8479404": {
+      "name": "Henrik Borgstrom",
+      "kind": "skater"
+    },
+    "8479406": {
+      "name": "Filip Gustavsson",
+      "kind": "goalie"
+    },
+    "8479407": {
+      "name": "Jesper Bratt",
+      "kind": "skater"
+    },
+    "8479410": {
+      "name": "Mikhail Sergachev",
+      "kind": "skater"
+    },
+    "8479413": {
+      "name": "Sean Day",
+      "kind": "skater"
+    },
+    "8479414": {
+      "name": "Nathan Bastian",
+      "kind": "skater"
+    },
+    "8479415": {
+      "name": "Michael McLeod",
+      "kind": "skater"
+    },
+    "8479419": {
+      "name": "Brett Murray",
+      "kind": "skater"
+    },
+    "8479420": {
+      "name": "Tage Thompson",
+      "kind": "skater"
+    },
+    "8479421": {
+      "name": "Jacob Moverare",
+      "kind": "skater"
+    },
+    "8479423": {
+      "name": "Alexander Nylander",
+      "kind": "skater"
+    },
+    "8479425": {
+      "name": "Filip Hronek",
+      "kind": "skater"
+    },
+    "8479439": {
+      "name": "Jacob MacDonald",
+      "kind": "skater"
+    },
+    "8479442": {
+      "name": "Troy Stecher",
+      "kind": "skater"
+    },
+    "8479447": {
+      "name": "Anthony Greco",
+      "kind": "skater"
+    },
+    "8479458": {
+      "name": "Nikita Zaitsev",
+      "kind": "skater"
+    },
+    "8479465": {
+      "name": "Drake Caggiula",
+      "kind": "skater"
+    },
+    "8479482": {
+      "name": "Michal Kempny",
+      "kind": "skater"
+    },
+    "8479496": {
+      "name": "David Rittich",
+      "kind": "goalie"
+    },
+    "8479511": {
+      "name": "Janne Kuokkanen",
+      "kind": "skater"
+    },
+    "8479512": {
+      "name": "Kasper Bjorkqvist",
+      "kind": "skater"
+    },
+    "8479514": {
+      "name": "Rem Pitlick",
+      "kind": "skater"
+    },
+    "8479516": {
+      "name": "Garrett Pilon",
+      "kind": "skater"
+    },
+    "8479518": {
+      "name": "Fredrik Karlstrom",
+      "kind": "skater"
+    },
+    "8479520": {
+      "name": "Brandon Duhaime",
+      "kind": "skater"
+    },
+    "8479522": {
+      "name": "Hardy Haman Aktell",
+      "kind": "skater"
+    },
+    "8479523": {
+      "name": "Lucas Carlsson",
+      "kind": "skater"
+    },
+    "8479525": {
+      "name": "Ross Colton",
+      "kind": "skater"
+    },
+    "8479526": {
+      "name": "Otto Koivula",
+      "kind": "skater"
+    },
+    "8479533": {
+      "name": "Joona Koppanen",
+      "kind": "skater"
+    },
+    "8479534": {
+      "name": "Linus Hogberg",
+      "kind": "skater"
+    },
+    "8479536": {
+      "name": "Axel Jonsson-Fjallby",
+      "kind": "skater"
+    },
+    "8479542": {
+      "name": "Brandon Hagel",
+      "kind": "skater"
+    },
+    "8479543": {
+      "name": "Michael Pezzetta",
+      "kind": "skater"
+    },
+    "8479546": {
+      "name": "Oskar Steen",
+      "kind": "skater"
+    },
+    "8479547": {
+      "name": "Matthew Phillips",
+      "kind": "skater"
+    },
+    "8479550": {
+      "name": "Tanner Laczynski",
+      "kind": "skater"
+    },
+    "8479553": {
+      "name": "Maxim Mamin",
+      "kind": "skater"
+    },
+    "8479573": {
+      "name": "Mikhail Maltsev",
+      "kind": "skater"
+    },
+    "8479576": {
+      "name": "Vincent Desharnais",
+      "kind": "skater"
+    },
+    "8479578": {
+      "name": "Casey Fitzgerald",
+      "kind": "skater"
+    },
+    "8479580": {
+      "name": "Dylan Gambrell",
+      "kind": "skater"
+    },
+    "8479581": {
+      "name": "Jack LaFontaine",
+      "kind": "goalie"
+    },
+    "8479587": {
+      "name": "Rhett Gardner",
+      "kind": "skater"
+    },
+    "8479591": {
+      "name": "Michael Eyssimont",
+      "kind": "skater"
+    },
+    "8479594": {
+      "name": "Nathan Clurman",
+      "kind": "skater"
+    },
+    "8479597": {
+      "name": "Chase Priskie",
+      "kind": "skater"
+    },
+    "8479602": {
+      "name": "Jeremy Davies",
+      "kind": "skater"
+    },
+    "8479619": {
+      "name": "Michael Carcone",
+      "kind": "skater"
+    },
+    "8479638": {
+      "name": "Justin Brazeau",
+      "kind": "skater"
+    },
+    "8479639": {
+      "name": "Dylan Coghlan",
+      "kind": "skater"
+    },
+    "8479644": {
+      "name": "Matt Luff",
+      "kind": "skater"
+    },
+    "8479661": {
+      "name": "Tanner Jeannot",
+      "kind": "skater"
+    },
+    "8479671": {
+      "name": "Mathieu Olivier",
+      "kind": "skater"
+    },
+    "8479675": {
+      "name": "Trevor Moore",
+      "kind": "skater"
+    },
+    "8479705": {
+      "name": "Jeff Viel",
+      "kind": "skater"
+    },
+    "8479718": {
+      "name": "Alex Barre-Boulet",
+      "kind": "skater"
+    },
+    "8479729": {
+      "name": "Kristians Rubins",
+      "kind": "skater"
+    },
+    "8479746": {
+      "name": "Tye Felhaber",
+      "kind": "skater"
+    },
+    "8479772": {
+      "name": "Zack MacEwen",
+      "kind": "skater"
+    },
+    "8479933": {
+      "name": "Gerry Mayhew",
+      "kind": "skater"
+    },
+    "8479941": {
+      "name": "Justin Danforth",
+      "kind": "skater"
+    },
+    "8479942": {
+      "name": "Dominik Shine",
+      "kind": "skater"
+    },
+    "8479944": {
+      "name": "Zachary Aston-Reese",
+      "kind": "skater"
+    },
+    "8479945": {
+      "name": "Gavin Bayreuther",
+      "kind": "skater"
+    },
+    "8479968": {
+      "name": "Vinni Lettieri",
+      "kind": "skater"
+    },
+    "8479972": {
+      "name": "Mason Shaw",
+      "kind": "skater"
+    },
+    "8479973": {
+      "name": "Stuart Skinner",
+      "kind": "goalie"
+    },
+    "8479974": {
+      "name": "Nolan Patrick",
+      "kind": "skater"
+    },
+    "8479976": {
+      "name": "Juuso Valimaki",
+      "kind": "skater"
+    },
+    "8479977": {
+      "name": "Kailer Yamamoto",
+      "kind": "skater"
+    },
+    "8479979": {
+      "name": "Jake Oettinger",
+      "kind": "goalie"
+    },
+    "8479980": {
+      "name": "Nicolas Hague",
+      "kind": "skater"
+    },
+    "8479981": {
+      "name": "Jonah Gadjovich",
+      "kind": "skater"
+    },
+    "8479982": {
+      "name": "Conor Timmins",
+      "kind": "skater"
+    },
+    "8479983": {
+      "name": "Mario Ferraro",
+      "kind": "skater"
+    },
+    "8479984": {
+      "name": "Cal Foote",
+      "kind": "skater"
+    },
+    "8479985": {
+      "name": "Cale Fleury",
+      "kind": "skater"
+    },
+    "8479986": {
+      "name": "Kole Lind",
+      "kind": "skater"
+    },
+    "8479987": {
+      "name": "Morgan Geekie",
+      "kind": "skater"
+    },
+    "8479991": {
+      "name": "Jake Leschyshyn",
+      "kind": "skater"
+    },
+    "8479992": {
+      "name": "Michael Rasmussen",
+      "kind": "skater"
+    },
+    "8479994": {
+      "name": "Jaret Anderson-Dolan",
+      "kind": "skater"
+    },
+    "8479996": {
+      "name": "Cody Glass",
+      "kind": "skater"
+    },
+    "8479998": {
+      "name": "Mikey Anderson",
+      "kind": "skater"
+    },
+    "8479999": {
+      "name": "Casey Mittelstadt",
+      "kind": "skater"
+    },
+    "8480001": {
+      "name": "Urho Vaakanainen",
+      "kind": "skater"
+    },
+    "8480002": {
+      "name": "Nico Hischier",
+      "kind": "skater"
+    },
+    "8480003": {
+      "name": "Jesper Boqvist",
+      "kind": "skater"
+    },
+    "8480005": {
+      "name": "Kristian Vesalainen",
+      "kind": "skater"
+    },
+    "8480007": {
+      "name": "Jonas Rondbjerg",
+      "kind": "skater"
+    },
+    "8480008": {
+      "name": "Adam Ruzicka",
+      "kind": "skater"
+    },
+    "8480009": {
+      "name": "Eeli Tolvanen",
+      "kind": "skater"
+    },
+    "8480011": {
+      "name": "Klim Kostin",
+      "kind": "skater"
+    },
+    "8480012": {
+      "name": "Elias Pettersson",
+      "kind": "skater"
+    },
+    "8480014": {
+      "name": "Gabriel Vilardi",
+      "kind": "skater"
+    },
+    "8480015": {
+      "name": "Owen Tippett",
+      "kind": "skater"
+    },
+    "8480018": {
+      "name": "Nick Suzuki",
+      "kind": "skater"
+    },
+    "8480019": {
+      "name": "Isaac Ratcliffe",
+      "kind": "skater"
+    },
+    "8480021": {
+      "name": "Jack Studnicka",
+      "kind": "skater"
+    },
+    "8480022": {
+      "name": "Michael DiPietro",
+      "kind": "goalie"
+    },
+    "8480023": {
+      "name": "Robert Thomas",
+      "kind": "skater"
+    },
+    "8480025": {
+      "name": "MacKenzie Entwistle",
+      "kind": "skater"
+    },
+    "8480027": {
+      "name": "Jason Robertson",
+      "kind": "skater"
+    },
+    "8480028": {
+      "name": "Morgan Frost",
+      "kind": "skater"
+    },
+    "8480029": {
+      "name": "Alex Formenton",
+      "kind": "skater"
+    },
+    "8480031": {
+      "name": "Maxime Comtois",
+      "kind": "skater"
+    },
+    "8480032": {
+      "name": "Shane Bowers",
+      "kind": "skater"
+    },
+    "8480034": {
+      "name": "Joel Teasdale",
+      "kind": "skater"
+    },
+    "8480035": {
+      "name": "Henri Jokiharju",
+      "kind": "skater"
+    },
+    "8480036": {
+      "name": "Miro Heiskanen",
+      "kind": "skater"
+    },
+    "8480037": {
+      "name": "Aleksi Heponiemi",
+      "kind": "skater"
+    },
+    "8480039": {
+      "name": "Martin Necas",
+      "kind": "skater"
+    },
+    "8480041": {
+      "name": "Dmitri Samorukov",
+      "kind": "skater"
+    },
+    "8480042": {
+      "name": "Olle Eriksson Ek",
+      "kind": "goalie"
+    },
+    "8480043": {
+      "name": "Timothy Liljegren",
+      "kind": "skater"
+    },
+    "8480045": {
+      "name": "Ukko-Pekka Luukkonen",
+      "kind": "goalie"
+    },
+    "8480049": {
+      "name": "Dylan Samberg",
+      "kind": "skater"
+    },
+    "8480051": {
+      "name": "Cayden Primeau",
+      "kind": "goalie"
+    },
+    "8480053": {
+      "name": "Sasha Chmelevski",
+      "kind": "skater"
+    },
+    "8480054": {
+      "name": "Reilly Walsh",
+      "kind": "skater"
+    },
+    "8480056": {
+      "name": "Jack Rathbone",
+      "kind": "skater"
+    },
+    "8480058": {
+      "name": "Pierre-Olivier Joseph",
+      "kind": "skater"
+    },
+    "8480060": {
+      "name": "Scott Reedy",
+      "kind": "skater"
+    },
+    "8480064": {
+      "name": "Josh Norris",
+      "kind": "skater"
+    },
+    "8480068": {
+      "name": "Ryan Poehling",
+      "kind": "skater"
+    },
+    "8480069": {
+      "name": "Cale Makar",
+      "kind": "skater"
+    },
+    "8480070": {
+      "name": "Ian Mitchell",
+      "kind": "skater"
+    },
+    "8480071": {
+      "name": "Robin Salo",
+      "kind": "skater"
+    },
+    "8480072": {
+      "name": "Lias Andersson",
+      "kind": "skater"
+    },
+    "8480073": {
+      "name": "Erik Brannstrom",
+      "kind": "skater"
+    },
+    "8480074": {
+      "name": "Alexandre Texier",
+      "kind": "skater"
+    },
+    "8480075": {
+      "name": "Cameron Crotty",
+      "kind": "skater"
+    },
+    "8480078": {
+      "name": "Filip Chytil",
+      "kind": "skater"
+    },
+    "8480083": {
+      "name": "C.J. Smith",
+      "kind": "skater"
+    },
+    "8480084": {
+      "name": "Nick DeSimone",
+      "kind": "skater"
+    },
+    "8480087": {
+      "name": "Mike Vecchione",
+      "kind": "skater"
+    },
+    "8480113": {
+      "name": "Alex Iafallo",
+      "kind": "skater"
+    },
+    "8480144": {
+      "name": "David Kampf",
+      "kind": "skater"
+    },
+    "8480145": {
+      "name": "Neal Pionk",
+      "kind": "skater"
+    },
+    "8480157": {
+      "name": "Calle Rosen",
+      "kind": "skater"
+    },
+    "8480160": {
+      "name": "Radim Simek",
+      "kind": "skater"
+    },
+    "8480172": {
+      "name": "Jan Rutta",
+      "kind": "skater"
+    },
+    "8480184": {
+      "name": "Gustav Lindström",
+      "kind": "skater"
+    },
+    "8480185": {
+      "name": "Eetu Luostarinen",
+      "kind": "skater"
+    },
+    "8480188": {
+      "name": "Fabian Zetterlund",
+      "kind": "skater"
+    },
+    "8480191": {
+      "name": "Matt Villalta",
+      "kind": "goalie"
+    },
+    "8480192": {
+      "name": "Johnathan Kovacevic",
+      "kind": "skater"
+    },
+    "8480193": {
+      "name": "Daniil Tarasov",
+      "kind": "goalie"
+    },
+    "8480196": {
+      "name": "Jacob Bryson",
+      "kind": "skater"
+    },
+    "8480199": {
+      "name": "Eetu Makiniemi",
+      "kind": "goalie"
+    },
+    "8480205": {
+      "name": "Emil Bemstrom",
+      "kind": "skater"
+    },
+    "8480208": {
+      "name": "Drake Batherson",
+      "kind": "skater"
+    },
+    "8480216": {
+      "name": "Jacob Peterson",
+      "kind": "skater"
+    },
+    "8480220": {
+      "name": "Noah Cates",
+      "kind": "skater"
+    },
+    "8480222": {
+      "name": "Sebastian Aho",
+      "kind": "skater"
+    },
+    "8480226": {
+      "name": "Marián Studenic",
+      "kind": "skater"
+    },
+    "8480231": {
+      "name": "Jakub Galvas",
+      "kind": "skater"
+    },
+    "8480238": {
+      "name": "Jiri Patera",
+      "kind": "goalie"
+    },
+    "8480242": {
+      "name": "Arnaud Durandeau",
+      "kind": "skater"
+    },
+    "8480245": {
+      "name": "Olle Lycksell",
+      "kind": "skater"
+    },
+    "8480246": {
+      "name": "Nick Perbix",
+      "kind": "skater"
+    },
+    "8480252": {
+      "name": "Cole Guttman",
+      "kind": "skater"
+    },
+    "8480259": {
+      "name": "Ben Jones",
+      "kind": "skater"
+    },
+    "8480263": {
+      "name": "Dylan Ferguson",
+      "kind": "goalie"
+    },
+    "8480267": {
+      "name": "Sammy Walker",
+      "kind": "skater"
+    },
+    "8480274": {
+      "name": "Phil Kemp",
+      "kind": "skater"
+    },
+    "8480275": {
+      "name": "Nick Swaney",
+      "kind": "skater"
+    },
+    "8480280": {
+      "name": "Jeremy Swayman",
+      "kind": "goalie"
+    },
+    "8480281": {
+      "name": "Alexey Toropchenko",
+      "kind": "skater"
+    },
+    "8480289": {
+      "name": "Morgan Barron",
+      "kind": "skater"
+    },
+    "8480291": {
+      "name": "Skyler Brind'Amour",
+      "kind": "skater"
+    },
+    "8480292": {
+      "name": "Carson Meyer",
+      "kind": "skater"
+    },
+    "8480293": {
+      "name": "Wyatt Kalynuk",
+      "kind": "skater"
+    },
+    "8480304": {
+      "name": "Jayden Halbgewachs",
+      "kind": "skater"
+    },
+    "8480306": {
+      "name": "Grant Hutton",
+      "kind": "skater"
+    },
+    "8480313": {
+      "name": "Logan Thompson",
+      "kind": "goalie"
+    },
+    "8480326": {
+      "name": "Sheldon Dries",
+      "kind": "skater"
+    },
+    "8480328": {
+      "name": "David Gust",
+      "kind": "skater"
+    },
+    "8480336": {
+      "name": "Sean Walker",
+      "kind": "skater"
+    },
+    "8480355": {
+      "name": "Mark Kastelic",
+      "kind": "skater"
+    },
+    "8480373": {
+      "name": "Josef Korenar",
+      "kind": "goalie"
+    },
+    "8480382": {
+      "name": "Alexandar Georgiev",
+      "kind": "goalie"
+    },
+    "8480384": {
+      "name": "Alexander True",
+      "kind": "skater"
+    },
+    "8480420": {
+      "name": "Collin Delia",
+      "kind": "goalie"
+    },
+    "8480426": {
+      "name": "Charle-Edouard D'Astous",
+      "kind": "skater"
+    },
+    "8480434": {
+      "name": "Sean Durzi",
+      "kind": "skater"
+    },
+    "8480439": {
+      "name": "Mac Hollowell",
+      "kind": "skater"
+    },
+    "8480441": {
+      "name": "Trey Fix-Wolansky",
+      "kind": "skater"
+    },
+    "8480443": {
+      "name": "Kristian Reichel",
+      "kind": "skater"
+    },
+    "8480448": {
+      "name": "Parker Kelly",
+      "kind": "skater"
+    },
+    "8480459": {
+      "name": "Pius Suter",
+      "kind": "skater"
+    },
+    "8480466": {
+      "name": "Joey Keane",
+      "kind": "skater"
+    },
+    "8480467": {
+      "name": "Austin Strand",
+      "kind": "skater"
+    },
+    "8480468": {
+      "name": "James Hamblin",
+      "kind": "skater"
+    },
+    "8480591": {
+      "name": "Thomas Hodges",
+      "kind": "goalie"
+    },
+    "8480727": {
+      "name": "Zach Whitecloud",
+      "kind": "skater"
+    },
+    "8480748": {
+      "name": "Kiefer Sherwood",
+      "kind": "skater"
+    },
+    "8480762": {
+      "name": "Eric Robinson",
+      "kind": "skater"
+    },
+    "8480776": {
+      "name": "Sheldon Rempal",
+      "kind": "skater"
+    },
+    "8480789": {
+      "name": "Oliver Wahlstrom",
+      "kind": "skater"
+    },
+    "8480796": {
+      "name": "Martin Fehervary",
+      "kind": "skater"
+    },
+    "8480797": {
+      "name": "Joel Farabee",
+      "kind": "skater"
+    },
+    "8480798": {
+      "name": "Philipp Kurashev",
+      "kind": "skater"
+    },
+    "8480800": {
+      "name": "Quinn Hughes",
+      "kind": "skater"
+    },
+    "8480801": {
+      "name": "Brady Tkachuk",
+      "kind": "skater"
+    },
+    "8480802": {
+      "name": "Ryan McLeod",
+      "kind": "skater"
+    },
+    "8480803": {
+      "name": "Evan Bouchard",
+      "kind": "skater"
+    },
+    "8480806": {
+      "name": "Isac Lundeström",
+      "kind": "skater"
+    },
+    "8480807": {
+      "name": "Mattias Samuelsson",
+      "kind": "skater"
+    },
+    "8480813": {
+      "name": "Joseph Veleno",
+      "kind": "skater"
+    },
+    "8480814": {
+      "name": "Nicolas Beaudin",
+      "kind": "skater"
+    },
+    "8480817": {
+      "name": "K'Andre Miller",
+      "kind": "skater"
+    },
+    "8480819": {
+      "name": "Jakub Skarek",
+      "kind": "goalie"
+    },
+    "8480820": {
+      "name": "Filip Kral",
+      "kind": "skater"
+    },
+    "8480821": {
+      "name": "Filip Zadina",
+      "kind": "skater"
+    },
+    "8480822": {
+      "name": "Martin Kaut",
+      "kind": "skater"
+    },
+    "8480823": {
+      "name": "Alexander Alexeyev",
+      "kind": "skater"
+    },
+    "8480825": {
+      "name": "Patrick Giles",
+      "kind": "skater"
+    },
+    "8480828": {
+      "name": "Michael Callahan",
+      "kind": "skater"
+    },
+    "8480829": {
+      "name": "Jesperi Kotkaniemi",
+      "kind": "skater"
+    },
+    "8480830": {
+      "name": "Andrei Svechnikov",
+      "kind": "skater"
+    },
+    "8480831": {
+      "name": "Alec Regula",
+      "kind": "skater"
+    },
+    "8480833": {
+      "name": "Vitali Kravtsov",
+      "kind": "skater"
+    },
+    "8480834": {
+      "name": "Ty Emberson",
+      "kind": "skater"
+    },
+    "8480835": {
+      "name": "Jack Drury",
+      "kind": "skater"
+    },
+    "8480836": {
+      "name": "Jonathan Gruden",
+      "kind": "skater"
+    },
+    "8480839": {
+      "name": "Rasmus Dahlin",
+      "kind": "skater"
+    },
+    "8480840": {
+      "name": "Oskar Bäck",
+      "kind": "skater"
+    },
+    "8480842": {
+      "name": "Filip Hallander",
+      "kind": "skater"
+    },
+    "8480843": {
+      "name": "Lukas Dostal",
+      "kind": "goalie"
+    },
+    "8480844": {
+      "name": "Grigori Denisenko",
+      "kind": "skater"
+    },
+    "8480845": {
+      "name": "Rasmus Kupari",
+      "kind": "skater"
+    },
+    "8480846": {
+      "name": "Sampo Ranta",
+      "kind": "skater"
+    },
+    "8480847": {
+      "name": "Ryan Merkley",
+      "kind": "skater"
+    },
+    "8480848": {
+      "name": "Ty Dellandrea",
+      "kind": "skater"
+    },
+    "8480849": {
+      "name": "Barrett Hayton",
+      "kind": "skater"
+    },
+    "8480851": {
+      "name": "Akil Thomas",
+      "kind": "skater"
+    },
+    "8480853": {
+      "name": "Liam Foudy",
+      "kind": "skater"
+    },
+    "8480855": {
+      "name": "Jack McBain",
+      "kind": "skater"
+    },
+    "8480858": {
+      "name": "Cam Hillis",
+      "kind": "skater"
+    },
+    "8480860": {
+      "name": "Kevin Bahl",
+      "kind": "skater"
+    },
+    "8480863": {
+      "name": "Gabriel Fortier",
+      "kind": "skater"
+    },
+    "8480865": {
+      "name": "Noah Dobson",
+      "kind": "skater"
+    },
+    "8480867": {
+      "name": "Kevin Mandolese",
+      "kind": "goalie"
+    },
+    "8480870": {
+      "name": "Bo Groulx",
+      "kind": "skater"
+    },
+    "8480871": {
+      "name": "Adam Boqvist",
+      "kind": "skater"
+    },
+    "8480873": {
+      "name": "Rasmus Sandin",
+      "kind": "skater"
+    },
+    "8480874": {
+      "name": "Adam Ginning",
+      "kind": "skater"
+    },
+    "8480876": {
+      "name": "Curtis Douglas",
+      "kind": "skater"
+    },
+    "8480878": {
+      "name": "Nils Lundkvist",
+      "kind": "skater"
+    },
+    "8480879": {
+      "name": "Jacob Bernard-Docker",
+      "kind": "skater"
+    },
+    "8480880": {
+      "name": "Jakub Lauko",
+      "kind": "skater"
+    },
+    "8480883": {
+      "name": "Ty Smith",
+      "kind": "skater"
+    },
+    "8480884": {
+      "name": "Calen Addison",
+      "kind": "skater"
+    },
+    "8480885": {
+      "name": "Olivier Rodrigue",
+      "kind": "goalie"
+    },
+    "8480887": {
+      "name": "Jordan Harris",
+      "kind": "skater"
+    },
+    "8480890": {
+      "name": "Jan Jenik",
+      "kind": "skater"
+    },
+    "8480891": {
+      "name": "Michael Kesselring",
+      "kind": "skater"
+    },
+    "8480893": {
+      "name": "Kirill Marchenko",
+      "kind": "skater"
+    },
+    "8480901": {
+      "name": "Karson Kuhlman",
+      "kind": "skater"
+    },
+    "8480913": {
+      "name": "Jordan Gross",
+      "kind": "skater"
+    },
+    "8480925": {
+      "name": "Pavel Francouz",
+      "kind": "goalie"
+    },
+    "8480935": {
+      "name": "Lawrence Pilut",
+      "kind": "skater"
+    },
+    "8480945": {
+      "name": "Juuso Riikola",
+      "kind": "skater"
+    },
+    "8480947": {
+      "name": "Kevin Lankinen",
+      "kind": "goalie"
+    },
+    "8480950": {
+      "name": "Ilya Lyubushkin",
+      "kind": "skater"
+    },
+    "8480977": {
+      "name": "Semyon Der-Arguchintsev",
+      "kind": "skater"
+    },
+    "8480979": {
+      "name": "Nate Smith",
+      "kind": "skater"
+    },
+    "8480980": {
+      "name": "Connor Dewar",
+      "kind": "skater"
+    },
+    "8480981": {
+      "name": "Joel Hofer",
+      "kind": "goalie"
+    },
+    "8480988": {
+      "name": "Riley Damiani",
+      "kind": "skater"
+    },
+    "8480990": {
+      "name": "Declan Chisholm",
+      "kind": "skater"
+    },
+    "8480992": {
+      "name": "Magnus Chrona",
+      "kind": "goalie"
+    },
+    "8480994": {
+      "name": "Damien Giroux",
+      "kind": "skater"
+    },
+    "8480995": {
+      "name": "Pontus Holmberg",
+      "kind": "skater"
+    },
+    "8481003": {
+      "name": "Hunter Drew",
+      "kind": "skater"
+    },
+    "8481004": {
+      "name": "Josiah Slavin",
+      "kind": "skater"
+    },
+    "8481006": {
+      "name": "Tyler Tucker",
+      "kind": "skater"
+    },
+    "8481013": {
+      "name": "Jonatan Berggren",
+      "kind": "skater"
+    },
+    "8481014": {
+      "name": "Alexander Romanov",
+      "kind": "skater"
+    },
+    "8481016": {
+      "name": "Ruslan Iskhakov",
+      "kind": "skater"
+    },
+    "8481019": {
+      "name": "David Gustafsson",
+      "kind": "skater"
+    },
+    "8481020": {
+      "name": "Justus Annunen",
+      "kind": "goalie"
+    },
+    "8481024": {
+      "name": "Linus Karlsson",
+      "kind": "skater"
+    },
+    "8481028": {
+      "name": "Martin Pospisil",
+      "kind": "skater"
+    },
+    "8481030": {
+      "name": "Jack St. Ivany",
+      "kind": "skater"
+    },
+    "8481031": {
+      "name": "Ivan Prosvetov",
+      "kind": "goalie"
+    },
+    "8481032": {
+      "name": "Paul Cotter",
+      "kind": "skater"
+    },
+    "8481033": {
+      "name": "Akira Schmid",
+      "kind": "goalie"
+    },
+    "8481035": {
+      "name": "Samuel Ersson",
+      "kind": "goalie"
+    },
+    "8481042": {
+      "name": "Nikolai Kovalenko",
+      "kind": "skater"
+    },
+    "8481043": {
+      "name": "Cole Koepke",
+      "kind": "skater"
+    },
+    "8481056": {
+      "name": "Spencer Stastney",
+      "kind": "skater"
+    },
+    "8481058": {
+      "name": "Jesse Ylonen",
+      "kind": "skater"
+    },
+    "8481059": {
+      "name": "Scott Perunovich",
+      "kind": "skater"
+    },
+    "8481061": {
+      "name": "Jasper Weatherby",
+      "kind": "skater"
+    },
+    "8481065": {
+      "name": "Angus Crookshank",
+      "kind": "skater"
+    },
+    "8481068": {
+      "name": "Yegor Sharangovich",
+      "kind": "skater"
+    },
+    "8481070": {
+      "name": "Hugh McGing",
+      "kind": "skater"
+    },
+    "8481072": {
+      "name": "Tim Berni",
+      "kind": "skater"
+    },
+    "8481077": {
+      "name": "John Leonard",
+      "kind": "skater"
+    },
+    "8481093": {
+      "name": "Rafael Harvey-Pinard",
+      "kind": "skater"
+    },
+    "8481102": {
+      "name": "Egor Sokolov",
+      "kind": "skater"
+    },
+    "8481122": {
+      "name": "Simon Benoit",
+      "kind": "skater"
+    },
+    "8481133": {
+      "name": "Cole Reinhardt",
+      "kind": "skater"
+    },
+    "8481147": {
+      "name": "Reese Johnson",
+      "kind": "skater"
+    },
+    "8481161": {
+      "name": "Jake Christiansen",
+      "kind": "skater"
+    },
+    "8481167": {
+      "name": "Brayden Pachal",
+      "kind": "skater"
+    },
+    "8481178": {
+      "name": "Egor Zamula",
+      "kind": "skater"
+    },
+    "8481186": {
+      "name": "Logan O'Connor",
+      "kind": "skater"
+    },
+    "8481206": {
+      "name": "John Ludvig",
+      "kind": "skater"
+    },
+    "8481219": {
+      "name": "Jonathan Aspirot",
+      "kind": "skater"
+    },
+    "8481237": {
+      "name": "Kyle MacLean",
+      "kind": "skater"
+    },
+    "8481239": {
+      "name": "Samuel Fagemo",
+      "kind": "skater"
+    },
+    "8481422": {
+      "name": "Jake Lucchini",
+      "kind": "skater"
+    },
+    "8481433": {
+      "name": "Taro Hirose",
+      "kind": "skater"
+    },
+    "8481441": {
+      "name": "Joe Snively",
+      "kind": "skater"
+    },
+    "8481461": {
+      "name": "Corey Schueneman",
+      "kind": "skater"
+    },
+    "8481462": {
+      "name": "Mason Morelli",
+      "kind": "skater"
+    },
+    "8481477": {
+      "name": "Nico Sturm",
+      "kind": "skater"
+    },
+    "8481481": {
+      "name": "Blake Lizotte",
+      "kind": "skater"
+    },
+    "8481486": {
+      "name": "Jimmy Schuldt",
+      "kind": "skater"
+    },
+    "8481489": {
+      "name": "Jon Lizotte",
+      "kind": "skater"
+    },
+    "8481491": {
+      "name": "Noah Philp",
+      "kind": "skater"
+    },
+    "8481517": {
+      "name": "Brett Leason",
+      "kind": "skater"
+    },
+    "8481518": {
+      "name": "Nolan Foote",
+      "kind": "skater"
+    },
+    "8481519": {
+      "name": "Spencer Knight",
+      "kind": "goalie"
+    },
+    "8481521": {
+      "name": "Ronald Attard",
+      "kind": "skater"
+    },
+    "8481522": {
+      "name": "Peyton Krebs",
+      "kind": "skater"
+    },
+    "8481523": {
+      "name": "Kirby Dach",
+      "kind": "skater"
+    },
+    "8481524": {
+      "name": "Bowen Byram",
+      "kind": "skater"
+    },
+    "8481525": {
+      "name": "Matthew Robertson",
+      "kind": "skater"
+    },
+    "8481527": {
+      "name": "Kaedan Korczak",
+      "kind": "skater"
+    },
+    "8481528": {
+      "name": "Dylan Cozens",
+      "kind": "skater"
+    },
+    "8481529": {
+      "name": "Trent Miner",
+      "kind": "goalie"
+    },
+    "8481530": {
+      "name": "Brayden Tracey",
+      "kind": "skater"
+    },
+    "8481532": {
+      "name": "Alex Turcotte",
+      "kind": "skater"
+    },
+    "8481533": {
+      "name": "Trevor Zegras",
+      "kind": "skater"
+    },
+    "8481534": {
+      "name": "Raphael Lavoie",
+      "kind": "skater"
+    },
+    "8481535": {
+      "name": "Nils Hoglander",
+      "kind": "skater"
+    },
+    "8481536": {
+      "name": "Daniil Misyul",
+      "kind": "skater"
+    },
+    "8481537": {
+      "name": "Nikita Okhotiuk",
+      "kind": "skater"
+    },
+    "8481538": {
+      "name": "Judd Caulfield",
+      "kind": "skater"
+    },
+    "8481540": {
+      "name": "Cole Caufield",
+      "kind": "skater"
+    },
+    "8481541": {
+      "name": "Samuel Bolduc",
+      "kind": "skater"
+    },
+    "8481542": {
+      "name": "Moritz Seider",
+      "kind": "skater"
+    },
+    "8481543": {
+      "name": "Nikita Alexandrov",
+      "kind": "skater"
+    },
+    "8481544": {
+      "name": "Mads Sogaard",
+      "kind": "goalie"
+    },
+    "8481546": {
+      "name": "Cam York",
+      "kind": "skater"
+    },
+    "8481547": {
+      "name": "Simon Lundmark",
+      "kind": "skater"
+    },
+    "8481550": {
+      "name": "Adam Beckman",
+      "kind": "skater"
+    },
+    "8481551": {
+      "name": "Colten Ellis",
+      "kind": "goalie"
+    },
+    "8481552": {
+      "name": "Artemi Kniazev",
+      "kind": "skater"
+    },
+    "8481553": {
+      "name": "Bobby Brink",
+      "kind": "skater"
+    },
+    "8481554": {
+      "name": "Kaapo Kakko",
+      "kind": "skater"
+    },
+    "8481555": {
+      "name": "Mattias Norlinder",
+      "kind": "skater"
+    },
+    "8481556": {
+      "name": "John Beecher",
+      "kind": "skater"
+    },
+    "8481557": {
+      "name": "Matt Boldy",
+      "kind": "skater"
+    },
+    "8481558": {
+      "name": "John Farinacci",
+      "kind": "skater"
+    },
+    "8481559": {
+      "name": "Jack Hughes",
+      "kind": "skater"
+    },
+    "8481560": {
+      "name": "Arthur Kaliyev",
+      "kind": "skater"
+    },
+    "8481562": {
+      "name": "Domenick Fensore",
+      "kind": "skater"
+    },
+    "8481563": {
+      "name": "Drew Helleson",
+      "kind": "skater"
+    },
+    "8481564": {
+      "name": "Ryan Johnson",
+      "kind": "skater"
+    },
+    "8481567": {
+      "name": "Henry Thrun",
+      "kind": "skater"
+    },
+    "8481568": {
+      "name": "Alex Vlasic",
+      "kind": "skater"
+    },
+    "8481569": {
+      "name": "Marshall Warren",
+      "kind": "skater"
+    },
+    "8481572": {
+      "name": "Ville Heinola",
+      "kind": "skater"
+    },
+    "8481575": {
+      "name": "Lassi Thomson",
+      "kind": "skater"
+    },
+    "8481576": {
+      "name": "Ryan Suzuki",
+      "kind": "skater"
+    },
+    "8481577": {
+      "name": "Philip Tomasino",
+      "kind": "skater"
+    },
+    "8481578": {
+      "name": "Graeme Clarke",
+      "kind": "skater"
+    },
+    "8481580": {
+      "name": "Connor McMichael",
+      "kind": "skater"
+    },
+    "8481581": {
+      "name": "Thomas Harley",
+      "kind": "skater"
+    },
+    "8481582": {
+      "name": "Nick Robertson",
+      "kind": "skater"
+    },
+    "8481585": {
+      "name": "Egor Afanasyev",
+      "kind": "skater"
+    },
+    "8481591": {
+      "name": "Samuel Poulin",
+      "kind": "skater"
+    },
+    "8481592": {
+      "name": "Jakob Pelletier",
+      "kind": "skater"
+    },
+    "8481593": {
+      "name": "Jayden Struble",
+      "kind": "skater"
+    },
+    "8481594": {
+      "name": "Nathan Légaré",
+      "kind": "skater"
+    },
+    "8481596": {
+      "name": "Shane Pinto",
+      "kind": "skater"
+    },
+    "8481597": {
+      "name": "Hugo Alnefelt",
+      "kind": "goalie"
+    },
+    "8481598": {
+      "name": "Philip Broberg",
+      "kind": "skater"
+    },
+    "8481599": {
+      "name": "Victor Soderstrom",
+      "kind": "skater"
+    },
+    "8481600": {
+      "name": "Tobias Bjornfot",
+      "kind": "skater"
+    },
+    "8481601": {
+      "name": "Simon Holmstrom",
+      "kind": "skater"
+    },
+    "8481604": {
+      "name": "Pavel Dorofeyev",
+      "kind": "skater"
+    },
+    "8481605": {
+      "name": "Jackson LaCombe",
+      "kind": "skater"
+    },
+    "8481606": {
+      "name": "Jordan Spence",
+      "kind": "skater"
+    },
+    "8481607": {
+      "name": "Albert Johansson",
+      "kind": "skater"
+    },
+    "8481609": {
+      "name": "Vladislav Kolyachonok",
+      "kind": "skater"
+    },
+    "8481611": {
+      "name": "Pyotr Kochetkov",
+      "kind": "goalie"
+    },
+    "8481617": {
+      "name": "Vasily Podkolzin",
+      "kind": "skater"
+    },
+    "8481618": {
+      "name": "Alex Newhook",
+      "kind": "skater"
+    },
+    "8481624": {
+      "name": "Ilya Mikheyev",
+      "kind": "skater"
+    },
+    "8481626": {
+      "name": "Arttu Ruotsalainen",
+      "kind": "skater"
+    },
+    "8481641": {
+      "name": "Joel Kiviranta",
+      "kind": "skater"
+    },
+    "8481649": {
+      "name": "Joona Luoto",
+      "kind": "skater"
+    },
+    "8481655": {
+      "name": "Cole Schwindt",
+      "kind": "skater"
+    },
+    "8481656": {
+      "name": "Aliaksei Protas",
+      "kind": "skater"
+    },
+    "8481657": {
+      "name": "Viktor Lodin",
+      "kind": "skater"
+    },
+    "8481668": {
+      "name": "Arturs Silovs",
+      "kind": "goalie"
+    },
+    "8481679": {
+      "name": "Maxence Guenette",
+      "kind": "skater"
+    },
+    "8481683": {
+      "name": "Aidan McDonough",
+      "kind": "skater"
+    },
+    "8481690": {
+      "name": "Tyler Angle",
+      "kind": "skater"
+    },
+    "8481692": {
+      "name": "Dustin Wolf",
+      "kind": "goalie"
+    },
+    "8481699": {
+      "name": "Aku Raty",
+      "kind": "skater"
+    },
+    "8481701": {
+      "name": "Santeri Hatakka",
+      "kind": "skater"
+    },
+    "8481703": {
+      "name": "Valtteri Puustinen",
+      "kind": "skater"
+    },
+    "8481704": {
+      "name": "Juuso Parssinen",
+      "kind": "skater"
+    },
+    "8481707": {
+      "name": "Erik Portillo",
+      "kind": "goalie"
+    },
+    "8481708": {
+      "name": "Zac Jones",
+      "kind": "skater"
+    },
+    "8481711": {
+      "name": "Matias Maccelli",
+      "kind": "skater"
+    },
+    "8481712": {
+      "name": "Matej Blümel",
+      "kind": "skater"
+    },
+    "8481715": {
+      "name": "Hunter Skinner",
+      "kind": "skater"
+    },
+    "8481716": {
+      "name": "Dmitri Voronkov",
+      "kind": "skater"
+    },
+    "8481719": {
+      "name": "Max Crozier",
+      "kind": "skater"
+    },
+    "8481720": {
+      "name": "Nicholas Abruzzese",
+      "kind": "skater"
+    },
+    "8481721": {
+      "name": "Arseny Gritsyuk",
+      "kind": "skater"
+    },
+    "8481725": {
+      "name": "Elmer Soderblom",
+      "kind": "skater"
+    },
+    "8481726": {
+      "name": "Adam Edstrom",
+      "kind": "skater"
+    },
+    "8481732": {
+      "name": "Andre Lee",
+      "kind": "skater"
+    },
+    "8481737": {
+      "name": "Matthew Stienburg",
+      "kind": "skater"
+    },
+    "8481740": {
+      "name": "Tyce Thompson",
+      "kind": "skater"
+    },
+    "8481743": {
+      "name": "Marc Del Gaizo",
+      "kind": "skater"
+    },
+    "8481751": {
+      "name": "Lukas Rousek",
+      "kind": "skater"
+    },
+    "8481754": {
+      "name": "Nikita Nesterenko",
+      "kind": "skater"
+    },
+    "8481789": {
+      "name": "Tye Kartye",
+      "kind": "skater"
+    },
+    "8481806": {
+      "name": "Louis Crevier",
+      "kind": "skater"
+    },
+    "8481812": {
+      "name": "Nikolai Knyzhov",
+      "kind": "skater"
+    },
+    "8481815": {
+      "name": "Bryce Kindopp",
+      "kind": "skater"
+    },
+    "8481827": {
+      "name": "Ben McCartney",
+      "kind": "skater"
+    },
+    "8481848": {
+      "name": "Jacob Gaucher",
+      "kind": "skater"
+    },
+    "8481849": {
+      "name": "Zack Hayes",
+      "kind": "skater"
+    },
+    "8482055": {
+      "name": "Drew O'Connor",
+      "kind": "skater"
+    },
+    "8482061": {
+      "name": "Brandon Biro",
+      "kind": "skater"
+    },
+    "8482062": {
+      "name": "Cole Smith",
+      "kind": "skater"
+    },
+    "8482067": {
+      "name": "Connor Mackey",
+      "kind": "skater"
+    },
+    "8482070": {
+      "name": "Mitchell Chaffee",
+      "kind": "skater"
+    },
+    "8482072": {
+      "name": "Jack Ahcan",
+      "kind": "skater"
+    },
+    "8482073": {
+      "name": "Braden Schneider",
+      "kind": "skater"
+    },
+    "8482074": {
+      "name": "Connor Zary",
+      "kind": "skater"
+    },
+    "8482076": {
+      "name": "Nico Daws",
+      "kind": "goalie"
+    },
+    "8482077": {
+      "name": "Dylan Holloway",
+      "kind": "skater"
+    },
+    "8482078": {
+      "name": "Lucas Raymond",
+      "kind": "skater"
+    },
+    "8482079": {
+      "name": "Marco Rossi",
+      "kind": "skater"
+    },
+    "8482081": {
+      "name": "Sean Farrell",
+      "kind": "skater"
+    },
+    "8482087": {
+      "name": "Kaiden Guhle",
+      "kind": "skater"
+    },
+    "8482088": {
+      "name": "Justin Sourdif",
+      "kind": "skater"
+    },
+    "8482089": {
+      "name": "Jake Neighbours",
+      "kind": "skater"
+    },
+    "8482090": {
+      "name": "Jack Finley",
+      "kind": "skater"
+    },
+    "8482092": {
+      "name": "Ridly Greig",
+      "kind": "skater"
+    },
+    "8482093": {
+      "name": "Seth Jarvis",
+      "kind": "skater"
+    },
+    "8482094": {
+      "name": "Daemon Hunt",
+      "kind": "skater"
+    },
+    "8482095": {
+      "name": "Tyler Kleven",
+      "kind": "skater"
+    },
+    "8482097": {
+      "name": "Jack Quinn",
+      "kind": "skater"
+    },
+    "8482100": {
+      "name": "Alexander Nikishin",
+      "kind": "skater"
+    },
+    "8482101": {
+      "name": "Danil Gushchin",
+      "kind": "skater"
+    },
+    "8482102": {
+      "name": "Vasily Ponomarev",
+      "kind": "skater"
+    },
+    "8482103": {
+      "name": "Ozzy Wiesblatt",
+      "kind": "skater"
+    },
+    "8482105": {
+      "name": "Jake Sanderson",
+      "kind": "skater"
+    },
+    "8482107": {
+      "name": "Michael Benning",
+      "kind": "skater"
+    },
+    "8482109": {
+      "name": "Alexis Lafrenière",
+      "kind": "skater"
+    },
+    "8482110": {
+      "name": "Dawson Mercer",
+      "kind": "skater"
+    },
+    "8482111": {
+      "name": "Justin Barron",
+      "kind": "skater"
+    },
+    "8482113": {
+      "name": "Anton Lundell",
+      "kind": "skater"
+    },
+    "8482116": {
+      "name": "Tim Stützle",
+      "kind": "skater"
+    },
+    "8482117": {
+      "name": "Lukas Reichel",
+      "kind": "skater"
+    },
+    "8482118": {
+      "name": "Sam Colangelo",
+      "kind": "skater"
+    },
+    "8482121": {
+      "name": "Dylan Peterson",
+      "kind": "skater"
+    },
+    "8482122": {
+      "name": "Brock Faber",
+      "kind": "skater"
+    },
+    "8482123": {
+      "name": "Drew Commesso",
+      "kind": "goalie"
+    },
+    "8482124": {
+      "name": "Quinton Byfield",
+      "kind": "skater"
+    },
+    "8482125": {
+      "name": "Alexander Holtz",
+      "kind": "skater"
+    },
+    "8482126": {
+      "name": "Emil Andrae",
+      "kind": "skater"
+    },
+    "8482131": {
+      "name": "Donovan Sebrango",
+      "kind": "skater"
+    },
+    "8482132": {
+      "name": "Brett Berard",
+      "kind": "skater"
+    },
+    "8482133": {
+      "name": "Thomas Bordeleau",
+      "kind": "skater"
+    },
+    "8482137": {
+      "name": "Yaroslav Askarov",
+      "kind": "goalie"
+    },
+    "8482141": {
+      "name": "Lukas Cormier",
+      "kind": "skater"
+    },
+    "8482142": {
+      "name": "Jamie Drysdale",
+      "kind": "skater"
+    },
+    "8482144": {
+      "name": "Jack Thompson",
+      "kind": "skater"
+    },
+    "8482145": {
+      "name": "Mavrik Bourque",
+      "kind": "skater"
+    },
+    "8482146": {
+      "name": "Luke Evangelista",
+      "kind": "skater"
+    },
+    "8482147": {
+      "name": "Jean-Luc Foudy",
+      "kind": "skater"
+    },
+    "8482148": {
+      "name": "Hendrix Lapierre",
+      "kind": "skater"
+    },
+    "8482149": {
+      "name": "Cole Perfetti",
+      "kind": "skater"
+    },
+    "8482150": {
+      "name": "Jacob Perreault",
+      "kind": "skater"
+    },
+    "8482153": {
+      "name": "Brendan Brisson",
+      "kind": "skater"
+    },
+    "8482155": {
+      "name": "Alex Laferriere",
+      "kind": "skater"
+    },
+    "8482157": {
+      "name": "Will Cuylle",
+      "kind": "skater"
+    },
+    "8482159": {
+      "name": "Tyson Foerster",
+      "kind": "skater"
+    },
+    "8482160": {
+      "name": "Martin Chromiak",
+      "kind": "skater"
+    },
+    "8482162": {
+      "name": "Roby Jarventie",
+      "kind": "skater"
+    },
+    "8482165": {
+      "name": "Yan Kuznetsov",
+      "kind": "skater"
+    },
+    "8482166": {
+      "name": "Shakir Mukhamadullin",
+      "kind": "skater"
+    },
+    "8482167": {
+      "name": "Bogdan Trineyev",
+      "kind": "skater"
+    },
+    "8482168": {
+      "name": "Maxim Groshev",
+      "kind": "skater"
+    },
+    "8482169": {
+      "name": "Helge Grans",
+      "kind": "skater"
+    },
+    "8482171": {
+      "name": "William Wallinder",
+      "kind": "skater"
+    },
+    "8482172": {
+      "name": "Landon Slaggert",
+      "kind": "skater"
+    },
+    "8482174": {
+      "name": "William Villeneuve",
+      "kind": "skater"
+    },
+    "8482175": {
+      "name": "JJ Peterka",
+      "kind": "skater"
+    },
+    "8482176": {
+      "name": "Wyatt Kaiser",
+      "kind": "skater"
+    },
+    "8482177": {
+      "name": "Marat Khusnutdinov",
+      "kind": "skater"
+    },
+    "8482178": {
+      "name": "Ian Moore",
+      "kind": "skater"
+    },
+    "8482179": {
+      "name": "Justin Richards",
+      "kind": "skater"
+    },
+    "8482181": {
+      "name": "Tristen Robins",
+      "kind": "skater"
+    },
+    "8482187": {
+      "name": "Ronan Seeley",
+      "kind": "skater"
+    },
+    "8482192": {
+      "name": "Isaak Phillips",
+      "kind": "skater"
+    },
+    "8482193": {
+      "name": "Dylan Garand",
+      "kind": "goalie"
+    },
+    "8482197": {
+      "name": "Adam Raska",
+      "kind": "skater"
+    },
+    "8482201": {
+      "name": "Gage Goncalves",
+      "kind": "skater"
+    },
+    "8482206": {
+      "name": "Ethan Cardwell",
+      "kind": "skater"
+    },
+    "8482207": {
+      "name": "William Dufour",
+      "kind": "skater"
+    },
+    "8482209": {
+      "name": "Rory Kerins",
+      "kind": "skater"
+    },
+    "8482213": {
+      "name": "Riley Duran",
+      "kind": "skater"
+    },
+    "8482221": {
+      "name": "Devon Levi",
+      "kind": "goalie"
+    },
+    "8482222": {
+      "name": "Alexander Barabanov",
+      "kind": "skater"
+    },
+    "8482241": {
+      "name": "Radim Zohorna",
+      "kind": "skater"
+    },
+    "8482243": {
+      "name": "Linus Sandin",
+      "kind": "skater"
+    },
+    "8482245": {
+      "name": "Artem Zub",
+      "kind": "skater"
+    },
+    "8482250": {
+      "name": "Callahan Burke",
+      "kind": "skater"
+    },
+    "8482259": {
+      "name": "Bobby McMann",
+      "kind": "skater"
+    },
+    "8482399": {
+      "name": "Billy Sweezey",
+      "kind": "skater"
+    },
+    "8482408": {
+      "name": "Jeff Malott",
+      "kind": "skater"
+    },
+    "8482411": {
+      "name": "Hunter Shepard",
+      "kind": "goalie"
+    },
+    "8482445": {
+      "name": "Devin Cooley",
+      "kind": "goalie"
+    },
+    "8482446": {
+      "name": "Joel Blomqvist",
+      "kind": "goalie"
+    },
+    "8482447": {
+      "name": "Leevi Merilainen",
+      "kind": "goalie"
+    },
+    "8482448": {
+      "name": "Samuel Knazko",
+      "kind": "skater"
+    },
+    "8482451": {
+      "name": "Mikael Pyyhtia",
+      "kind": "skater"
+    },
+    "8482452": {
+      "name": "Elliot Desnoyers",
+      "kind": "skater"
+    },
+    "8482459": {
+      "name": "Tyrel Bauer",
+      "kind": "skater"
+    },
+    "8482460": {
+      "name": "Matt Rempe",
+      "kind": "skater"
+    },
+    "8482470": {
+      "name": "Ilya Solovyov",
+      "kind": "skater"
+    },
+    "8482475": {
+      "name": "Egor Chinakhov",
+      "kind": "skater"
+    },
+    "8482476": {
+      "name": "Emil Heineman",
+      "kind": "skater"
+    },
+    "8482479": {
+      "name": "Trevor Kuntar",
+      "kind": "skater"
+    },
+    "8482482": {
+      "name": "Adam Wilsby",
+      "kind": "skater"
+    },
+    "8482487": {
+      "name": "Jakub Dobes",
+      "kind": "goalie"
+    },
+    "8482496": {
+      "name": "Nils Aman",
+      "kind": "skater"
+    },
+    "8482507": {
+      "name": "Chase Bradley",
+      "kind": "skater"
+    },
+    "8482511": {
+      "name": "Mason Lohrei",
+      "kind": "skater"
+    },
+    "8482515": {
+      "name": "Artur Akhtyamov",
+      "kind": "goalie"
+    },
+    "8482516": {
+      "name": "Matthew Kessel",
+      "kind": "skater"
+    },
+    "8482525": {
+      "name": "Ryan Tverberg",
+      "kind": "skater"
+    },
+    "8482623": {
+      "name": "Joshua Dunne",
+      "kind": "skater"
+    },
+    "8482624": {
+      "name": "Daniil Miromanov",
+      "kind": "skater"
+    },
+    "8482634": {
+      "name": "Alex Steeves",
+      "kind": "skater"
+    },
+    "8482635": {
+      "name": "Mike Hardman",
+      "kind": "skater"
+    },
+    "8482641": {
+      "name": "Matt Kiersted",
+      "kind": "skater"
+    },
+    "8482652": {
+      "name": "Walker Duehr",
+      "kind": "skater"
+    },
+    "8482654": {
+      "name": "Jackson Cates",
+      "kind": "skater"
+    },
+    "8482655": {
+      "name": "J.J. Moser",
+      "kind": "skater"
+    },
+    "8482657": {
+      "name": "Sebastian Cossa",
+      "kind": "goalie"
+    },
+    "8482659": {
+      "name": "Josh Doan",
+      "kind": "skater"
+    },
+    "8482660": {
+      "name": "Kent Johnson",
+      "kind": "skater"
+    },
+    "8482661": {
+      "name": "Jesper Wallstedt",
+      "kind": "goalie"
+    },
+    "8482663": {
+      "name": "Dylan Duke",
+      "kind": "skater"
+    },
+    "8482665": {
+      "name": "Matty Beniers",
+      "kind": "skater"
+    },
+    "8482666": {
+      "name": "Scott Morrow",
+      "kind": "skater"
+    },
+    "8482667": {
+      "name": "William Eklund",
+      "kind": "skater"
+    },
+    "8482668": {
+      "name": "Tristan Lennox",
+      "kind": "goalie"
+    },
+    "8482671": {
+      "name": "Owen Power",
+      "kind": "skater"
+    },
+    "8482673": {
+      "name": "Xavier Bourgault",
+      "kind": "skater"
+    },
+    "8482679": {
+      "name": "Matt Coronato",
+      "kind": "skater"
+    },
+    "8482684": {
+      "name": "Luke Hughes",
+      "kind": "skater"
+    },
+    "8482691": {
+      "name": "Aatu Räty",
+      "kind": "skater"
+    },
+    "8482698": {
+      "name": "Tristan Broz",
+      "kind": "skater"
+    },
+    "8482699": {
+      "name": "Dylan Guenther",
+      "kind": "skater"
+    },
+    "8482700": {
+      "name": "Nolan Allan",
+      "kind": "skater"
+    },
+    "8482702": {
+      "name": "Logan Stankoven",
+      "kind": "skater"
+    },
+    "8482703": {
+      "name": "Colton Dach",
+      "kind": "skater"
+    },
+    "8482705": {
+      "name": "Cole Sillinger",
+      "kind": "skater"
+    },
+    "8482711": {
+      "name": "Stanislav Svozil",
+      "kind": "skater"
+    },
+    "8482712": {
+      "name": "Oskar Olausson",
+      "kind": "skater"
+    },
+    "8482713": {
+      "name": "Mackie Samoskevich",
+      "kind": "skater"
+    },
+    "8482715": {
+      "name": "Ryan Ufko",
+      "kind": "skater"
+    },
+    "8482720": {
+      "name": "Matthew Knies",
+      "kind": "skater"
+    },
+    "8482726": {
+      "name": "Samuel Helenius",
+      "kind": "skater"
+    },
+    "8482730": {
+      "name": "Brandt Clarke",
+      "kind": "skater"
+    },
+    "8482731": {
+      "name": "Tyson Hinds",
+      "kind": "skater"
+    },
+    "8482733": {
+      "name": "Logan Mailloux",
+      "kind": "skater"
+    },
+    "8482737": {
+      "name": "Zachary Bolduc",
+      "kind": "skater"
+    },
+    "8482740": {
+      "name": "Wyatt Johnston",
+      "kind": "skater"
+    },
+    "8482742": {
+      "name": "Zachary L'Heureux",
+      "kind": "skater"
+    },
+    "8482744": {
+      "name": "James Malatesta",
+      "kind": "skater"
+    },
+    "8482745": {
+      "name": "Mason McTavish",
+      "kind": "skater"
+    },
+    "8482747": {
+      "name": "Brennan Othmann",
+      "kind": "skater"
+    },
+    "8482749": {
+      "name": "Joshua Roy",
+      "kind": "skater"
+    },
+    "8482751": {
+      "name": "Ryan Winterton",
+      "kind": "skater"
+    },
+    "8482758": {
+      "name": "Ville Koivunen",
+      "kind": "skater"
+    },
+    "8482761": {
+      "name": "Carl Lindbom",
+      "kind": "goalie"
+    },
+    "8482762": {
+      "name": "Simon Edvinsson",
+      "kind": "skater"
+    },
+    "8482763": {
+      "name": "Fabian Lysell",
+      "kind": "skater"
+    },
+    "8482765": {
+      "name": "Isak Rosén",
+      "kind": "skater"
+    },
+    "8482766": {
+      "name": "William Stromgren",
+      "kind": "skater"
+    },
+    "8482768": {
+      "name": "Fedor Svechkov",
+      "kind": "skater"
+    },
+    "8482775": {
+      "name": "Oliver Kapanen",
+      "kind": "skater"
+    },
+    "8482781": {
+      "name": "Carson Lambos",
+      "kind": "skater"
+    },
+    "8482783": {
+      "name": "Aleksei Kolosov",
+      "kind": "goalie"
+    },
+    "8482784": {
+      "name": "Zach Dean",
+      "kind": "skater"
+    },
+    "8482785": {
+      "name": "Justin Robidas",
+      "kind": "skater"
+    },
+    "8482787": {
+      "name": "Nikita Chibrikov",
+      "kind": "skater"
+    },
+    "8482802": {
+      "name": "Carter Mazur",
+      "kind": "skater"
+    },
+    "8482803": {
+      "name": "Olen Zellweger",
+      "kind": "skater"
+    },
+    "8482804": {
+      "name": "Ty Murchison",
+      "kind": "skater"
+    },
+    "8482806": {
+      "name": "William Trudeau",
+      "kind": "skater"
+    },
+    "8482807": {
+      "name": "Ethan Del Mastro",
+      "kind": "skater"
+    },
+    "8482809": {
+      "name": "Jackson Blake",
+      "kind": "skater"
+    },
+    "8482815": {
+      "name": "Kirill Semyonov",
+      "kind": "skater"
+    },
+    "8482821": {
+      "name": "Arvid Soderblom",
+      "kind": "goalie"
+    },
+    "8482824": {
+      "name": "Nick Cicek",
+      "kind": "skater"
+    },
+    "8482829": {
+      "name": "Michael Milne",
+      "kind": "skater"
+    },
+    "8482834": {
+      "name": "Jesper Froden",
+      "kind": "skater"
+    },
+    "8482858": {
+      "name": "Ryker Evans",
+      "kind": "skater"
+    },
+    "8482859": {
+      "name": "Zack Ostapchuk",
+      "kind": "skater"
+    },
+    "8482861": {
+      "name": "Vincent Iorio",
+      "kind": "skater"
+    },
+    "8482866": {
+      "name": "Ville Ottavainen",
+      "kind": "skater"
+    },
+    "8482873": {
+      "name": "Topias Vilen",
+      "kind": "skater"
+    },
+    "8482874": {
+      "name": "Jacob Melanson",
+      "kind": "skater"
+    },
+    "8482877": {
+      "name": "Jaroslav Chmelar",
+      "kind": "skater"
+    },
+    "8482896": {
+      "name": "Tyson Kozak",
+      "kind": "skater"
+    },
+    "8482911": {
+      "name": "Joel Nystrom",
+      "kind": "skater"
+    },
+    "8482929": {
+      "name": "Emil Lilleberg",
+      "kind": "skater"
+    },
+    "8482941": {
+      "name": "Shane Lachance",
+      "kind": "skater"
+    },
+    "8482947": {
+      "name": "Zakhar Bardakov",
+      "kind": "skater"
+    },
+    "8482949": {
+      "name": "Arsenii Sergeev",
+      "kind": "goalie"
+    },
+    "8482953": {
+      "name": "Taylor Makar",
+      "kind": "skater"
+    },
+    "8482964": {
+      "name": "Arber Xhekaj",
+      "kind": "skater"
+    },
+    "8482982": {
+      "name": "Jet Greaves",
+      "kind": "goalie"
+    },
+    "8482993": {
+      "name": "Avery Hayes",
+      "kind": "skater"
+    },
+    "8483012": {
+      "name": "Logan Morrison",
+      "kind": "skater"
+    },
+    "8483017": {
+      "name": "Frederic Brunet",
+      "kind": "skater"
+    },
+    "8483039": {
+      "name": "Tristen Nielsen",
+      "kind": "skater"
+    },
+    "8483045": {
+      "name": "Cameron Butler",
+      "kind": "skater"
+    },
+    "8483114": {
+      "name": "Thomas Milic",
+      "kind": "goalie"
+    },
+    "8483158": {
+      "name": "Matthew Berlin",
+      "kind": "goalie"
+    },
+    "8483183": {
+      "name": "Jett Alexander",
+      "kind": "goalie"
+    },
+    "8483395": {
+      "name": "Arshdeep Bains",
+      "kind": "skater"
+    },
+    "8483397": {
+      "name": "Marc McLaughlin",
+      "kind": "skater"
+    },
+    "8483398": {
+      "name": "Declan Carlile",
+      "kind": "skater"
+    },
+    "8483401": {
+      "name": "Marc Johnstone",
+      "kind": "skater"
+    },
+    "8483406": {
+      "name": "Taylor Ward",
+      "kind": "skater"
+    },
+    "8483407": {
+      "name": "Brandon Scanlin",
+      "kind": "skater"
+    },
+    "8483424": {
+      "name": "Owen Beck",
+      "kind": "skater"
+    },
+    "8483425": {
+      "name": "Lian Bichsel",
+      "kind": "skater"
+    },
+    "8483428": {
+      "name": "Filip Bystedt",
+      "kind": "skater"
+    },
+    "8483429": {
+      "name": "Seamus Casey",
+      "kind": "skater"
+    },
+    "8483431": {
+      "name": "Logan Cooley",
+      "kind": "skater"
+    },
+    "8483432": {
+      "name": "Luca Del Bel Belluz",
+      "kind": "skater"
+    },
+    "8483433": {
+      "name": "Jack Devine",
+      "kind": "skater"
+    },
+    "8483435": {
+      "name": "Jorian Donovan",
+      "kind": "skater"
+    },
+    "8483436": {
+      "name": "Artem Duda",
+      "kind": "skater"
+    },
+    "8483444": {
+      "name": "Nathan Gaucher",
+      "kind": "skater"
+    },
+    "8483445": {
+      "name": "Cutter Gauthier",
+      "kind": "skater"
+    },
+    "8483447": {
+      "name": "Conor Geekie",
+      "kind": "skater"
+    },
+    "8483448": {
+      "name": "Isaiah George",
+      "kind": "skater"
+    },
+    "8483450": {
+      "name": "Ryan Greene",
+      "kind": "skater"
+    },
+    "8483452": {
+      "name": "Hunter Haight",
+      "kind": "skater"
+    },
+    "8483455": {
+      "name": "Isaac Howard",
+      "kind": "skater"
+    },
+    "8483457": {
+      "name": "Lane Hutson",
+      "kind": "skater"
+    },
+    "8483460": {
+      "name": "David Jiricek",
+      "kind": "skater"
+    },
+    "8483461": {
+      "name": "Devin Kaplan",
+      "kind": "skater"
+    },
+    "8483463": {
+      "name": "Aleksanteri Kaskimaki",
+      "kind": "skater"
+    },
+    "8483464": {
+      "name": "Marco Kasper",
+      "kind": "skater"
+    },
+    "8483465": {
+      "name": "Joakim Kemell",
+      "kind": "skater"
+    },
+    "8483466": {
+      "name": "Kevin Korchinski",
+      "kind": "skater"
+    },
+    "8483467": {
+      "name": "Kirill Kudryavtsev",
+      "kind": "skater"
+    },
+    "8483468": {
+      "name": "Jiri Kulich",
+      "kind": "skater"
+    },
+    "8483471": {
+      "name": "Brad Lambert",
+      "kind": "skater"
+    },
+    "8483472": {
+      "name": "Maveric Lamoureux",
+      "kind": "skater"
+    },
+    "8483476": {
+      "name": "Jonathan Lekkerimaki",
+      "kind": "skater"
+    },
+    "8483478": {
+      "name": "Rieger Lorenz",
+      "kind": "skater"
+    },
+    "8483481": {
+      "name": "Cam Lund",
+      "kind": "skater"
+    },
+    "8483482": {
+      "name": "Tristan Luneau",
+      "kind": "skater"
+    },
+    "8483485": {
+      "name": "Denton Mateychuk",
+      "kind": "skater"
+    },
+    "8483487": {
+      "name": "Rutger McGroarty",
+      "kind": "skater"
+    },
+    "8483489": {
+      "name": "Fraser Minten",
+      "kind": "skater"
+    },
+    "8483490": {
+      "name": "Pavel Mintyukov",
+      "kind": "skater"
+    },
+    "8483491": {
+      "name": "Ivan Miroshnichenko",
+      "kind": "skater"
+    },
+    "8483493": {
+      "name": "Frank Nazar",
+      "kind": "skater"
+    },
+    "8483495": {
+      "name": "Simon Nemec",
+      "kind": "skater"
+    },
+    "8483497": {
+      "name": "Jani Nyman",
+      "kind": "skater"
+    },
+    "8483499": {
+      "name": "Liam Ohgren",
+      "kind": "skater"
+    },
+    "8483500": {
+      "name": "Noah Ostlund",
+      "kind": "skater"
+    },
+    "8483503": {
+      "name": "Owen Pickering",
+      "kind": "skater"
+    },
+    "8483505": {
+      "name": "Matthew Poitras",
+      "kind": "skater"
+    },
+    "8483506": {
+      "name": "Sam Rinzel",
+      "kind": "skater"
+    },
+    "8483510": {
+      "name": "Elias Salomonsson",
+      "kind": "skater"
+    },
+    "8483512": {
+      "name": "Matt Savoie",
+      "kind": "skater"
+    },
+    "8483513": {
+      "name": "Reid Schaefer",
+      "kind": "skater"
+    },
+    "8483514": {
+      "name": "Matthew Seminoff",
+      "kind": "skater"
+    },
+    "8483515": {
+      "name": "Juraj Slafkovský",
+      "kind": "skater"
+    },
+    "8483516": {
+      "name": "Jimmy Snuggerud",
+      "kind": "skater"
+    },
+    "8483521": {
+      "name": "Noah Warren",
+      "kind": "skater"
+    },
+    "8483524": {
+      "name": "Shane Wright",
+      "kind": "skater"
+    },
+    "8483525": {
+      "name": "Danila Yurov",
+      "kind": "skater"
+    },
+    "8483526": {
+      "name": "Danil Zhilkin",
+      "kind": "skater"
+    },
+    "8483530": {
+      "name": "Jaxson Stauber",
+      "kind": "goalie"
+    },
+    "8483531": {
+      "name": "Brian Halonen",
+      "kind": "skater"
+    },
+    "8483532": {
+      "name": "Clay Stevenson",
+      "kind": "goalie"
+    },
+    "8483538": {
+      "name": "Owen Sillinger",
+      "kind": "skater"
+    },
+    "8483546": {
+      "name": "Marshall Rifai",
+      "kind": "skater"
+    },
+    "8483548": {
+      "name": "Brandon Bussi",
+      "kind": "goalie"
+    },
+    "8483549": {
+      "name": "Lucas Condotta",
+      "kind": "skater"
+    },
+    "8483553": {
+      "name": "Marc Gatcomb",
+      "kind": "skater"
+    },
+    "8483565": {
+      "name": "Nick Blankenburg",
+      "kind": "skater"
+    },
+    "8483567": {
+      "name": "Georgii Merkulov",
+      "kind": "skater"
+    },
+    "8483569": {
+      "name": "Wyatt Aamodt",
+      "kind": "skater"
+    },
+    "8483570": {
+      "name": "Ben Meyers",
+      "kind": "skater"
+    },
+    "8483573": {
+      "name": "Ethen Frank",
+      "kind": "skater"
+    },
+    "8483575": {
+      "name": "Matt Murray",
+      "kind": "goalie"
+    },
+    "8483597": {
+      "name": "Milos Kelemen",
+      "kind": "skater"
+    },
+    "8483609": {
+      "name": "Adam Klapka",
+      "kind": "skater"
+    },
+    "8483619": {
+      "name": "Filip Roos",
+      "kind": "skater"
+    },
+    "8483620": {
+      "name": "Marcus Bjork",
+      "kind": "skater"
+    },
+    "8483630": {
+      "name": "Pavol Regenda",
+      "kind": "skater"
+    },
+    "8483641": {
+      "name": "Anton Levtchi",
+      "kind": "skater"
+    },
+    "8483668": {
+      "name": "Nikke Kokko",
+      "kind": "goalie"
+    },
+    "8483669": {
+      "name": "Adam Sykora",
+      "kind": "skater"
+    },
+    "8483675": {
+      "name": "Kenny Connors",
+      "kind": "skater"
+    },
+    "8483676": {
+      "name": "Stephen Halliday",
+      "kind": "skater"
+    },
+    "8483678": {
+      "name": "Elias Pettersson",
+      "kind": "skater"
+    },
+    "8483679": {
+      "name": "Anton Johansson",
+      "kind": "skater"
+    },
+    "8483686": {
+      "name": "Adam Engstrom",
+      "kind": "skater"
+    },
+    "8483687": {
+      "name": "Marek Alscher",
+      "kind": "skater"
+    },
+    "8483690": {
+      "name": "Noah Laba",
+      "kind": "skater"
+    },
+    "8483695": {
+      "name": "Amadeus Lombardi",
+      "kind": "skater"
+    },
+    "8483696": {
+      "name": "Cole O'Hara",
+      "kind": "skater"
+    },
+    "8483699": {
+      "name": "Angus Booth",
+      "kind": "skater"
+    },
+    "8483703": {
+      "name": "Sergei Murashov",
+      "kind": "goalie"
+    },
+    "8483709": {
+      "name": "Abram Wiebe",
+      "kind": "skater"
+    },
+    "8483710": {
+      "name": "Dennis Hildeby",
+      "kind": "goalie"
+    },
+    "8483712": {
+      "name": "Ludvig Jansson",
+      "kind": "skater"
+    },
+    "8483728": {
+      "name": "Jared Davidson",
+      "kind": "skater"
+    },
+    "8483731": {
+      "name": "Alex Bump",
+      "kind": "skater"
+    },
+    "8483733": {
+      "name": "Nikita Grebenkin",
+      "kind": "skater"
+    },
+    "8483746": {
+      "name": "Vyacheslav Buteyets",
+      "kind": "goalie"
+    },
+    "8483752": {
+      "name": "Dominic James",
+      "kind": "skater"
+    },
+    "8483756": {
+      "name": "Jared Wright",
+      "kind": "skater"
+    },
+    "8483760": {
+      "name": "Hunter McDonald",
+      "kind": "skater"
+    },
+    "8483763": {
+      "name": "Maksymilian Szuber",
+      "kind": "skater"
+    },
+    "8483766": {
+      "name": "David Spacek",
+      "kind": "skater"
+    },
+    "8483768": {
+      "name": "Victor Mancini",
+      "kind": "skater"
+    },
+    "8483771": {
+      "name": "Sandis Vilmanis",
+      "kind": "skater"
+    },
+    "8483787": {
+      "name": "Cole Knuble",
+      "kind": "skater"
+    },
+    "8483808": {
+      "name": "Andrei Kuzmenko",
+      "kind": "skater"
+    },
+    "8483841": {
+      "name": "Xavier Parent",
+      "kind": "skater"
+    },
+    "8483890": {
+      "name": "Braeden Bowman",
+      "kind": "skater"
+    },
+    "8483920": {
+      "name": "Pierrick Dube",
+      "kind": "skater"
+    },
+    "8483930": {
+      "name": "Ivan Ivan",
+      "kind": "skater"
+    },
+    "8484125": {
+      "name": "Hunter McKown",
+      "kind": "skater"
+    },
+    "8484135": {
+      "name": "Parker Ford",
+      "kind": "skater"
+    },
+    "8484136": {
+      "name": "Max Sasson",
+      "kind": "skater"
+    },
+    "8484142": {
+      "name": "Denver Barkey",
+      "kind": "skater"
+    },
+    "8484144": {
+      "name": "Connor Bedard",
+      "kind": "skater"
+    },
+    "8484145": {
+      "name": "Zach Benson",
+      "kind": "skater"
+    },
+    "8484148": {
+      "name": "Oliver Bonk",
+      "kind": "skater"
+    },
+    "8484149": {
+      "name": "Gavin Brindley",
+      "kind": "skater"
+    },
+    "8484150": {
+      "name": "Hunter Brzustewicz",
+      "kind": "skater"
+    },
+    "8484152": {
+      "name": "Luca Cagnoni",
+      "kind": "skater"
+    },
+    "8484153": {
+      "name": "Leo Carlsson",
+      "kind": "skater"
+    },
+    "8484154": {
+      "name": "Jonathan Castagna",
+      "kind": "skater"
+    },
+    "8484158": {
+      "name": "Easton Cowan",
+      "kind": "skater"
+    },
+    "8484160": {
+      "name": "Nate Danielson",
+      "kind": "skater"
+    },
+    "8484164": {
+      "name": "Dalibor Dvorsky",
+      "kind": "skater"
+    },
+    "8484166": {
+      "name": "Adam Fantilli",
+      "kind": "skater"
+    },
+    "8484168": {
+      "name": "Oscar Fisker Molgaard",
+      "kind": "skater"
+    },
+    "8484169": {
+      "name": "Drew Fortescue",
+      "kind": "skater"
+    },
+    "8484170": {
+      "name": "Jacob Fowler",
+      "kind": "goalie"
+    },
+    "8484177": {
+      "name": "Lenni Hameenaho",
+      "kind": "skater"
+    },
+    "8484180": {
+      "name": "Samuel Honzek",
+      "kind": "skater"
+    },
+    "8484185": {
+      "name": "Nick Lardis",
+      "kind": "skater"
+    },
+    "8484186": {
+      "name": "Ryan Leonard",
+      "kind": "skater"
+    },
+    "8484188": {
+      "name": "Theo Lindstein",
+      "kind": "skater"
+    },
+    "8484197": {
+      "name": "Oliver Moore",
+      "kind": "skater"
+    },
+    "8484201": {
+      "name": "Nico Myatovic",
+      "kind": "skater"
+    },
+    "8484203": {
+      "name": "Bradly Nadeau",
+      "kind": "skater"
+    },
+    "8484210": {
+      "name": "Gabe Perreault",
+      "kind": "skater"
+    },
+    "8484214": {
+      "name": "Luca Pinelli",
+      "kind": "skater"
+    },
+    "8484220": {
+      "name": "David Reinbacher",
+      "kind": "skater"
+    },
+    "8484221": {
+      "name": "Calum Ritchie",
+      "kind": "skater"
+    },
+    "8484223": {
+      "name": "Axel Sandin-Pellikka",
+      "kind": "skater"
+    },
+    "8484227": {
+      "name": "Will Smith",
+      "kind": "skater"
+    },
+    "8484230": {
+      "name": "Otto Stenberg",
+      "kind": "skater"
+    },
+    "8484234": {
+      "name": "Aydar Suniev",
+      "kind": "skater"
+    },
+    "8484240": {
+      "name": "Tom Willander",
+      "kind": "skater"
+    },
+    "8484241": {
+      "name": "Matthew Wood",
+      "kind": "skater"
+    },
+    "8484242": {
+      "name": "Brayden Yager",
+      "kind": "skater"
+    },
+    "8484254": {
+      "name": "Akito Hirose",
+      "kind": "skater"
+    },
+    "8484255": {
+      "name": "Jason Polin",
+      "kind": "skater"
+    },
+    "8484256": {
+      "name": "Jake Livingstone",
+      "kind": "skater"
+    },
+    "8484258": {
+      "name": "Sam Malinski",
+      "kind": "skater"
+    },
+    "8484259": {
+      "name": "Ondrej Pavel",
+      "kind": "skater"
+    },
+    "8484262": {
+      "name": "Travis Mitchell",
+      "kind": "skater"
+    },
+    "8484268": {
+      "name": "Nikita Tolopilo",
+      "kind": "goalie"
+    },
+    "8484287": {
+      "name": "Cole McWard",
+      "kind": "skater"
+    },
+    "8484293": {
+      "name": "Yaniv Perets",
+      "kind": "goalie"
+    },
+    "8484304": {
+      "name": "Uvis Balinskis",
+      "kind": "skater"
+    },
+    "8484305": {
+      "name": "Zach Metsa",
+      "kind": "skater"
+    },
+    "8484312": {
+      "name": "Georgii Romanov",
+      "kind": "goalie"
+    },
+    "8484314": {
+      "name": "Jiri Smejkal",
+      "kind": "skater"
+    },
+    "8484321": {
+      "name": "Nikolas Matinpalo",
+      "kind": "skater"
+    },
+    "8484325": {
+      "name": "Waltteri Merela",
+      "kind": "skater"
+    },
+    "8484326": {
+      "name": "Patrik Koch",
+      "kind": "skater"
+    },
+    "8484380": {
+      "name": "Wilmer Skoog",
+      "kind": "skater"
+    },
+    "8484386": {
+      "name": "Dmitri Simashev",
+      "kind": "skater"
+    },
+    "8484387": {
+      "name": "Matvei Michkov",
+      "kind": "skater"
+    },
+    "8484388": {
+      "name": "Daniil But",
+      "kind": "skater"
+    },
+    "8484390": {
+      "name": "Roman Kantserov",
+      "kind": "skater"
+    },
+    "8484392": {
+      "name": "Felix Unger Sörum",
+      "kind": "skater"
+    },
+    "8484403": {
+      "name": "Florian Xhekaj",
+      "kind": "skater"
+    },
+    "8484406": {
+      "name": "Ty Mueller",
+      "kind": "skater"
+    },
+    "8484409": {
+      "name": "Hoyt Stanley",
+      "kind": "skater"
+    },
+    "8484421": {
+      "name": "Eric Pohlkamp",
+      "kind": "skater"
+    },
+    "8484428": {
+      "name": "Charles Alexis Legault",
+      "kind": "skater"
+    },
+    "8484471": {
+      "name": "Emmitt Finnie",
+      "kind": "skater"
+    },
+    "8484509": {
+      "name": "Josh Samanski",
+      "kind": "skater"
+    },
+    "8484529": {
+      "name": "Connor Clattenburg",
+      "kind": "skater"
+    },
+    "8484759": {
+      "name": "Carter Yakemchuk",
+      "kind": "skater"
+    },
+    "8484762": {
+      "name": "Beckett Sennecke",
+      "kind": "skater"
+    },
+    "8484768": {
+      "name": "Zayne Parekh",
+      "kind": "skater"
+    },
+    "8484779": {
+      "name": "Jett Luchanko",
+      "kind": "skater"
+    },
+    "8484783": {
+      "name": "Artyom Levshunov",
+      "kind": "skater"
+    },
+    "8484786": {
+      "name": "Cole Beaudoin",
+      "kind": "skater"
+    },
+    "8484790": {
+      "name": "Adam Jiricek",
+      "kind": "skater"
+    },
+    "8484793": {
+      "name": "Sacha Boisvert",
+      "kind": "skater"
+    },
+    "8484794": {
+      "name": "Michael Brandsegg-Nygård",
+      "kind": "skater"
+    },
+    "8484797": {
+      "name": "Konsta Helenius",
+      "kind": "skater"
+    },
+    "8484798": {
+      "name": "Zeev Buium",
+      "kind": "skater"
+    },
+    "8484800": {
+      "name": "Berkly Catton",
+      "kind": "skater"
+    },
+    "8484801": {
+      "name": "Macklin Celebrini",
+      "kind": "skater"
+    },
+    "8484803": {
+      "name": "Trevor Connelly",
+      "kind": "skater"
+    },
+    "8484806": {
+      "name": "Sam Dickinson",
+      "kind": "skater"
+    },
+    "8484821": {
+      "name": "Sam Morton",
+      "kind": "skater"
+    },
+    "8484829": {
+      "name": "Justin Hryckowian",
+      "kind": "skater"
+    },
+    "8484839": {
+      "name": "Harrison Brunicke",
+      "kind": "skater"
+    },
+    "8484860": {
+      "name": "Matvei Gridin",
+      "kind": "skater"
+    },
+    "8484873": {
+      "name": "Cole Hutson",
+      "kind": "skater"
+    },
+    "8484900": {
+      "name": "Cooper Black",
+      "kind": "goalie"
+    },
+    "8484901": {
+      "name": "Jacob Quillan",
+      "kind": "skater"
+    },
+    "8484910": {
+      "name": "Victor Ostman",
+      "kind": "goalie"
+    },
+    "8484911": {
+      "name": "Collin Graf",
+      "kind": "skater"
+    },
+    "8484929": {
+      "name": "Juha Jaaska",
+      "kind": "skater"
+    },
+    "8484933": {
+      "name": "Mikulas Hovorka",
+      "kind": "skater"
+    },
+    "8484938": {
+      "name": "Arttu Hyry",
+      "kind": "skater"
+    },
+    "8484958": {
+      "name": "Maksim Tsyplakov",
+      "kind": "skater"
+    },
+    "8484976": {
+      "name": "Jere Innala",
+      "kind": "skater"
+    },
+    "8484984": {
+      "name": "Ivan Demidov",
+      "kind": "skater"
+    },
+    "8484994": {
+      "name": "Igor Chernyshov",
+      "kind": "skater"
+    },
+    "8484999": {
+      "name": "Ilya Protas",
+      "kind": "skater"
+    },
+    "8485105": {
+      "name": "Nikita Prishchepov",
+      "kind": "skater"
+    },
+    "8485251": {
+      "name": "Kai Uchacz",
+      "kind": "skater"
+    },
+    "8485366": {
+      "name": "Matthew Schaefer",
+      "kind": "skater"
+    },
+    "8485385": {
+      "name": "Braeden Cootes",
+      "kind": "skater"
+    },
+    "8485388": {
+      "name": "Victor Eklund",
+      "kind": "skater"
+    },
+    "8485391": {
+      "name": "Anton Frondell",
+      "kind": "skater"
+    },
+    "8485395": {
+      "name": "James Hagens",
+      "kind": "skater"
+    },
+    "8485400": {
+      "name": "Roger McQueen",
+      "kind": "skater"
+    },
+    "8485402": {
+      "name": "Michael Misa",
+      "kind": "skater"
+    },
+    "8485405": {
+      "name": "Brady Martin",
+      "kind": "skater"
+    },
+    "8485406": {
+      "name": "Porter Martone",
+      "kind": "skater"
+    },
+    "8485414": {
+      "name": "Ben Kindel",
+      "kind": "skater"
+    },
+    "8485467": {
+      "name": "Luke Haymes",
+      "kind": "skater"
+    },
+    "8485468": {
+      "name": "Trey Taylor",
+      "kind": "skater"
+    },
+    "8485469": {
+      "name": "Jack Williams",
+      "kind": "skater"
+    },
+    "8485483": {
+      "name": "Karsen Dorwart",
+      "kind": "skater"
+    },
+    "8485493": {
+      "name": "David Tomasek",
+      "kind": "skater"
+    },
+    "8485511": {
+      "name": "Quinn Hutson",
+      "kind": "skater"
+    },
+    "8485512": {
+      "name": "Tim Washe",
+      "kind": "skater"
+    },
+    "8485545": {
+      "name": "Michal Postava",
+      "kind": "goalie"
+    },
+    "8485554": {
+      "name": "Dillon Boucher",
+      "kind": "skater"
+    },
+    "8485702": {
+      "name": "Maxim Shabanov",
+      "kind": "skater"
+    },
+    "8485957": {
+      "name": "Alberts Smits",
+      "kind": "skater"
+    },
+    "8486025": {
+      "name": "Viggo Björck",
+      "kind": "skater"
+    },
+    "8486052": {
+      "name": "Nikita Klepov",
+      "kind": "skater"
+    },
+    "8486056": {
+      "name": "Tyson Gross",
+      "kind": "skater"
+    },
+    "8486067": {
+      "name": "Gavin McKenna",
+      "kind": "skater"
+    },
+    "8486103": {
+      "name": "Ivar Stenberg",
+      "kind": "skater"
+    },
+    "8486130": {
+      "name": "Dylan Hryckowian",
+      "kind": "skater"
+    },
+    "8486161": {
+      "name": "Owen Michaels",
+      "kind": "skater"
+    },
+    "8486166": {
+      "name": "Viking Gustafsson Nyberg",
+      "kind": "skater"
+    },
+    "8486169": {
+      "name": "Jake Livanavage",
+      "kind": "skater"
+    },
+    "8486171": {
+      "name": "T.J. Hughes",
+      "kind": "skater"
+    },
+    "8486189": {
+      "name": "Vitali Pinchuk",
+      "kind": "skater"
+    }
+  },
+  "teams": {
+    "1": {
+      "id": 1,
+      "name": "New Jersey Devils",
+      "abbreviation": "NJD"
+    },
+    "2": {
+      "id": 2,
+      "name": "New York Islanders",
+      "abbreviation": "NYI"
+    },
+    "3": {
+      "id": 3,
+      "name": "New York Rangers",
+      "abbreviation": "NYR"
+    },
+    "4": {
+      "id": 4,
+      "name": "Philadelphia Flyers",
+      "abbreviation": "PHI"
+    },
+    "5": {
+      "id": 5,
+      "name": "Pittsburgh Penguins",
+      "abbreviation": "PIT"
+    },
+    "6": {
+      "id": 6,
+      "name": "Boston Bruins",
+      "abbreviation": "BOS"
+    },
+    "7": {
+      "id": 7,
+      "name": "Buffalo Sabres",
+      "abbreviation": "BUF"
+    },
+    "8": {
+      "id": 8,
+      "name": "Montréal Canadiens",
+      "abbreviation": "MTL"
+    },
+    "9": {
+      "id": 9,
+      "name": "Ottawa Senators",
+      "abbreviation": "OTT"
+    },
+    "10": {
+      "id": 10,
+      "name": "Toronto Maple Leafs",
+      "abbreviation": "TOR"
+    },
+    "12": {
+      "id": 12,
+      "name": "Carolina Hurricanes",
+      "abbreviation": "CAR"
+    },
+    "13": {
+      "id": 13,
+      "name": "Florida Panthers",
+      "abbreviation": "FLA"
+    },
+    "14": {
+      "id": 14,
+      "name": "Tampa Bay Lightning",
+      "abbreviation": "TBL"
+    },
+    "15": {
+      "id": 15,
+      "name": "Washington Capitals",
+      "abbreviation": "WSH"
+    },
+    "16": {
+      "id": 16,
+      "name": "Chicago Blackhawks",
+      "abbreviation": "CHI"
+    },
+    "17": {
+      "id": 17,
+      "name": "Detroit Red Wings",
+      "abbreviation": "DET"
+    },
+    "18": {
+      "id": 18,
+      "name": "Nashville Predators",
+      "abbreviation": "NSH"
+    },
+    "19": {
+      "id": 19,
+      "name": "St. Louis Blues",
+      "abbreviation": "STL"
+    },
+    "20": {
+      "id": 20,
+      "name": "Calgary Flames",
+      "abbreviation": "CGY"
+    },
+    "21": {
+      "id": 21,
+      "name": "Colorado Avalanche",
+      "abbreviation": "COL"
+    },
+    "22": {
+      "id": 22,
+      "name": "Edmonton Oilers",
+      "abbreviation": "EDM"
+    },
+    "23": {
+      "id": 23,
+      "name": "Vancouver Canucks",
+      "abbreviation": "VAN"
+    },
+    "24": {
+      "id": 24,
+      "name": "Anaheim Ducks",
+      "abbreviation": "ANA"
+    },
+    "25": {
+      "id": 25,
+      "name": "Dallas Stars",
+      "abbreviation": "DAL"
+    },
+    "26": {
+      "id": 26,
+      "name": "Los Angeles Kings",
+      "abbreviation": "LAK"
+    },
+    "28": {
+      "id": 28,
+      "name": "San Jose Sharks",
+      "abbreviation": "SJS"
+    },
+    "29": {
+      "id": 29,
+      "name": "Columbus Blue Jackets",
+      "abbreviation": "CBJ"
+    },
+    "30": {
+      "id": 30,
+      "name": "Minnesota Wild",
+      "abbreviation": "MIN"
+    },
+    "52": {
+      "id": 52,
+      "name": "Winnipeg Jets",
+      "abbreviation": "WPG"
+    },
+    "53": {
+      "id": 53,
+      "name": "Arizona Coyotes",
+      "abbreviation": "ARI"
+    },
+    "54": {
+      "id": 54,
+      "name": "Vegas Golden Knights",
+      "abbreviation": "VGK"
+    },
+    "55": {
+      "id": 55,
+      "name": "Seattle Kraken",
+      "abbreviation": "SEA"
+    },
+    "59": {
+      "id": 59,
+      "name": "Utah Hockey Club",
+      "abbreviation": "UTA"
+    },
+    "68": {
+      "id": 68,
+      "name": "Utah Mammoth",
+      "abbreviation": "UTA"
+    }
+  },
+  "seasons": {
+    "20212022": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      53,
+      54,
+      55
+    ],
+    "20222023": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      53,
+      54,
+      55
+    ],
+    "20232024": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      53,
+      54,
+      55
+    ],
+    "20242025": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      54,
+      55,
+      59
+    ],
+    "20252026": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      54,
+      55,
+      68
+    ],
+    "20262027": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      52,
+      54,
+      55,
+      68
+    ]
+  },
+  "sources": [
+    "data/nhl_game_logs/20261110T102419960596Z/plan.json",
+    "data/nhl_game_logs/20261110T185806965948Z/plan.json",
+    "data/nhl_schedules/20261110T105031775860Z/20252026.json",
+    "data/nhl_schedules/20261110T105031775860Z/20262027.json",
+    "data/nhl_schedules/20261110T185916009711Z/20212022.json",
+    "data/nhl_schedules/20261110T185916009711Z/20222023.json",
+    "data/nhl_schedules/20261110T185916009711Z/20232024.json",
+    "data/nhl_schedules/20261110T185916009711Z/20242025.json"
+  ]
+}

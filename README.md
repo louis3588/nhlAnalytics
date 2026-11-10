@@ -189,3 +189,42 @@ uses a labelled next-day availability assumption and writes outside the strict
 feature directory. Baseline inputs, future labels, forecasts, evaluation metrics
 and model parameters are separate artifacts. Keep collecting real observation
 history for strict point-in-time evaluation.
+
+Add monthly player diagnostics, development-only Elo experiments, reliability
+diagrams and historical residual prediction intervals without replacing the
+original baseline artifacts:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e '.[analysis]'
+.\.venv\Scripts\python.exe -m nhl_analytics.evaluation --baseline data/baselines/reconstructed/20261110T193519626194Z
+```
+
+See [evaluation methodology, findings and uncertainty limits](docs/evaluation.md).
+The 2025–26 benchmark is excluded from parameter selection and interval fitting.
+New reports live under `data/evaluations/reconstructed/`; `--no-plots` omits the
+optional plotting dependency.
+
+Serve saved player projections, intervals and improved Elo predictions:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e '.[api]'
+.\.venv\Scripts\python.exe -m nhl_analytics.api --run data/evaluations/reconstructed/20261110T210453233933Z
+```
+
+Open <http://127.0.0.1:8000/docs>. The API indexes saved artifacts at startup and
+uses read-only queries on a disposable D: cache, with no request-time training,
+CSV scans, NHL requests or Timescale dependency. See [endpoints, filters and refresh instructions](docs/api.md).
+
+The React dashboard is a separate JavaScript project in [dashboard/](dashboard/README.md):
+
+```powershell
+cd dashboard
+npm.cmd ci
+npm.cmd run dev
+```
+
+With the API running on port 8000, open <http://127.0.0.1:5173> for season/team
+filters, player projections and labelled interval charts, searchable player
+tables and upcoming game probabilities. Its local proxy connects to FastAPI;
+fonts and display names are bundled locally. See the dashboard README for
+configuration, production builds and browser checks.

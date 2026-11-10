@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="shot data and standing schedule">
+    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="modeled home-win benchmark">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/game_logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/game_logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/schedules.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/schedules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_game_logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_game_logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_schedules.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_schedules.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,23 +20,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000119731295016" />
-      <entry key="MS500" value="1.1206598074679575" />
-      <entry key="S2" value="2.2335772219042074" />
-      <entry key="S5" value="4.843428340332933" />
-      <entry key="S10" value="9.854982005368619" />
-      <entry key="S30" value="22.165145589855218" />
-      <entry key="S60" value="28.684036419810184" />
-      <entry key="M2" value="32.93625747660952" />
-      <entry key="M5" value="38.06504413420878" />
-      <entry key="M10" value="47.92711009601725" />
-      <entry key="M15" value="56.09669919499976" />
-      <entry key="M30" value="69.97829051804058" />
-      <entry key="H1" value="90.49526084094377" />
-      <entry key="H2" value="191.34201655564618" />
-      <entry key="H4" value="450.41910946461707" />
-      <entry key="D1" value="1149.828327509234" />
-      <entry key="W1" value="1369.9472307610527" />
+      <entry key="MS100" value="1.0708711742517665" />
+      <entry key="MS500" value="1.8106086522600844" />
+      <entry key="S2" value="4.581617205590806" />
+      <entry key="S5" value="8.651426784068974" />
+      <entry key="S10" value="12.519726351677875" />
+      <entry key="S30" value="17.703181600456585" />
+      <entry key="S60" value="19.651907375970882" />
+      <entry key="M2" value="20.7700895253847" />
+      <entry key="M5" value="21.55567198369551" />
+      <entry key="M10" value="23.532538263877157" />
+      <entry key="M15" value="27.741972014052475" />
+      <entry key="M30" value="46.67977826592421" />
+      <entry key="H1" value="88.05311020619418" />
+      <entry key="H2" value="175.06443561574685" />
+      <entry key="H4" value="394.81896824637386" />
+      <entry key="D1" value="1215.711985617679" />
+      <entry key="W1" value="1528.2844506603562" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -62,23 +58,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.926599310892274" />
-      <entry key="MS500" value="1.1039598216694015" />
-      <entry key="S2" value="2.2250256464145006" />
-      <entry key="S5" value="4.8351306661572035" />
-      <entry key="S10" value="9.845800121664526" />
-      <entry key="S30" value="22.15771708077649" />
-      <entry key="S60" value="28.67913099070953" />
-      <entry key="M2" value="32.93341220426833" />
-      <entry key="M5" value="38.06370558852385" />
-      <entry key="M10" value="47.92623490866288" />
-      <entry key="M15" value="56.096000430480856" />
-      <entry key="M30" value="69.9778425893658" />
-      <entry key="H1" value="90.49496261817988" />
-      <entry key="H2" value="191.34167948543364" />
-      <entry key="H4" value="450.4187009707257" />
-      <entry key="D1" value="1149.8281533663985" />
-      <entry key="W1" value="1369.947201169546" />
+      <entry key="MS100" value="1.0061074017466443" />
+      <entry key="MS500" value="1.787767842449186" />
+      <entry key="S2" value="4.564951931985966" />
+      <entry key="S5" value="8.637332691340587" />
+      <entry key="S10" value="12.50875492595208" />
+      <entry key="S30" value="17.69760323753263" />
+      <entry key="S60" value="19.648737795613275" />
+      <entry key="M2" value="20.768393662496244" />
+      <entry key="M5" value="21.554963025718752" />
+      <entry key="M10" value="23.532156530859275" />
+      <entry key="M15" value="27.741680928559518" />
+      <entry key="M30" value="46.679549758425544" />
+      <entry key="H1" value="88.0528977461976" />
+      <entry key="H2" value="175.06419993946915" />
+      <entry key="H4" value="394.81865974661173" />
+      <entry key="D1" value="1215.7118116768058" />
+      <entry key="W1" value="1528.2844191499514" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -149,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794318865302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="modeled home-win benchmark">
+      <option name="closed" value="true" />
+      <created>1794339633559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794339633559</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="data setup" />
     <MESSAGE value="shot data and standing schedule" />
-    <option name="LAST_COMMIT_MESSAGE" value="shot data and standing schedule" />
+    <MESSAGE value="modeled home-win benchmark" />
+    <option name="LAST_COMMIT_MESSAGE" value="modeled home-win benchmark" />
   </component>
 </project>

@@ -9,6 +9,10 @@ description = "Reproducible NHL roster and statistics ingestion"
 requires-python = ">=3.12"
 dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=1,<2", "pyarrow>=20,<30"]
 
+[project.optional-dependencies]
+analysis = ["matplotlib>=3.9,<4"]
+api = ["fastapi>=0.162,<1", "uvicorn>=0.54,<1", "httpx2>=2.16,<3"]
+
 [project.scripts]
 nhl-fetch = "nhl_analytics.ingest:main"
 nhl-db = "nhl_analytics.database:main"
@@ -21,6 +25,8 @@ nhl-health = "nhl_analytics.health:main"
 nhl-features = "nhl_analytics.features:main"
 nhl-reconstruct = "nhl_analytics.reconstructed:main"
 nhl-baselines = "nhl_analytics.baselines:main"
+nhl-evaluate = "nhl_analytics.evaluation:main"
+nhl-api = "nhl_analytics.api:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
