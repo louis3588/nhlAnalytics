@@ -1,0 +1,39 @@
+services:
+  timescaledb-permissions:
+    image: timescale/timescaledb-ha:pg18
+    user: root
+    restart: "no"
+    entrypoint: ["sh", "-c", "chown postgres:postgres /pgdata && chmod 700 /pgdata"]
+    volumes:
+      - timescale_data:/pgdata
+
+  timescaledb:
+    image: timescale/timescaledb-ha:pg18
+    container_name: nhl-timescaledb
+    restart: unless-stopped
+    depends_on:
+      timescaledb-permissions:
+        condition: service_completed_successfully
+
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the local .env file before starting}
+      POSTGRES_DB: nhl_analytics
+      PGDATA: /pgdata
+
+    ports:
+      - "127.0.0.1:6543:5432"
+
+    volumes:
+      - timescale_data:/pgdata
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d nhl_analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+volumes:
+  timescale_data:

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nhl-analytics"
+version = "0.1.0"
+description = "Reproducible NHL roster and statistics ingestion"
+requires-python = ">=3.12"
+dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=1,<2"]
+
+[project.scripts]
+nhl-fetch = "nhl_analytics.ingest:main"
+nhl-db = "nhl_analytics.database:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nhl_analytics = ["migrations/*.sql"]
