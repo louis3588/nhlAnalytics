@@ -70,6 +70,11 @@ def fetch_season(client,season,types):
     # Discover that season's franchises instead of hardcoding today's team list.
     calendar = client.get(f'{WEB}/schedule-calendar/{season//10000}-07-01')
     teams = calendar['teams']
+    # Delayed seasons (notably the 2021 Stanley Cup final) can still be
+    # active on July 1. Discover teams again inside the requested season.
+    if teams and any(t.get('seasonId')!=season for t in teams):
+        calendar = client.get(f'{WEB}/schedule-calendar/{season//10000}-11-01')
+        teams = calendar['teams']
     ids = [team['id'] for team in teams]
     if not teams or len(set(ids))!=len(ids) or any(t['seasonId']!=season for t in teams):
         raise ValueError('Invalid season-specific schedule team discovery')

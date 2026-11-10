@@ -269,6 +269,11 @@ def run_import(connection,run,seasons,phase,resume=False,workers=2):
                     status = load_game_log(connection,envelope,path)
                     counts[status] += 1
                 except (requests.RequestException,ValueError,KeyError,TypeError,OSError,psycopg.Error) as error:
+                    if isinstance(error,psycopg.OperationalError) and connection is not None and connection.closed:
+                        # A dead connection cannot load subsequent players. Keep
+                        # the cache and stop promptly instead of accumulating
+                        # thousands of misleading per-player failures.
+                        raise
                     # DB exceptions can contain connection details: record their class only.
                     message = type(error).__name__ if isinstance(error,psycopg.Error) else str(error)
                     failures.append({**participant,'error':message})
@@ -305,7 +310,7 @@ def main():
             parser.exit(1,f'{len(failures)} player-seasons failed. Resume with --resume {run}\n')
         LOG.info('Game-log import complete: %s',run)
     except psycopg.Error:
-        parser.exit(1,'Database connection/migration failed. Credentials are not logged.\n')
+        parser.exit(1,f'Database connection/migration failed. Credentials are not logged. Cached responses remain in {run}; resume with --resume {run}\n')
     except (requests.RequestException,ValueError,KeyError,OSError) as error:
         parser.exit(1,f'Import failed: {error}. Run directory: {run}\n')
 

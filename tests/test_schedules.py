@@ -21,6 +21,19 @@ def fixture():
 
 
 class ScheduleValidationTests(unittest.TestCase):
+    def test_delayed_previous_season_calendar_falls_back_to_november(self):
+        envelope=fixture()
+        urls=[]
+        class Client:
+            def __init__(self):
+                self.responses=iter([{'teams':[dict(seasonId=20242025)]},
+                    {'teams':envelope['teams']},{'games':envelope['games']},{'games':envelope['games']}])
+            def get(self,url):
+                urls.append(url)
+                return next(self.responses)
+        self.assertEqual(len(fetch_season(Client(),20252026,{2})['games']),1)
+        self.assertTrue(urls[1].endswith('2025-11-01'))
+
     def test_future_game_has_no_invented_scores_or_winner(self):
         core = normalize_game(fixture()['games'][0],20252026,{2,3})
         self.assertFalse(core['is_final'])

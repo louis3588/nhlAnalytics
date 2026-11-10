@@ -64,6 +64,21 @@ class GameLogValidationTests(unittest.TestCase):
 
 
 class GameLogResumeTests(unittest.TestCase):
+    def test_dead_database_connection_stops_and_preserves_cache(self):
+        Path('.work/tmp').mkdir(parents=True,exist_ok=True)
+        with tempfile.TemporaryDirectory(dir='.work/tmp') as directory:
+            run=Path(directory)
+            envelope=fixture()
+            write_json(run/'plan.json',{'participants':[envelope]})
+            path=run/'players/20252026/skater/999999997.json'
+            write_json(path,envelope)
+            with patch('nhl_analytics.game_logs.Client'), \
+                 patch('nhl_analytics.game_logs.load_game_log',side_effect=psycopg.OperationalError('disconnected')):
+                with self.assertRaises(psycopg.OperationalError):
+                    run_import(Mock(closed=True),run,[],2,resume=True)
+            self.assertTrue(path.exists())
+            self.assertFalse((run/'manifest.json').exists())
+
     def test_cached_responses_resume_without_network_and_isolate_failed_player(self):
         Path('.work/tmp').mkdir(parents=True,exist_ok=True)
         with tempfile.TemporaryDirectory(dir='.work/tmp') as directory:

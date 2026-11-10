@@ -7,7 +7,7 @@ name = "nhl-analytics"
 version = "0.1.0"
 description = "Reproducible NHL roster and statistics ingestion"
 requires-python = ">=3.12"
-dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=1,<2"]
+dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=1,<2", "pyarrow>=20,<30"]
 
 [project.scripts]
 nhl-fetch = "nhl_analytics.ingest:main"
@@ -17,6 +17,10 @@ nhl-game-logs = "nhl_analytics.game_logs:main"
 nhl-schedules = "nhl_analytics.schedules:main"
 nhl-standings = "nhl_analytics.team_context:main"
 nhl-names = "nhl_analytics.names:main"
+nhl-health = "nhl_analytics.health:main"
+nhl-features = "nhl_analytics.features:main"
+nhl-reconstruct = "nhl_analytics.reconstructed:main"
+nhl-baselines = "nhl_analytics.baselines:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

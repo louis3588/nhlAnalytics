@@ -11,6 +11,10 @@ services:
     image: timescale/timescaledb-ha:pg18
     container_name: nhl-timescaledb
     restart: unless-stopped
+    # Leave RAM for Windows/PyCharm on the development machine. Explicit
+    # PostgreSQL settings override the image's more aggressive auto tuning.
+    mem_limit: 1536m
+    command: ["postgres", "-c", "shared_buffers=128MB", "-c", "work_mem=4MB", "-c", "max_parallel_workers_per_gather=0", "-c", "jit=off"]
     depends_on:
       timescaledb-permissions:
         condition: service_completed_successfully

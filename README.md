@@ -162,3 +162,30 @@ Refresh standings and optional team tracking features:
 
 See [team standings, EDGE and name cleanup](docs/team-context.md) for table names,
 metric units, historical dates, name-inference flags and example queries.
+
+Generate dataset health reports and reusable point-in-time features:
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.health
+.\.venv\Scripts\python.exe -m nhl_analytics.features
+```
+
+Feature export writes player, goalie and team CSV/Parquet datasets plus health
+reports and a provenance manifest. See [feature definitions and cutoff policy](docs/features-and-health.md).
+Historical cutoffs before our first recorded imports intentionally produce no
+eligible data; downloaded season finals are never backdated into earlier predictions.
+
+Historical backfill and explicitly reconstructed baseline models:
+
+```powershell
+.\.venv\Scripts\python.exe -m nhl_analytics.game_logs --seasons 20212022 20222023 20232024 20242025
+.\.venv\Scripts\python.exe -m nhl_analytics.schedules --seasons 20212022 20222023 20232024 20242025
+.\.venv\Scripts\python.exe -m nhl_analytics.reconstructed
+.\.venv\Scripts\python.exe -m nhl_analytics.baselines --history data/reconstructed/RUN_TIMESTAMP
+```
+
+See [backfill, player projections and Elo](docs/baselines.md). Reconstruction
+uses a labelled next-day availability assumption and writes outside the strict
+feature directory. Baseline inputs, future labels, forecasts, evaluation metrics
+and model parameters are separate artifacts. Keep collecting real observation
+history for strict point-in-time evaluation.
