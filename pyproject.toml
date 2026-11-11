@@ -27,6 +27,8 @@ nhl-reconstruct = "nhl_analytics.reconstructed:main"
 nhl-baselines = "nhl_analytics.baselines:main"
 nhl-evaluate = "nhl_analytics.evaluation:main"
 nhl-api = "nhl_analytics.api:main"
+nhl-refresh = "nhl_analytics.refresh:main"
+nhl-live = "nhl_analytics.live:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

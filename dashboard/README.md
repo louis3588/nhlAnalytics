@@ -61,7 +61,7 @@ service. Timescale does not need to run to view saved forecasts.
 If the API is not already running, start it from the **Python project root**:
 
 ```powershell
-.\.venv\Scripts\python.exe -m nhl_analytics.api --run data/evaluations/reconstructed/20261110T210453233933Z
+.\.venv\Scripts\python.exe -m nhl_analytics.api
 ```
 
 Then open another terminal:
@@ -111,7 +111,7 @@ credentials in the JavaScript project.
   fetched in API pages before calculating leaders or medians, so these are not
   misleading first-page statistics.
 - **Games:** both teams' win probabilities are labelled. Dates/times use the
-  viewer's browser timezone, including daylight saving. `Upcoming` is relative to the saved snapshot;
+  viewer's browser timezone, including daylight saving. `Upcoming` uses the current clock;
   `All saved` also displays completed fixtures' pregame predictions. Historical
   seasons honestly have no upcoming games, with a button to view saved forecasts.
 - **Refresh:** rereads the saved API bundle; it does not fetch NHL data or train.
@@ -195,8 +195,8 @@ cache; no model training, CSV scans or Timescale requests occur per request.
 
 Date buttons update the cards to that snapshot. Exact values are also available
 in an accessible table. On narrow screens the graph scrolls horizontally so
-axis labels stay readable. Current 2026–27 outputs contain one snapshot, shown
-as one point; historical seasons have multiple snapshots. No invented daily
+axis labels stay readable. The original 2026–27 bundle contained one snapshot;
+daily publications now append new points. Historical seasons have multiple snapshots. No invented daily
 trend or future labels are added. Recorded totals are current **as of the
 selected saved date**, rather than a live NHL feed. Prediction intervals retain
 their original historical calibration and reconstructed provenance.
@@ -211,3 +211,37 @@ be corrected in the operating system/browser.
 Run `npm.cmd run test:players` with the API and dev server running for player
 navigation, history, filters, error states, mobile layout and London clock checks.
 Unit tests also cover UK daylight saving and a US date rollover.
+
+### Daily publications
+
+The API now follows daily saved forecasts when started without `--run` (and with
+`NHL_PREDICTIONS_RUN` blank). Visible dashboard tabs check for a new bundle each
+minute and when returning to the tab. Game lists refresh each minute against the
+current clock, rather than the original bundle's date. Device-local times still
+apply. Player history preserves the older reconstructed points and appends new
+observed daily points; their provenance is described on the player page.
+
+Display identities now come from `/api/catalog`, with a bundled-catalog fallback
+inside the API, so a production build can show newly imported players without
+rebuilding JavaScript. The large model/shot datasets are never sent to the browser.
+As the history grows, graph axis labels stay bounded and a saved-date selector
+provides access to older snapshots; the exact data table retains every point.
+
+See [daily automation and the proposed live-game scope](../DAILY_REFRESH.md)
+for scheduled-task setup, failure recovery and the free GameCenter polling/SSE
+design. Daily forecasts are separate from the planned live score service.
+
+`npm.cmd run test:refresh` adds three browser check groups for minute-based game
+refresh, automatic coherent bundle updates, and a graph with 30 daily points.
+
+### Live game center
+
+`/games/{nhl_id}` pages show GameCenter scores/clock, team comparisons,
+skater/goalie tables and a corrected event timeline. Open them from **Live &
+recent games** or a forecast card's **Open game center** link. The unpinned API
+uses one shared collector with Timescale durability, while React receives full
+replacement states over EventSource. Reconnects retain cached scores, missing
+pregame stats stay unavailable, and saved Elo remains explicitly pregame.
+Device-local game times still apply. `npm.cmd run test:live` covers real data,
+reloads/mobile layout and controlled SSE update/correction/recovery paths.
+See [the live-game guide](../LIVE_GAMES.md) for endpoints and retention.

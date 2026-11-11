@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="setup rinkside frontend">
+    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="player page">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/public/catalog.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/public/catalog.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/scripts/build-catalog.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/scripts/build-catalog.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/PlayerPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/PlayerPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/tests/browser.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/browser.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/player.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/teamBranding.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/teamBranding.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/tests/data.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/data.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/tests/player-pages.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/player-pages.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/tests/team-pages.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/team-pages.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nhl_analytics/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/prediction_store.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/prediction_store.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,23 +39,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000571825147" />
-      <entry key="MS500" value="1.04318368943104" />
-      <entry key="S2" value="2.233849162196189" />
-      <entry key="S5" value="5.057673679392559" />
-      <entry key="S10" value="9.474922243909683" />
-      <entry key="S30" value="24.332419551702642" />
-      <entry key="S60" value="37.09418551873002" />
-      <entry key="M2" value="47.91685098299662" />
-      <entry key="M5" value="56.770120997810885" />
-      <entry key="M10" value="60.23521798927247" />
-      <entry key="M15" value="61.455440792117535" />
-      <entry key="M30" value="62.710025019345835" />
-      <entry key="H1" value="63.43371800433259" />
-      <entry key="H2" value="69.79593638968012" />
-      <entry key="H4" value="138.62284141711277" />
-      <entry key="D1" value="1050.8772176021105" />
-      <entry key="W1" value="1678.738729311061" />
+      <entry key="MS100" value="1.0000000315025226" />
+      <entry key="MS500" value="1.0381932782385173" />
+      <entry key="S2" value="2.0126114990015176" />
+      <entry key="S5" value="3.255816022576512" />
+      <entry key="S10" value="3.99169374822116" />
+      <entry key="S30" value="4.664565836773683" />
+      <entry key="S60" value="6.484638267074208" />
+      <entry key="M2" value="18.792221047741577" />
+      <entry key="M5" value="64.86032453603318" />
+      <entry key="M10" value="108.65698345435489" />
+      <entry key="M15" value="130.57861385263016" />
+      <entry key="M30" value="157.8637678527446" />
+      <entry key="H1" value="174.03890352542228" />
+      <entry key="H2" value="188.44152588543082" />
+      <entry key="H4" value="259.5554254149503" />
+      <entry key="D1" value="1172.4718505166209" />
+      <entry key="W1" value="1805.3076883925062" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -73,23 +77,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9395228029381705" />
-      <entry key="MS500" value="1.0302036960421073" />
-      <entry key="S2" value="2.225496539378685" />
-      <entry key="S5" value="5.04907755985658" />
-      <entry key="S10" value="9.466327679739699" />
-      <entry key="S30" value="24.323413893102217" />
-      <entry key="S60" value="37.08631202069221" />
-      <entry key="M2" value="47.91131270006305" />
-      <entry key="M5" value="56.76734717521197" />
-      <entry key="M10" value="60.233718272647955" />
-      <entry key="M15" value="61.45441421407661" />
-      <entry key="M30" value="62.70949789593582" />
-      <entry key="H1" value="63.43345072974542" />
-      <entry key="H2" value="69.79579503316484" />
-      <entry key="H4" value="138.62272288863878" />
-      <entry key="D1" value="1050.8770731330592" />
-      <entry key="W1" value="1678.7386959568576" />
+      <entry key="MS100" value="0.9201876798147266" />
+      <entry key="MS500" value="1.021105204948079" />
+      <entry key="S2" value="2.0036704904109084" />
+      <entry key="S5" value="3.2494044840843124" />
+      <entry key="S10" value="3.9875826594985515" />
+      <entry key="S30" value="4.662915719491841" />
+      <entry key="S60" value="6.483551019940712" />
+      <entry key="M2" value="18.790744884212646" />
+      <entry key="M5" value="64.85807787979893" />
+      <entry key="M10" value="108.65497583649882" />
+      <entry key="M15" value="130.57696629648672" />
+      <entry key="M30" value="157.8627468466002" />
+      <entry key="H1" value="174.03833362112618" />
+      <entry key="H2" value="188.44121829630697" />
+      <entry key="H4" value="259.5552212311821" />
+      <entry key="D1" value="1172.4716916672935" />
+      <entry key="W1" value="1805.3076528868437" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -176,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794350100240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="player page">
+      <option name="closed" value="true" />
+      <created>1794399446270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1794399446270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +199,7 @@
     <MESSAGE value="shot data and standing schedule" />
     <MESSAGE value="modeled home-win benchmark" />
     <MESSAGE value="setup rinkside frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup rinkside frontend" />
+    <MESSAGE value="player page" />
+    <option name="LAST_COMMIT_MESSAGE" value="player page" />
   </component>
 </project>

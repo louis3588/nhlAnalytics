@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { checkBundle, fetchAllPages, fetchJSON, median, nameFor, number, queryString, seasonLabel, snapshotDate, snapshotTime, TARGETS, teamFor } from './data.js';
 import { useResource } from './useResource.js';
+import { useBundleUpdates, useMinuteTick } from './useBundleUpdates.js';
 import { Empty, ErrorNote, GameGrid, Loading, PlayerFocus, PlayerTable, ProjectionChart } from './components.jsx';
 import Icon from './Icon.jsx';
+import LiveGames from './LiveGames.jsx';
 import { TeamDirectory, TeamHero } from './TeamIdentity.jsx';
 import { pageRoute, teamPageURL, themeStyle } from './teamBranding.js';
 
@@ -12,6 +14,7 @@ export default function App() {
   const isTeamPage = route.kind === 'team';
   const routeTeam = isTeamPage ? String(route.teamId) : '';
   const [revision, setRevision] = useState(0);
+  const gameClock = useMinuteTick();
   const [season, setSeason] = useState(() => new URLSearchParams(window.location.search).get('season') || '');
   const [team, setTeam] = useState('');
   const [model, setModel] = useState('prior_shrinkage');
@@ -27,7 +30,7 @@ export default function App() {
   const refresh = () => { setRevision(v => v + 1); setGamePage(0); };
 
   const bootstrap = useResource(`bootstrap:${revision}`, async signal => {
-    const [metadata, catalog] = await Promise.all([fetchJSON('/api/metadata', signal), fetchJSON('/catalog.json', signal)]);
+    const [metadata, catalog] = await Promise.all([fetchJSON('/api/metadata', signal), fetchJSON('/api/catalog', signal)]);
     return { metadata, catalog };
   });
   const metadata = bootstrap.data?.metadata;
@@ -45,7 +48,8 @@ export default function App() {
   const intervals = useResource(showForecasts ? `${revision}:${hash}:intervals:${queryString(intervalParams)}` : null,
     signal => fetchAllPages('/api/predictions/intervals', intervalParams, signal, hash));
   const gameParams = { season: activeSeason, team_id: activeTeam || undefined, status: gameStatus, limit: 6, offset: gamePage * 6 };
-  const games = useResource(showForecasts ? `${revision}:${hash}:games:${queryString(gameParams)}` : null,
+  useBundleUpdates(hash, () => setRevision(r => r + 1));
+  const games = useResource(showForecasts ? `${revision}:${hash}:${gameClock}:games:${queryString(gameParams)}` : null,
     async signal => checkBundle(await fetchJSON(`/api/predictions/games?${queryString(gameParams)}`, signal), hash));
 
   const bands = useMemo(() => new Map((intervals.data?.items || []).map(b => [b.player_id, b])), [intervals.data]);
@@ -92,8 +96,9 @@ export default function App() {
           </section><PlayerFocus player={selected} catalog={catalog} band={bands.get(selected?.player_id)} target={target} nominal={nominal} loading={intervals.loading || players.loading} error={intervals.error} /></div>
 
           <PlayerTable rows={tableRows} catalog={catalog} bands={bands} target={target} nominal={nominal} selectedId={selected?.player_id} onSelect={id => { setSelectedId(id); document.getElementById('comparison-heading')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }} page={playerPage} onPage={setPlayerPage} sort={sort} onSort={sortTable} search={search} onSearch={value => { setSearch(value); setPlayerPage(0); }} loading={players.loading} intervalsLoading={intervals.loading} intervalsError={intervals.error} />
+          <LiveGames catalog={catalog} teamId={activeTeam} />
           <GameGrid data={games.data} loading={games.loading} error={games.error} catalog={catalog} page={gamePage} onPage={setGamePage} status={gameStatus} onStatus={value => { setGameStatus(value); setGamePage(0); }} onRetry={refresh} />
-          <details className="method-note"><summary><span><Icon name="info" size={17} /> A note on these forecasts</span><Icon name="down" size={16} /></summary><div><p>Player totals use current scoring pace or a blend with the previous season. Games use Elo win probabilities, including overtime and shootouts. Team filters refer to a player’s last recorded team.</p><p>Prediction intervals describe possible season totals, not guarantees or confidence intervals for an average. They can be wide. Goals, assists and points have separate ranges that do not add together. Missing historical calibration is shown as unavailable.</p><p>These forecasts come from saved, reconstructed data with an assumed next-day publication time. They are not live results. Upcoming fixtures are relative to the saved snapshot, and future probabilities hold those saved ratings fixed.</p></div></details>
+          <details className="method-note"><summary><span><Icon name="info" size={17} /> A note on these forecasts</span><Icon name="down" size={16} /></summary><div><p>Player totals use current scoring pace or a blend with the previous season. Games use Elo win probabilities, including overtime and shootouts. Team filters refer to a player’s last recorded team.</p><p>Prediction intervals describe possible season totals, not guarantees or confidence intervals for an average. They can be wide. Goals, assists and points have separate ranges that do not add together. Missing historical calibration is shown as unavailable.</p><p>New daily forecasts use observed player data and frozen historical calibration. Older snapshots and Elo history are reconstructed. These are saved predictions, not live results. Upcoming games are filtered against the current time; probabilities retain the ratings from their saved forecast.</p></div></details>
           </>}
           <footer className="footer"><span><img src="/rink.svg" width="18" height="18" alt="" /> rinkside. <span>A clearer view of the ice.</span></span><span>Snapshot {metadata.bundle_id} <i /> {seasonLabel(activeSeason)}</span></footer>
         </>}

@@ -1,7 +1,10 @@
 """Local read-only HTTP API for a pinned saved prediction bundle."""
 
 import argparse
+import asyncio
+import logging
 import os
+from contextlib import suppress
 from contextlib import asynccontextmanager
 from datetime import date,datetime,timezone
 from pathlib import Path
@@ -12,6 +15,7 @@ from fastapi import Depends,FastAPI,HTTPException,Query,Request
 from fastapi import Path as APIPath
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import AwareDatetime,BaseModel,BeforeValidator
 
 from nhl_analytics.prediction_store import PredictionStore,discover_run,instant
@@ -31,7 +35,7 @@ class Provenance(BaseModel):
     bundle_sha256:str
     baseline_id:str
     evaluation_version:str
-    data_mode:Literal['reconstructed_latest_corrected']
+    data_mode:Literal['reconstructed_latest_corrected','operational_daily_with_reconstructed_history']
     as_of:AwareDatetime
     availability_policy:str
     age_hours:float
@@ -70,6 +74,7 @@ class ObservedTotals(BaseModel):
 
 
 class PlayerProjection(BaseModel):
+    data_mode:Literal['reconstructed_latest_corrected','observed_daily']='reconstructed_latest_corrected'
     player_id:int
     season_id:int
     prediction_at:AwareDatetime
@@ -83,6 +88,7 @@ class PlayerProjection(BaseModel):
 
 
 class PlayerInterval(BaseModel):
+    data_mode:Literal['reconstructed_latest_corrected','observed_daily']='reconstructed_latest_corrected'
     player_id:int
     season_id:int
     prediction_at:AwareDatetime
@@ -167,9 +173,10 @@ def snapshot(store,season,prediction_at):
 
 
 PROJECTIONS='''(SELECT p.*,i.team,i.games AS observed_games,i.goals AS observed_goals,i.assists AS observed_assists,
- i.points AS observed_points,i.remaining,i.prior_games,i.available_at
- FROM projections p JOIN inputs i USING(season,prediction_at,player))'''
-INTERVALS='(SELECT b.*,i.team FROM intervals b JOIN inputs i USING(season,prediction_at,player))'
+ i.points AS observed_points,i.remaining,i.prior_games,i.available_at,o.data_mode
+ FROM projections p JOIN inputs i USING(season,prediction_at,player)
+ JOIN prediction_origins o USING(season,prediction_at))'''
+INTERVALS='(SELECT b.*,i.team,o.data_mode FROM intervals b JOIN inputs i USING(season,prediction_at,player) JOIN prediction_origins o USING(season,prediction_at))'
 HISTORY='''(SELECT p.*,b.target,b.nominal,b.observed AS band_observed,b.prediction AS band_prediction,b.available,
  b.lower,b.upper,b.calibration_players,b.calibration_seasons,b.calibration_available_at,b.scope,b.radius
  FROM '''+PROJECTIONS+''' p LEFT JOIN intervals b ON b.season=p.season AND b.prediction_at=p.prediction_at
@@ -178,14 +185,14 @@ GAMES='(SELECT * FROM games JOIN fixtures USING(game))'
 
 
 def player_item(row):
-    return dict(player_id=row['player'],season_id=row['season'],prediction_at=row['prediction_at'],model=row['model'],
+    return dict(data_mode=row.get('data_mode','reconstructed_latest_corrected'),player_id=row['player'],season_id=row['season'],prediction_at=row['prediction_at'],model=row['model'],
         last_played_team_id=row['team'],observed={t:row['observed_'+t] for t in ('goals','assists','points','games')},
         projected={t:row[t] for t in ('goals','assists','points','games')},team_games_remaining=row['remaining'],
         prior_games=row['prior_games'],max_assumed_available_at=row['available_at'])
 
 
 def interval_item(row):
-    return dict(player_id=row['player'],season_id=row['season'],prediction_at=row['prediction_at'],model=row['model'],
+    return dict(data_mode=row.get('data_mode','reconstructed_latest_corrected'),player_id=row['player'],season_id=row['season'],prediction_at=row['prediction_at'],model=row['model'],
         target=row['target'],nominal=row['nominal']/100,observed=row['observed'],prediction=row['prediction'],
         available=bool(row['available']),lower=row['lower'],upper=row['upper'],calibration_players=row['calibration_players'],
         calibration_seasons=[int(s) for s in row['calibration_seasons'].split(',') if s],
@@ -220,29 +227,110 @@ def interval_page(store,season,model,prediction_at,team_id,player_id,target,nomi
     return dict(metadata=provenance(store),snapshot_at=cutoff,total=total,limit=limit,offset=offset,items=[interval_item(r) for r in rows])
 
 
-def create_app(run_dir:Path|None=None,cache_dir:Path|None=None):
+def create_app(run_dir:Path|None=None,cache_dir:Path|None=None,refresh_seconds:float=15,live_enabled:bool|None=None):
     """App factory. Artifact loading happens once in lifespan, never in a route."""
     load_dotenv(override=False)
     @asynccontextmanager
     async def lifespan(app):
         load_dotenv(override=False)
         configured=run_dir or os.environ.get('NHL_PREDICTIONS_RUN')
-        run=Path(configured) if configured else discover_run()
         cache=Path(cache_dir or os.environ.get('NHL_API_CACHE_DIR','.work/api-cache'))
-        app.state.predictions=await run_in_threadpool(PredictionStore.load,run,cache)
+        daily_root=Path(os.environ.get('NHL_DAILY_ROOT','data/predictions/daily'))
+        pointer=daily_root/'latest.json'
+        from nhl_analytics.daily_predictions import load_daily
+        signature=None
+        if not configured and pointer.exists():
+            app.state.predictions=await run_in_threadpool(load_daily,daily_root)
+            signature=pointer.read_bytes()
+        else:
+            run=Path(configured) if configured else discover_run()
+            app.state.predictions=await run_in_threadpool(PredictionStore.load,run,cache)
+        async def follow_daily():
+            nonlocal signature
+            while True:
+                await asyncio.sleep(refresh_seconds)
+                try:
+                    current=pointer.read_bytes() if pointer.exists() else None
+                    if current is not None and current!=signature:
+                        replacement=await run_in_threadpool(load_daily,daily_root)
+                        app.state.predictions=replacement
+                        signature=current
+                        logging.getLogger(__name__).info('Loaded daily forecast %s',replacement.metadata['bundle_id'])
+                except Exception as error:
+                    logging.getLogger(__name__).error('Daily publication rejected (%s); retaining last good bundle',type(error).__name__)
+        watcher=asyncio.create_task(follow_daily()) if not configured else None
+        enabled=live_enabled if live_enabled is not None else not configured and os.environ.get('NHL_LIVE_ENABLED','1')=='1'
+        if enabled:
+            from nhl_analytics.live import LiveHub
+            app.state.live=LiveHub()
+            live_task=asyncio.create_task(app.state.live.run())
+        else:
+            app.state.live=None
+            live_task=None
         try:yield
-        finally:app.state.predictions=None
+        finally:
+            if live_task:
+                live_task.cancel()
+                with suppress(asyncio.CancelledError):await live_task
+            if watcher:
+                watcher.cancel()
+                with suppress(asyncio.CancelledError):await watcher
+            app.state.predictions=None
     app=FastAPI(title='NHL Prediction API',version='1.0.0',lifespan=lifespan,
         description='Saved player and improved Elo forecasts. Reconstructed provenance, not a live NHL feed. No request-time training.')
     origins=[v.strip() for v in os.environ.get('NHL_API_CORS_ORIGINS','').split(',') if v.strip()]
     if origins:app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET'],allow_headers=['Accept','Content-Type'])
 
     @app.get('/health')
-    def health(store:Store):
-        return dict(status='ok',bundle_id=store.metadata['bundle_id'],as_of=store.metadata['as_of'],stale=provenance(store)['stale'])
+    def health(store:Store,request:Request):
+        hub=getattr(request.app.state,'live',None)
+        return dict(status='ok',bundle_id=store.metadata['bundle_id'],as_of=store.metadata['as_of'],stale=provenance(store)['stale'],
+            live=dict(hub.health,subscribers=hub.clients,cached_games=len(hub.states)) if hub else None)
 
     @app.get('/api/metadata',response_model=BundleInfo)
     def metadata(store:Store):return provenance(store)
+
+    @app.get('/api/catalog')
+    def catalog():
+        from nhl_analytics.prediction_store import document
+        path=Path(os.environ.get('NHL_DAILY_ROOT','data/predictions/daily')).parent/'catalog.json'
+        fallback=Path('dashboard/public/catalog.json')
+        return document(path if path.exists() else fallback) if path.exists() or fallback.exists() else dict(players={},teams={},seasons={})
+
+    def live_hub(request:Request):
+        hub=getattr(request.app.state,'live',None)
+        if hub is None:raise HTTPException(503,'Live collector is disabled on this API instance')
+        return hub
+
+    def admit(hub,game_id):
+        try:hub.request(game_id)
+        except ValueError as error:raise HTTPException(422,str(error)) from error
+        except OverflowError as error:raise HTTPException(429,str(error)) from error
+
+    def stream(hub,request,game_id=None):
+        if hub.clients>=64:raise HTTPException(503,'Live stream capacity reached; retry shortly')
+        return StreamingResponse(hub.events(request,game_id),media_type='text/event-stream',
+            headers={'Cache-Control':'no-cache, no-transform','X-Accel-Buffering':'no'})
+
+    @app.get('/api/live/games')
+    async def live_games(request:Request):
+        return live_hub(request).listing()
+
+    @app.get('/api/live/stream')
+    async def live_directory_stream(request:Request):
+        return stream(live_hub(request),request)
+
+    @app.get('/api/live/games/{game_id}')
+    async def live_game(game_id:Identifier,request:Request):
+        hub=live_hub(request);admit(hub,game_id)
+        result=hub.detail(game_id)
+        if result['status']=='not_found':raise HTTPException(404,'GameCenter has no game with that NHL ID')
+        return result
+
+    @app.get('/api/live/games/{game_id}/stream')
+    async def live_game_stream(game_id:Identifier,request:Request):
+        hub=live_hub(request);admit(hub,game_id)
+        return stream(hub,request,game_id)
 
     @app.get('/api/predictions/players',response_model=Page[PlayerProjection])
     def players(store:Store,season:int|None=None,model:Model='prior_shrinkage',prediction_at:datetime|None=None,
@@ -289,18 +377,19 @@ def create_app(run_dir:Path|None=None,cache_dir:Path|None=None):
         if date_from and date_to and date_from>date_to:raise HTTPException(422,'date_from must not be after date_to')
         where='season=?';params=[season]
         if team_id is not None:where+=' AND (home=? OR away=?)';params.extend([team_id,team_id])
-        if status=='upcoming':where+=' AND is_final=0 AND start>=?';params.append(store.metadata['as_of'])
+        clock=instant(datetime.now(timezone.utc))
+        if status=='upcoming':where+=' AND is_final=0 AND start>=?';params.append(clock)
         elif status=='final':where+=' AND is_final=1'
         if date_from:where+=' AND game_date>=?';params.append(date_from.isoformat())
         if date_to:where+=' AND game_date<=?';params.append(date_to.isoformat())
         total,rows=store.page(GAMES,where,params,'start,game',limit,offset)
-        return dict(metadata=provenance(store),total=total,limit=limit,offset=offset,items=[game_item(r,store.metadata['as_of']) for r in rows])
+        return dict(metadata=provenance(store),total=total,limit=limit,offset=offset,items=[game_item(r,clock) for r in rows])
 
     @app.get('/api/predictions/games/{game_id}',response_model=Detail[GamePrediction])
     def game(game_id:Identifier,store:Store):
         total,rows=store.page(GAMES,'game=?',[game_id],'game',1,0)
         if not total:raise HTTPException(404,'Game has no saved improved Elo prediction')
-        return dict(metadata=provenance(store),item=game_item(rows[0],store.metadata['as_of']))
+        return dict(metadata=provenance(store),item=game_item(rows[0],instant(datetime.now(timezone.utc))))
 
     return app
 
@@ -312,7 +401,7 @@ def main():
     parser.add_argument('--port',type=int,default=8000)
     args=parser.parse_args()
     import uvicorn
-    uvicorn.run(create_app(args.run),host=args.host,port=args.port,workers=1)
+    uvicorn.run(create_app(args.run),host=args.host,port=args.port,workers=1,timeout_graceful_shutdown=5)
 
 
 if __name__=='__main__':main()

@@ -18,10 +18,13 @@ try {
   assert.equal(await page.locator('.player-stat').count(), 4);
   assert.equal(await page.locator('.player-workspace').evaluate(el => getComputedStyle(el).getPropertyValue('--team-primary').trim()), '#CD001A');
   assert.equal(await page.locator('.player-portrait img').getAttribute('src'), 'https://assets.nhle.com/mugs/nhl/20262027/CAR/8478427.png');
-  assert.match(await page.locator('.history-chart figcaption').textContent(), /One saved snapshot/);
+  const snapshots = await page.locator('.history-dates button').count();
+  assert.ok(snapshots >= 1);
+  if (snapshots === 1) assert.match(await page.locator('.history-chart figcaption').textContent(), /One saved snapshot/);
+  else assert.match(await page.locator('.history-chart figcaption').textContent(), /Lines connect saved snapshots/);
   await page.screenshot({ path: 'test-results/player-page.png', fullPage: true });
   await page.reload(); await ready();
-  checks.push('Player links, direct reload, headshot, team styling, four stats/interval cards and honest single-snapshot chart.');
+  checks.push('Player links, direct reload, headshot, team styling, four stats/interval cards and saved-snapshot chart.');
   await page.getByLabel('Season', { exact: true }).selectOption('20252026'); await ready();
   assert.ok(await page.locator('.history-dates button').count() > 1);
   const first = await page.locator('.history-dates button').first().textContent();

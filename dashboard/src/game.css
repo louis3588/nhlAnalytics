@@ -1,0 +1,76 @@
+.game-page-heading { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin: 10px 0 25px; }
+.game-page-heading h1 { font-size: clamp(25px, 3vw, 35px); letter-spacing: -1.3px; margin-top: 8px; }
+.live-connection { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: #806128; white-space: nowrap; }
+.live-connection::before { content: ''; width: 7px; height: 7px; background: currentColor; border-radius: 50%; }
+.live-connection.healthy { color: #256048; }
+.live-warning { padding: 14px 18px; background: #fff4dc; color: #6e5425; border: 1px solid #e9d5a8; border-radius: 10px; margin: 15px 0; font-size: 13px; }
+.game-scoreboard { overflow: hidden; border-top: 3px solid var(--team-primary); }
+.scoreboard-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 25px; padding: 20px; font-size: 12px; color: var(--muted); }
+.live-state { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 5px; background: #edf0e8; color: #53624e; font-size: 11px; font-weight: 650; }
+.live-state.is-live { background: #fce6e4; color: #ab2929; }
+.live-state.is-live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; }
+.scoreboard-main { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding: 20px 35px 35px; gap: 20px; }
+.scoreboard-team { display: grid; justify-items: center; text-align: center; gap: 10px; min-width: 0; }
+.scoreboard-team:hover { transform: translateY(-3px); }
+.scoreboard-team .team-logo { width: 100px; height: 100px; }
+.scoreboard-team h2 { font-size: 22px; letter-spacing: -.7px; }
+.scoreboard-team small { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+.scoreboard-center { text-align: center; }
+.game-score { display: flex; align-items: center; justify-content: center; gap: 22px; }
+.game-score strong { font-size: clamp(45px, 6vw, 78px); line-height: 1.2; letter-spacing: -3px; }
+.game-score > span { color: #adb5a9; font-size: 25px; }
+.scoreboard-center p { font-size: 13px; margin-top: 7px; }
+.scoreboard-center small { display: block; color: var(--muted); font-size: 10px; margin-top: 5px; }
+.scoreboard-footer { padding: 15px 22px; background: #f8faf5; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 11px; color: var(--muted); }
+.game-page-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin: 24px 0; }
+.game-comparison, .game-pregame, .game-player-panel, .game-timeline { padding: 28px; min-width: 0; }
+.game-comparison h2, .game-pregame h2 { margin-top: 7px; }
+.game-comparison-legend { display: flex; justify-content: space-between; font-weight: 650; font-size: 12px; margin: 20px 0 12px; }
+.live-metric { margin: 15px 0; }
+.live-metric > div:first-child { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin-bottom: 7px; }
+.live-metric > div:first-child span { font-size: 12px; color: var(--muted); }
+.live-metric-track { display: flex; gap: 3px; height: 6px; border-radius: 5px; overflow: hidden; }
+.live-metric-track i { height: 100%; }
+.game-note { font-size: 12px; line-height: 1.8; color: var(--muted); margin-top: 20px; }
+.pregame-values { display: flex; justify-content: space-between; margin: 30px 0 15px; }
+.pregame-values span { display: grid; gap: 10px; font-size: 13px; }
+.pregame-values span:last-child { text-align: right; }
+.pregame-values strong { font-size: 36px; letter-spacing: -1px; }
+.game-player-panel, .game-timeline { margin-top: 24px; }
+.game-stats-table { width: 100%; min-width: 660px; }
+.game-stats-table caption { text-align: left; font-size: 12px; color: var(--muted); padding: 16px 0; }
+.game-stats-table th { text-align: left; }
+.game-stats-table td, .game-stats-table th { padding: 12px 10px; }
+.game-stats-table abbr { text-decoration: none; cursor: help; }
+.game-stats-table .table-player { min-width: 205px; }
+.live-event-list { list-style: none; padding: 0; margin: 20px 0; }
+.live-event-list li { display: grid; grid-template-columns: 65px 12px 1fr; gap: 18px; position: relative; padding: 15px 0; }
+.live-event-list li::before { content: ''; position: absolute; left: 88px; top: 0; bottom: 0; border-left: 1px solid #e0e6dd; }
+.event-clock { display: grid; align-content: start; gap: 4px; font-size: 13px; }
+.event-clock span { font-size: 11px; color: var(--muted); }
+.event-marker { width: 9px; height: 9px; border: 2px solid #9aa994; border-radius: 50%; background: #fff; margin-top: 5px; z-index: 1; }
+.goal-event .event-marker { background: var(--team-primary); border-color: var(--team-primary); }
+.live-event-list li > div:last-child > strong { text-transform: capitalize; font-size: 14px; }
+.live-event-list p, .live-event-list small { color: var(--muted); font-size: 12px; margin-top: 5px; }
+.goal-event > div:last-child { background: var(--team-soft); border-radius: 7px; padding: 8px 12px; margin: -8px -12px; }
+.live-games-section { margin: 34px 0; }
+.live-directory { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
+.live-game-tile { padding: 17px; transition: transform .2s, box-shadow .2s; }
+.live-game-tile:hover { transform: translateY(-4px); box-shadow: 0 10px 25px #0000000b; }
+.live-game-tile > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.live-game-tile time { font-size: 10px; color: var(--muted); }
+.live-tile-team { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+.live-tile-team .team-logo { width: 32px; height: 32px; }
+.live-tile-team b { margin-left: auto; font-size: 20px; }
+.live-game-tile > small { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 15px; font-size: 11px; color: var(--muted); }
+.game-card-footer a:hover { text-decoration: underline; }
+.game-card-footer a { display: inline-flex; align-items: center; gap: 5px; }
+@media(max-width:1100px) { .live-directory { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media(max-width:800px) { .live-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }.game-page-grid { grid-template-columns: 1fr; }.scoreboard-main { padding: 20px 15px 30px; gap: 12px; }.scoreboard-team h2 { font-size: 17px; }.scoreboard-team .team-logo { width: 75px; height: 75px; } }
+@media(max-width:600px) {
+  .game-page-heading { display: block; }.game-page-heading .live-connection { margin-top: 15px; }.scoreboard-meta { gap: 8px 12px; padding: 15px; font-size: 10px; }
+  .scoreboard-team h2 { font-size: 13px; letter-spacing: -.3px; }.scoreboard-team .team-logo { width: 56px; height: 56px; }.scoreboard-team small { font-size: 9px; letter-spacing: .3px; }
+  .game-score { gap: 10px; }.game-score strong { font-size: 40px; }.scoreboard-center p { font-size: 10px; }.scoreboard-center small { font-size: 9px; }
+  .game-comparison, .game-pregame, .game-player-panel, .game-timeline { padding: 18px; }.game-player-panel .section-heading, .game-timeline .section-heading { align-items: flex-start; flex-wrap: wrap; gap: 15px; }
+  .live-event-list li { grid-template-columns: 47px 12px 1fr; gap: 12px; }.live-event-list li::before { left: 64px; }.live-directory { gap: 10px; }.live-game-tile { padding: 13px; }
+}

@@ -12,7 +12,7 @@ from pathlib import Path
 from uuid import uuid4
 
 MODE='reconstructed_latest_corrected'
-CACHE_VERSION=1
+CACHE_VERSION=2
 MODELS=('pace','prior_shrinkage')
 TARGETS=('goals','assists','points','games')
 
@@ -93,6 +93,9 @@ CREATE TABLE inputs (
  team INTEGER NOT NULL,games INTEGER NOT NULL,goals INTEGER NOT NULL,assists INTEGER NOT NULL,points INTEGER NOT NULL,
  remaining INTEGER NOT NULL,prior_games INTEGER NOT NULL,available_at TEXT NOT NULL,
  PRIMARY KEY(season,prediction_at,player));
+CREATE TABLE prediction_origins (
+ season INTEGER NOT NULL,prediction_at TEXT NOT NULL,data_mode TEXT NOT NULL,
+ PRIMARY KEY(season,prediction_at));
 CREATE TABLE projections (
  season INTEGER NOT NULL,prediction_at TEXT NOT NULL,model TEXT NOT NULL,player INTEGER NOT NULL,
  games REAL NOT NULL,goals REAL NOT NULL,assists REAL NOT NULL,points REAL NOT NULL,
@@ -139,6 +142,7 @@ def build_cache(path,identity,run,baseline,history,metadata,expected_projections
                         if abs(values[1]+values[2]-values[3])>1e-8:raise ArtifactError('Projected goals plus assists differ from points')
                         yield (int(row['season_id']),instant(row['prediction_at']),model,int(row['player_id']),*values)
             batched_insert(connection,'INSERT INTO projections VALUES (?,?,?,?,?,?,?,?)',projections())
+            connection.execute("INSERT INTO prediction_origins SELECT DISTINCT season,prediction_at,'reconstructed_latest_corrected' FROM inputs")
             invalid=connection.execute('''SELECT count(*) FROM projections p JOIN inputs i USING(season,prediction_at,player)
                 WHERE p.games<i.games-1e-8 OR p.goals<i.goals-1e-8 OR p.assists<i.assists-1e-8 OR p.points<i.points-1e-8''').fetchone()[0]
             if invalid:raise ArtifactError('Projection is below already recorded statistics')

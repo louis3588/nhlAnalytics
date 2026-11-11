@@ -51,7 +51,7 @@ try {
   checks.push('Team season changes retain filters, and Utah Hockey Club/Mammoth remain distinct historical pages.');
 
   await page.route('https://assets.nhle.com/mugs/nhl/20262027/CAR/8478427.png', route => route.abort());
-  await page.route('**/catalog.json', async route => {
+  await page.route('**/api/catalog', async route => {
     const response = await route.fetch(); const catalog = await response.json();
     catalog.players[8478427].headshot = '/rink.svg';
     await route.fulfill({ response, json: catalog });
@@ -59,7 +59,7 @@ try {
   await page.goto(`${base}/teams/12?season=20262027`); await ready();
   await page.getByRole('button', { name: 'View Sebastian Aho details', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('.focus-panel .player-headshot img')?.getAttribute('src') === '/rink.svg');
-  await page.unroute('**/catalog.json');
+  await page.unroute('**/api/catalog');
   // The stored string equals the primary URL for Aho, so there is only one
   // request before the neutral silhouette (no retry loop or guessed photo).
   await page.reload(); await ready();

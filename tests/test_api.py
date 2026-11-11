@@ -168,6 +168,16 @@ class APITests(unittest.TestCase):
         self.assertEqual(self.client.get('/api/predictions/players/-1').status_code,422)
         self.assertEqual(self.client.get('/api/predictions/players',params={'prediction_at':'2026-11-09T17:00:00Z'}).status_code,404)
 
+    def test_upcoming_uses_current_clock_not_old_bundle_date(self):
+        class Later(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return datetime(2026, 11, 13, 12, tzinfo=timezone.utc)
+        with patch('nhl_analytics.api.datetime', Later):
+            self.assertEqual(self.client.get('/api/predictions/games').json()['total'],0)
+            old=self.client.get('/api/predictions/games/2026020001').json()['item']
+            self.assertEqual(old['snapshot_status'],'unresolved')
+
     def test_requests_do_not_reload_scan_csv_or_hash_artifacts(self):
         with patch('nhl_analytics.prediction_store.csv_rows',side_effect=AssertionError('request parsed CSV')), \
              patch('nhl_analytics.prediction_store.checksum',side_effect=AssertionError('request hashed files')), \

@@ -2,6 +2,24 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { chartMaximum, fetchAllPages, gameTime, median, queryString, teamFor } from '../src/data.js';
 import { headshotSources, logoSources, matchupColors, pageRoute, paletteFor, playerPageURL, teamPageURL, themeStyle } from '../src/teamBranding.js';
+import { gameStatus, goalieSaves, teamMetric } from '../src/useLiveFeed.js';
+
+test('game routes and statuses distinguish live, final and postponed games', () => {
+  assert.deepEqual(pageRoute('/games/2026020293'), { kind: 'game', gameId: 2026020293 });
+  assert.equal(pageRoute('/games/no-game').kind, 'not-found');
+  assert.equal(gameStatus({ game_state: 'CRIT' }), 'Live');
+  assert.equal(gameStatus({ game_state: 'OFF' }), 'Final');
+  assert.equal(gameStatus({ game_state: 'FUT', schedule_state: 'PPD' }), 'Postponed');
+});
+
+test('live totals preserve zero and missing goalie/skater data', () => {
+  assert.equal(goalieSaves({ saves: 0, saveShotsAgainst: '0/3' }), 0);
+  assert.equal(goalieSaves({ saveShotsAgainst: '21/24' }), 21);
+  assert.equal(goalieSaves({}), null);
+  assert.equal(teamMetric([], 'hits'), null);
+  assert.equal(teamMetric([{ goalie: false, stats: { hits: null } }], 'hits'), null);
+  assert.equal(teamMetric([{ goalie: false, stats: { hits: 0 } }, { goalie: true, stats: { hits: 5 } }], 'hits'), 0);
+});
 
 test('player deep links preserve forecast context', () => {
   assert.deepEqual(pageRoute('/players/8478427'), { kind: 'player', playerId: 8478427 });

@@ -208,7 +208,7 @@ Serve saved player projections, intervals and improved Elo predictions:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -e '.[api]'
-.\.venv\Scripts\python.exe -m nhl_analytics.api --run data/evaluations/reconstructed/20261110T210453233933Z
+.\.venv\Scripts\python.exe -m nhl_analytics.api
 ```
 
 Open <http://127.0.0.1:8000/docs>. The API indexes saved artifacts at startup and
@@ -228,3 +228,22 @@ filters, player projections and labelled interval charts, searchable player
 tables and upcoming game probabilities. Its local proxy connects to FastAPI;
 fonts and display names are bundled locally. See the dashboard README for
 configuration, production builds and browser checks.
+
+Daily source refresh and append-only forecasts:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/daily-refresh.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/install-daily-refresh.ps1 -Time '09:30'
+```
+
+The Windows task is installed for the signed-in user. It refreshes current-season
+rosters, skater/goalie season stats and game logs, schedules/results, standings,
+team EDGE and display identities. Forecast archives retain previous days; the
+API follows new publications automatically when started without `--run`.
+See [daily automation, recovery and free live-data design](DAILY_REFRESH.md).
+
+Live GameCenter collection now runs with the unpinned API. Open **Live & recent
+games** or a forecast card's **Open game center** link for scores, player stats,
+team comparisons and play-by-play pushed through Server-Sent Events. Changed
+snapshots and event corrections are saved separately in Timescale. See
+[live-game setup, endpoints, retention and tests](LIVE_GAMES.md).

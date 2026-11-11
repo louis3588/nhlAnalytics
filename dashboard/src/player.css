@@ -41,6 +41,8 @@
 .history-whisker { stroke: var(--team-primary); stroke-width: 2; opacity: .45; }
 .history-dot { fill: var(--team-primary); stroke: white; stroke-width: 2; }
 .history-dates { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.history-picker { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 18px; font-size: 13px; }
+.history-picker select { padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: white; }
 .history-dates button { padding: 8px 12px; background: white; border: 1px solid var(--line); border-radius: 8px; font-size: 12px; }
 .history-dates button:hover, .history-dates button[aria-pressed=true] { background: var(--team-soft); border-color: var(--team-primary); color: var(--team-ink); }
 .history-chart figcaption, .player-method p { font-size: 13px; line-height: 1.8; color: var(--muted); }

@@ -58,6 +58,8 @@ export function playerPageURL(id, season, options = {}) {
 export function pageRoute(pathname) {
   if (pathname === '/' || pathname === '') return { kind: 'overview' };
   if (/^\/teams\/?$/.test(pathname)) return { kind: 'directory' };
+  const game = /^\/games\/([1-9]\d{9})\/?$/.exec(pathname);
+  if (game) return { kind: 'game', gameId: Number(game[1]) };
   const player = /^\/players\/([1-9]\d*)\/?$/.exec(pathname);
   if (player) return { kind: 'player', playerId: Number(player[1]) };
   const match = /^\/teams\/([1-9]\d*)\/?$/.exec(pathname);
