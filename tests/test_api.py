@@ -85,6 +85,22 @@ def fixture(root):
 
 @unittest.skipUnless(API_AVAILABLE,'Install the api extra for HTTP tests')
 class APITests(unittest.TestCase):
+    def test_player_history_is_chronological_paginated_and_personal(self):
+        result=self.client.get('/api/predictions/players/101/history',params={'season':20262027,'limit':1}).json()
+        self.assertEqual(result['total'],2)
+        self.assertEqual(result['items'][0]['projection']['prediction_at'],'2026-11-01T17:00:00Z')
+        self.assertEqual(result['items'][0]['interval']['nominal'],0.8)
+        second=self.client.get('/api/predictions/players/101/history',params={'season':20262027,'offset':1,'model':'pace','target':'goals','nominal':0.95}).json()['items'][0]
+        self.assertEqual(second['projection']['projected']['goals'],4)
+        self.assertEqual(second['interval']['prediction'],4)
+        self.assertEqual(second['interval']['nominal'],0.95)
+        self.assertEqual(second['projection']['prediction_at'],'2026-11-10T17:00:00Z')
+        self.assertEqual(self.client.get('/api/predictions/players/102/history').json()['total'],1)
+        historical=self.client.get('/api/predictions/players/101/history',params={'season':20212022}).json()
+        self.assertFalse(historical['items'][0]['interval']['available'])
+        self.assertEqual(self.client.get('/api/predictions/players/999/history').status_code,404)
+        self.assertEqual(self.client.get('/api/predictions/players/101/history?target=bad').status_code,422)
+
     def setUp(self):
         Path('.work/tmp').mkdir(parents=True,exist_ok=True)
         temporary=tempfile.TemporaryDirectory(dir='.work/tmp');self.addCleanup(temporary.cleanup)
@@ -156,7 +172,7 @@ class APITests(unittest.TestCase):
         with patch('nhl_analytics.prediction_store.csv_rows',side_effect=AssertionError('request parsed CSV')), \
              patch('nhl_analytics.prediction_store.checksum',side_effect=AssertionError('request hashed files')), \
              patch.object(PredictionStore,'load',side_effect=AssertionError('request reloaded artifacts')):
-            for url in ('/health','/api/metadata','/api/predictions/players','/api/predictions/intervals','/api/predictions/games'):
+            for url in ('/health','/api/metadata','/api/predictions/players','/api/predictions/intervals','/api/predictions/games','/api/predictions/players/101/history'):
                 self.assertEqual(self.client.get(url).status_code,200)
         with closing(self.app.state.predictions.connect()) as connection:
             with self.assertRaises(sqlite3.OperationalError):connection.execute('DELETE FROM games')

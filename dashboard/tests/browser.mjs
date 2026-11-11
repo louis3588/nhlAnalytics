@@ -38,7 +38,7 @@ try {
   await page.getByLabel('Search players').fill('Crosby');
   await page.waitForFunction(() => document.querySelectorAll('tbody tr').length === 1);
   assert.ok((await page.locator('tbody').innerText()).includes('Sidney Crosby'));
-  await page.getByRole('button', { name: 'Inspect Sidney Crosby', exact: true }).click();
+  await page.getByRole('button', { name: 'View Sidney Crosby details', exact: true }).click();
   assert.ok((await page.getByTestId('player-focus').innerText()).includes('Sidney Crosby'));
   await page.getByLabel('Clear player search').click();
   await page.locator('.confidence-control').getByRole('button', { name: '95%' }).click();

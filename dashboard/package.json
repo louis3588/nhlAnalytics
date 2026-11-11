@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "catalog": "node scripts/build-catalog.mjs",
+    "assets": "npm run catalog && node scripts/fetch-team-assets.mjs",
     "predev": "npm run catalog",
     "dev": "vite --host 127.0.0.1",
     "prebuild": "npm run catalog",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test tests/data.test.js",
-    "test:browser": "node tests/browser.mjs"
+    "test:browser": "node tests/browser.mjs",
+    "test:teams": "node tests/team-pages.mjs",
+    "test:players": "node tests/player-pages.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.0",

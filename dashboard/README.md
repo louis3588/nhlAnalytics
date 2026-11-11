@@ -4,6 +4,55 @@ A separate React + JavaScript project for the saved NHL prediction API. Custom
 CSS, locally bundled Inter fonts, labelled charts, floating hover details and a
 responsive layout; no component framework or chart-library dependency.
 
+## Team identities and dedicated pages
+
+Use **Team pages** in the sidebar to open `/teams`, a season-aware team
+directory. Every card links to a dedicated, shareable projection page, e.g.
+`/teams/12?season=20262027` for Carolina. Team pages retain the season/model/
+target/interval controls, player table and matching fixtures, styled with that
+team's colours. Game logos and the player-focus team name also link to these
+pages. Direct links and browser reloads work through Vite's SPA fallback; a
+separately deployed static host needs the same index.html fallback for `/teams/*`.
+
+The team ID stays explicit: `/teams/59?season=20242025` is Utah Hockey Club,
+while `/teams/68?season=20262027` is Utah Mammoth. Selecting a season in which
+that ID is absent shows no matching forecasts rather than silently substituting
+another identity. Choose the appropriate team from the directory/dropdown.
+
+Player portraits use the forecast's own season, last-played team abbreviation,
+and NHL ID:
+
+```text
+https://assets.nhle.com/mugs/nhl/{season}/{teamAbbreviation}/{playerId}.png
+```
+
+If the generated image fails, a distinct saved `headshot` string from the local
+roster catalog is tried. That fallback may be a more recent portrait. If no
+usable image remains, a neutral silhouette replaces the image, with no retry
+loop or fabricated portrait. No database lookup is needed. Headshots load
+directly from NHL assets; table portraits are lazy-loaded.
+
+Team logos are official NHL SVGs bundled in `public/team-logos/`, including
+season-specific variants where our saved metadata supplies them. Representative
+team colours in `src/teamBranding.js` coordinate the team header, chart, selected
+rows and player focus. Matchup probability segments use the competing clubs'
+colours; matching primary colours use an available secondary colour, and away
+segments have subtle stripes so labels/patterns also distinguish them. Palette
+themes do not claim to reproduce every historical or alternate jersey.
+
+Logos do not require remote requests during ordinary use. To explicitly refresh
+the official assets after adding new seasons/identities:
+
+```powershell
+npm.cmd run assets
+```
+
+This opt-in command downloads only official NHL SVGs, at most two concurrently;
+normal dev/build does not fetch assets. `palette-sources.json` records colours
+found in the source logo files. Saved roster headshot strings are display
+metadata and never become prediction features. Forecast values and probability
+segment widths still come directly from the unchanged API.
+
 ## Run locally
 
 Requirements: Node 22.12+ (tested with 24.22.1), npm, and the existing FastAPI
@@ -61,8 +110,8 @@ credentials in the JavaScript project.
   headings, and page through ten players at a time. The full filtered cohort is
   fetched in API pages before calculating leaders or medians, so these are not
   misleading first-page statistics.
-- **Games:** both teams' win probabilities are labelled. Dates/times use Eastern
-  time, including daylight saving. `Upcoming` is relative to the saved snapshot;
+- **Games:** both teams' win probabilities are labelled. Dates/times use the
+  viewer's browser timezone, including daylight saving. `Upcoming` is relative to the saved snapshot;
   `All saved` also displays completed fixtures' pregame predictions. Historical
   seasons honestly have no upcoming games, with a button to view saved forecasts.
 - **Refresh:** rereads the saved API bundle; it does not fetch NHL data or train.
@@ -104,6 +153,7 @@ download. Keep the API and dev server running, then:
 
 ```powershell
 npm.cmd run test:browser
+npm.cmd run test:teams
 ```
 
 For another installed Chromium browser, set `BROWSER_EXECUTABLE` to its absolute
@@ -117,3 +167,47 @@ pagination, player focus, historical unavailable intervals, Utah IDs, hover
 details, 390px mobile overflow, API recovery and partial interval-request failure.
 No browser JavaScript errors were reported. Python sources and saved prediction
 artifacts were not modified by this frontend work.
+
+Team identity verification adds three data tests (nine total) and five browser
+check groups: directory and team-specific data/theme, real portraits/logos,
+deep links/reloads, historical IDs, failed-image fallbacks and mobile layouts.
+The original eight dashboard browser check groups also pass. Team screenshots
+include `test-results/carolina-team-page.png` and `test-results/team-page-mobile.png`.
+
+### Player pages and local game clocks
+
+Click a player's name, portrait in the table, or comparison-chart row to open
+`/players/{nhl_id}?season=20262027`. The small table arrow still selects the
+dashboard's quick preview. Player pages show the last played team's colours,
+headshot, recorded goals/assists/points/games, projected final totals, and saved
+80% or 95% marginal prediction intervals. Season, model, graph statistic and
+interval selections persist in the URL for sharing and reloading.
+
+The labelled history graph reads saved forecasts through
+`GET /api/predictions/players/{player_id}/history`. Optional parameters are
+`season`, `model` (`pace` or `prior_shrinkage`), `target` (`goals`, `assists`,
+`points`, `games`), `nominal` (`0.8` or `0.95`), `limit` (maximum 200), and
+`offset`. Results are chronological `{projection, interval}` pairs with bundle
+provenance. Unlike the overview's global latest snapshot, history includes a
+player's earlier snapshots even if absent from the latest cohort. An unknown
+player/season returns 404. This endpoint reads the existing immutable serving
+cache; no model training, CSV scans or Timescale requests occur per request.
+
+Date buttons update the cards to that snapshot. Exact values are also available
+in an accessible table. On narrow screens the graph scrolls horizontally so
+axis labels stay readable. Current 2026–27 outputs contain one snapshot, shown
+as one point; historical seasons have multiple snapshots. No invented daily
+trend or future labels are added. Recorded totals are current **as of the
+selected saved date**, rather than a live NHL feed. Prediction intervals retain
+their original historical calibration and reconstructed provenance.
+
+Game cards use `Intl.DateTimeFormat().resolvedOptions().timeZone`, with local
+date, time and zone abbreviation. UK devices automatically show GMT in winter
+and BST in summer. This uses the device timezone setting and requires no GPS,
+IP lookup, browser permission or location storage. Source UTC timestamps and
+prediction-date labels remain unchanged. A misconfigured device timezone must
+be corrected in the operating system/browser.
+
+Run `npm.cmd run test:players` with the API and dev server running for player
+navigation, history, filters, error states, mobile layout and London clock checks.
+Unit tests also cover UK daylight saving and a US date rollover.

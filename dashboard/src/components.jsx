@@ -1,8 +1,10 @@
-import { chartMaximum, gameTime, initials, nameFor, number, TARGETS, teamFor } from './data.js';
+import { browserTimeZone, chartMaximum, gameTime, nameFor, number, TARGETS, teamFor } from './data.js';
 import Icon from './Icon.jsx';
+import { PlayerHeadshot, TeamLogo } from './TeamIdentity.jsx';
+import { matchupColors, playerPageURL, teamPageURL } from './teamBranding.js';
 
-export function Avatar({ name, small = false }) {
-  return <span className={`avatar${small ? ' avatar-small' : ''}`} aria-hidden="true">{initials(name)}</span>;
+export function Avatar({ name, player, team, catalog, small = false }) {
+  return <PlayerHeadshot name={name} player={player} team={team} catalog={catalog} small={small} />;
 }
 
 export function Loading({ text = 'Loading saved forecasts…' }) {
@@ -31,8 +33,8 @@ export function ProjectionChart({ rows, selectedId, onSelect, catalog, bands, ta
         const band = bands.get(row.player_id);
         const selected = selectedId === row.player_id;
         const range = band?.available ? `${band.lower}–${band.upper}` : intervalsLoading ? 'Loading range' : 'Range unavailable';
-        return <button key={row.player_id} className={`chart-row${selected ? ' selected' : ''}`} onClick={() => onSelect(row.player_id)} aria-pressed={selected}
-          aria-label={`Inspect ${name}: ${number(row.projected[target])} projected ${targetInfo.singular}, ${range}`}>
+        return <a key={row.player_id} className={`chart-row${selected ? ' selected' : ''}`} href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })}
+          aria-label={`View ${name}: ${number(row.projected[target])} projected ${targetInfo.singular}, ${range}`}>
           <span className="chart-player"><span title={name}>{name}</span><small>{team.abbreviation}</small></span>
           <span className="chart-track" aria-hidden="true">
             <span className="chart-grid"><i /><i /><i /><i /><i /></span>
@@ -43,7 +45,7 @@ export function ProjectionChart({ rows, selectedId, onSelect, catalog, bands, ta
           </span>
           <span className="chart-value"><strong>{number(row.projected[target])}</strong><small>{band?.available ? range : '—'}</small></span>
           <span className="chart-tooltip" role="tooltip"><strong>{name}</strong><span>{row.observed[target]} recorded · {number(row.projected[target])} projected {targetInfo.unit}</span><span>{nominal * 100}% interval: {range}</span></span>
-        </button>;
+        </a>;
       })}
     </div>
     <figcaption><span>Season {targetInfo.singular} →</span><span>Ranges are marginal, not guarantees.</span></figcaption>
@@ -57,7 +59,7 @@ export function PlayerFocus({ player, catalog, band, target, nominal, loading, e
   const gain = player.projected[target] - player.observed[target];
   return <aside className="panel focus-panel" aria-label="Selected player forecast" aria-busy={loading} data-testid="player-focus">
     <div className="focus-topline"><span className="eyebrow">IN FOCUS</span><span className="team-pill">{team.abbreviation}</span></div>
-    <Avatar name={name} /><h3>{name}</h3><p className="muted focus-team">{team.name}</p>
+    <Avatar name={name} player={player} team={team} catalog={catalog} /><h3><a href={playerPageURL(player.player_id, player.season_id, { model: player.model, target, nominal })}>{name} ↗</a></h3><p className="muted focus-team"><a href={teamPageURL(team.id, player.season_id)}>{team.name} <Icon name="arrow" size={13} /></a></p>
     <div className="focus-total"><strong>{number(player.projected[target])}</strong><span>projected {TARGETS[target].singular}</span></div>
     <div className="gain-note"><Icon name="up" size={15} /> {number(gain)} more than recorded</div>
     <div className="band-card"><div><span className="band-symbol" aria-hidden="true">↔</span><span>{nominal * 100}% prediction interval</span></div>
@@ -85,9 +87,10 @@ export function PlayerTable({ rows, catalog, bands, target, nominal, selectedId,
       <div className="table-scroll"><table><caption className="sr-only">Saved player season forecasts. Select a player's name to inspect their forecast and interval.</caption><thead><tr>{heading('name', 'Player')}{heading('games', 'Games')}{heading('goals', 'Goals')}{heading('assists', 'Assists')}{heading('points', 'Points')}<th scope="col">{nominal * 100}% {TARGETS[target].unit} interval</th><th scope="col"><span className="sr-only">Inspect</span></th></tr></thead>
         <tbody>{visible.map(row => {
           const name = nameFor(catalog, row.player_id);
+          const team = teamFor(catalog, row.last_played_team_id);
           const band = bands.get(row.player_id);
           return <tr key={row.player_id} data-selected={row.player_id === selectedId}>
-            <td><button className="table-player" onClick={() => onSelect(row.player_id)} aria-label={`Inspect ${name}`}><Avatar name={name} small /><span><strong>{name}</strong><small>{teamFor(catalog, row.last_played_team_id).abbreviation} <span>· NHL #{row.player_id}</span></small></span></button></td>
+            <td><a className="table-player" href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })} aria-label={`View ${name} player page`}><Avatar name={name} player={row} team={team} catalog={catalog} small /><span><strong>{name}</strong><small>{team.abbreviation} <span>· NHL #{row.player_id}</span></small></span></a></td>
             {['games', 'goals', 'assists', 'points'].map(t => <td key={t} className={t === target ? 'highlight-number' : ''}>{number(row.projected[t])}</td>)}
             <td><span className={band?.available ? 'table-range' : 'muted'}>{band?.available ? `${band.lower}–${band.upper}` : intervalsLoading ? 'Loading…' : intervalsError ? 'Load failed' : 'Unavailable'}</span></td>
             <td><button className="icon-button row-action" aria-label={`View ${name} details`} onClick={() => onSelect(row.player_id)}><Icon name="arrow" size={17} /></button></td>
@@ -99,16 +102,17 @@ export function PlayerTable({ rows, catalog, bands, target, nominal, selectedId,
 }
 
 export function GameGrid({ data, loading, error, catalog, page, onPage, status, onStatus, onRetry }) {
-  return <section id="games" className="games-section" aria-labelledby="games-heading" aria-busy={loading}><div className="section-heading"><div><span className="eyebrow">THE NEXT FACEOFF</span><h2 id="games-heading">{status === 'upcoming' ? 'Upcoming games' : 'Saved game forecasts'} <span className="count-badge">{data?.total ?? '—'}</span></h2><p>Win probabilities include overtime and shootouts. All game times Eastern.</p></div>
+  return <section id="games" className="games-section" aria-labelledby="games-heading" aria-busy={loading}><div className="section-heading"><div><span className="eyebrow">THE NEXT FACEOFF</span><h2 id="games-heading">{status === 'upcoming' ? 'Upcoming games' : 'Saved game forecasts'} <span className="count-badge">{data?.total ?? '—'}</span></h2><p>Win probabilities include overtime and shootouts. Times in your timezone: {browserTimeZone()}.</p></div>
     <div className="segmented" aria-label="Game view">{[['upcoming', 'Upcoming'], ['all', 'All saved']].map(([value, label]) => <button key={value} aria-pressed={status === value} onClick={() => onStatus(value)}>{label}</button>)}</div></div>
     {error ? <ErrorNote message={error} onRetry={onRetry} /> : loading ? <div className="panel"><Loading text="Loading game forecasts…" /></div> : !data?.items.length ? <div className="panel"><Empty title="No upcoming games in this view">This season may be complete, or no saved fixtures match the team filter.<br />You can still explore its historical game forecasts.<br /><button className="button secondary empty-action" onClick={() => onStatus('all')}>View all saved games <Icon name="arrow" size={16} /></button></Empty></div> : <>
       <div className="game-grid">{data.items.map(game => {
         const away = teamFor(catalog, game.away_team_id);const home = teamFor(catalog, game.home_team_id);
+        const colors = matchupColors(away, home);
         const a = game.away_win_probability * 100;const h = game.home_win_probability * 100;
-        return <article className="game-card panel" key={game.game_id}><div className="game-card-top"><span><Icon name="clock" size={14} />{gameTime(game.start_time_utc)} ET</span><span className={`game-status ${game.snapshot_status}`}>{game.snapshot_status === 'scheduled' ? 'Scheduled' : game.snapshot_status === 'final' ? 'Completed' : 'Unresolved'}</span></div>
-          <div className="matchup"><div><span className="team-emblem away">{away.abbreviation}</span><strong>{away.name}</strong><small>Away</small></div><span className="matchup-at">@</span><div><span className="team-emblem home">{home.abbreviation}</span><strong>{home.name}</strong><small>Home</small></div></div>
-          <div className="probability-labels"><span><strong>{number(a)}%</strong> {away.abbreviation}</span><span>{home.abbreviation} <strong>{number(h)}%</strong></span></div>
-          <div className="probability-bar" role="img" aria-label={`${away.name} ${number(a)}% win probability, ${home.name} ${number(h)}% win probability`}><span style={{ width: `${a}%` }} /><span style={{ width: `${h}%` }} /></div>
+        return <article className="game-card panel" key={game.game_id}><div className="game-card-top"><span><Icon name="clock" size={14} /><time dateTime={game.start_time_utc}>{gameTime(game.start_time_utc)}</time></span><span className={`game-status ${game.snapshot_status}`}>{game.snapshot_status === 'scheduled' ? 'Scheduled' : game.snapshot_status === 'final' ? 'Completed' : 'Unresolved'}</span></div>
+          <div className="matchup"><div><a className="game-team-link" href={teamPageURL(away.id, game.season_id)} aria-label={`Explore ${away.name} projections`}><TeamLogo team={away} season={game.season_id} /><strong>{away.name}</strong></a><small>Away</small></div><span className="matchup-at">@</span><div><a className="game-team-link" href={teamPageURL(home.id, game.season_id)} aria-label={`Explore ${home.name} projections`}><TeamLogo team={home} season={game.season_id} /><strong>{home.name}</strong></a><small>Home</small></div></div>
+          <div className="probability-labels"><span style={{ '--probability-color': colors.away }}><strong>{number(a)}%</strong> {away.abbreviation}</span><span style={{ '--probability-color': colors.home }}>{home.abbreviation} <strong>{number(h)}%</strong></span></div>
+          <div className="probability-bar team-probabilities" role="img" aria-label={`${away.name} ${number(a)}% win probability, ${home.name} ${number(h)}% win probability`}><span style={{ width: `${a}%`, backgroundColor: colors.away }} /><span style={{ width: `${h}%`, backgroundColor: colors.home }} /></div>
           <div className="game-card-footer"><span>Win probability</span><span>{Math.abs(a - h) < 0.1 ? 'Even matchup' : `${a > h ? away.abbreviation : home.abbreviation} favoured`} <Icon name="arrow" size={13} /></span></div>
         </article>;
       })}</div>

@@ -101,6 +101,11 @@ class PlayerInterval(BaseModel):
     radius:float|None
 
 
+class PlayerHistoryPoint(BaseModel):
+    projection:PlayerProjection
+    interval:PlayerInterval|None
+
+
 class GamePrediction(BaseModel):
     game_id:int
     season_id:int
@@ -165,6 +170,10 @@ PROJECTIONS='''(SELECT p.*,i.team,i.games AS observed_games,i.goals AS observed_
  i.points AS observed_points,i.remaining,i.prior_games,i.available_at
  FROM projections p JOIN inputs i USING(season,prediction_at,player))'''
 INTERVALS='(SELECT b.*,i.team FROM intervals b JOIN inputs i USING(season,prediction_at,player))'
+HISTORY='''(SELECT p.*,b.target,b.nominal,b.observed AS band_observed,b.prediction AS band_prediction,b.available,
+ b.lower,b.upper,b.calibration_players,b.calibration_seasons,b.calibration_available_at,b.scope,b.radius
+ FROM '''+PROJECTIONS+''' p LEFT JOIN intervals b ON b.season=p.season AND b.prediction_at=p.prediction_at
+ AND b.player=p.player AND b.model=p.model)'''
 GAMES='(SELECT * FROM games JOIN fixtures USING(game))'
 
 
@@ -245,6 +254,19 @@ def create_app(run_dir:Path|None=None,cache_dir:Path|None=None):
         result=player_page(store,season,model,prediction_at,None,player_id,1,0)
         if not result['items']:raise HTTPException(404,'Player has no saved projection for this snapshot')
         return dict(metadata=result['metadata'],item=result['items'][0])
+
+    @app.get('/api/predictions/players/{player_id}/history',response_model=Page[PlayerHistoryPoint])
+    def player_history(player_id:Identifier,store:Store,season:int|None=None,model:Model='prior_shrinkage',
+                       target:Target='points',nominal:NominalQuery=0.8,limit:Limit=100,offset:Offset=0):
+        season,_=snapshot(store,season,None)
+        total,rows=store.page(HISTORY,'season=? AND player=? AND model=? AND target=? AND nominal=?',
+            [season,player_id,model,target,round(nominal*100)],'prediction_at',limit,offset)
+        if not total:raise HTTPException(404,'Player has no saved projection history in this season')
+        items=[]
+        for row in rows:
+            band=dict(row,observed=row['band_observed'],prediction=row['band_prediction'])
+            items.append(dict(projection=player_item(row),interval=interval_item(band)))
+        return dict(metadata=provenance(store),total=total,limit=limit,offset=offset,items=items)
 
     @app.get('/api/predictions/intervals',response_model=Page[PlayerInterval])
     def intervals(store:Store,season:int|None=None,model:Model='prior_shrinkage',prediction_at:datetime|None=None,
