@@ -1,9 +1,11 @@
 import { useLiveFeed, gameStatus } from './useLiveFeed.js';
 import { TeamLogo } from './TeamIdentity.jsx';
 import { gameTime, teamFor } from './data.js';
+import { STATIC } from './transport.js';
 
 export default function LiveGames({ catalog, teamId }) {
   const { data, error, connected, retry } = useLiveFeed('/api/live/games');
+  if (STATIC) return null;
   const games = (data?.items || []).filter(g => !teamId || g.home.id === Number(teamId) || g.away.id === Number(teamId));
   return <section id="live-games" className="live-games-section" aria-labelledby="live-games-title">
     <div className="section-heading"><div><span className="eyebrow">AROUND THE RINK</span><h2 id="live-games-title">Live &amp; recent games</h2><p>Today and yesterday on the NHL calendar. Open a game for stats and play-by-play.</p></div><span className={`live-connection ${connected && !data?.collector?.error ? 'healthy' : ''}`}>{data?.collector?.error ? 'Feed delayed' : connected ? 'Updates connected' : 'Connecting…'}</span></div>

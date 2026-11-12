@@ -72,6 +72,8 @@ def run_refresh(root, season, env_file, base_run=None, workers=2, edge=True, ing
         if manifest['season'] != season:
             raise ValueError('This UTC day already belongs to a different season')
         if manifest['status'] == 'complete':
+            from nhl_analytics.public_refresh import queue_daily_publication
+            queue_daily_publication(manifest.get('publication'))
             LOG.info('Already complete for %s; nothing repeated', manifest['day'])
             return manifest
         # Fail before any network downloads when Docker/Timescale is unavailable.
@@ -103,6 +105,9 @@ def run_refresh(root, season, env_file, base_run=None, workers=2, edge=True, ing
             manifest['finished_at'] = datetime.now(timezone.utc).isoformat()
             manifest.pop('error', None)
             write_document(manifest_path, manifest)
+            if manifest['status']=='complete':
+                from nhl_analytics.public_refresh import queue_daily_publication
+                queue_daily_publication(manifest.get('publication'))
             return manifest
         except Exception as error:
             manifest.update(status='failed', error=type(error).__name__)

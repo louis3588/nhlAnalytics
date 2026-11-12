@@ -56,6 +56,7 @@ export function playerPageURL(id, season, options = {}) {
   return `/players/${id}${query.size ? `?${query}` : ''}`;
 }
 export function pageRoute(pathname) {
+  if (/^\/models\/?$/.test(pathname)) return { kind: 'models' };
   if (pathname === '/' || pathname === '') return { kind: 'overview' };
   if (/^\/teams\/?$/.test(pathname)) return { kind: 'directory' };
   const game = /^\/games\/([1-9]\d{9})\/?$/.exec(pathname);

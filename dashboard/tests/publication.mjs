@@ -1,0 +1,75 @@
+import assert from 'node:assert/strict';
+import { readFile, readdir, mkdir } from 'node:fs/promises';
+import { chromium } from 'playwright-core';
+import { verifyRelease } from '../scripts/public-build.mjs';
+import { dynamicMetadata } from '../src/transport.js';
+
+const base = process.env.PUBLIC_DASHBOARD_URL || 'http://127.0.0.1:4174';
+const output = process.env.NHL_PUBLIC_BUILD_OUTPUT || 'dist-public';
+const pointer = JSON.parse(await readFile(`${output}/publication/latest.json`, 'utf8'));
+const manifest = await verifyRelease(`${output}/publication`, pointer.release_id);
+assert.ok(manifest.player_count > 0);
+const root = `${output}/publication/releases/${pointer.release_id}`;
+const players = JSON.parse(await readFile(`${root}/players.json`, 'utf8'));
+const fixtures = JSON.parse(await readFile(`${root}/fixtures.json`, 'utf8'));
+const metadata = JSON.parse(await readFile(`${root}/metadata.json`, 'utf8'));
+const bands = JSON.parse(await readFile(`${root}/intervals.json`, 'utf8'));
+assert.equal(dynamicMetadata(metadata, Date.parse(metadata.as_of) + 25 * 3600000).stale, true);
+assert.ok(!(await readdir(output)).includes('_redirects'), 'native SPA routes need no index redirects');
+assert.ok((await readFile(`${output}/_headers`, 'utf8')).includes('connect-src \'self\''));
+assert.ok(!(await readdir(output)).includes('catalog.json'), 'old source catalog excluded');
+assert.ok(!(await readdir(output)).includes('404.html'), 'Pages native SPA fallback enabled');
+
+await mkdir('test-results', { recursive: true });
+const browser = await chromium.launch({ executablePath: process.env.BROWSER_EXECUTABLE || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', headless: true, args: ['--disable-gpu', '--renderer-process-limit=1'] });
+const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, timezoneId: 'Europe/London', locale: 'en-GB' });
+const forbidden = [], errors = [], releases = new Set();
+page.on('pageerror', e => errors.push(e.message));
+page.on('request', request => {
+  const url = new URL(request.url());
+  if (url.pathname.startsWith('/api/') || /api-web\.nhle|api\.nhle|:8000/.test(url.href)) forbidden.push(url.href);
+  const match = /\/publication\/releases\/([a-f0-9]{64})\//.exec(url.pathname);
+  if (match) releases.add(match[1]);
+});
+await page.route('**/api/**', route => route.abort());
+await page.addInitScript(() => { window.EventSource = class { constructor() { throw new Error('SSE must be disabled in public mode'); } }; });
+try {
+  await page.goto(base);
+  await page.locator('.player-table tbody tr, #players tbody tr').first().waitFor();
+  await page.getByText('Public beta · saved snapshots', { exact: true }).waitFor();
+  await page.locator('.sidebar-bottom').filter({ hasText: 'Snapshot ready' }).waitFor();
+  assert.equal(await page.getByRole('link', { name: 'Open saved forecast metadata' }).getAttribute('href'), '/publication/latest.json');
+  await page.getByRole('heading', { name: 'Saved team standings' }).waitFor();
+  await page.screenshot({ path: 'test-results/public-overview-desktop.png' });
+  const player = players.find(p => p.model === 'prior_shrinkage');
+  await page.goto(`${base}/players/${player.player_id}`);
+  await page.locator('.player-hero h1').waitFor();
+  await page.locator('.player-stat-band strong').first().waitFor();
+  assert.equal(await page.locator('.player-stat').count(), 4);
+  await page.reload(); await page.locator('.player-hero h1').waitFor();
+  const expected = bands.find(b => b.player_id === player.player_id && b.model === 'prior_shrinkage' && b.target === 'points' && b.nominal === .8);
+  if (expected.available) await page.getByText(`${expected.lower}–${expected.upper}`, { exact: true }).first().waitFor();
+  await page.goto(`${base}/teams/${player.last_played_team_id}`);
+  await page.locator('#players tbody tr, .player-table tbody tr').first().waitFor();
+  const teamRows = await page.locator('#players tbody tr, .player-table tbody tr').count();
+  assert.ok(teamRows > 0);
+  await page.goto(`${base}/models`);
+  await page.getByRole('heading', { name: 'Reconstructed benchmarks' }).waitFor();
+  const game = fixtures.find(g => g.snapshot_status !== 'final') || fixtures[0];
+  await page.goto(`${base}/games/${game.game_id}`);
+  await page.getByRole('heading', { name: 'Saved game outlook' }).waitFor();
+  await page.getByText(/Live scores, player game totals and play-by-play are available only/).waitFor();
+  await page.reload(); await page.getByRole('heading', { name: 'Saved game outlook' }).waitFor();
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.goto(base); await page.getByText('Public beta · saved snapshots', { exact: true }).waitFor();
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.screenshot({ path: 'test-results/public-overview-mobile.png' });
+  // A failed publication gives an actionable state, not an API/localhost instruction.
+  await page.route('**/publication/latest.json', route => route.fulfill({ status: 404, body: 'Missing' }));
+  await page.reload(); await page.getByText(/saved data release is unavailable/).first().waitFor();
+  assert.equal(forbidden.length, 0, forbidden.join('\n'));
+  assert.deepEqual([...releases], [pointer.release_id]);
+  assert.deepEqual(errors, []);
+  console.log(`PASS: static-only overview, ${manifest.player_count} identities, team/player deep links, intervals, model evidence, read-only games, mobile, pinned release and missing-data state. Zero API, SSE or NHL data-feed requests.`);
+} finally { await browser.close(); }

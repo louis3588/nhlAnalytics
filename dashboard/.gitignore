@@ -2,3 +2,11 @@ node_modules/
 dist/
 .env.local
 test-results/
+dist-public/
+public/publication/
+.wrangler/
+.dev.vars*
+.env.*.local
+.env.*
+!.env.public
+!.env.example

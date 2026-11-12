@@ -227,7 +227,7 @@ def interval_page(store,season,model,prediction_at,team_id,player_id,target,nomi
     return dict(metadata=provenance(store),snapshot_at=cutoff,total=total,limit=limit,offset=offset,items=[interval_item(r) for r in rows])
 
 
-def create_app(run_dir:Path|None=None,cache_dir:Path|None=None,refresh_seconds:float=15,live_enabled:bool|None=None):
+def create_app(run_dir:Path|None=None,cache_dir:Path|None=None,refresh_seconds:float=15,live_enabled:bool|None=None,prospective_enabled:bool|None=None,publishing_enabled:bool|None=None):
     """App factory. Artifact loading happens once in lifespan, never in a route."""
     load_dotenv(override=False)
     @asynccontextmanager
@@ -267,8 +267,31 @@ def create_app(run_dir:Path|None=None,cache_dir:Path|None=None,refresh_seconds:f
         else:
             app.state.live=None
             live_task=None
+        tracking=prospective_enabled if prospective_enabled is not None else enabled and not configured and os.environ.get('NHL_PROSPECTIVE_ENABLED','1')=='1'
+        if tracking:
+            from nhl_analytics.prospective import ProspectiveTracker
+            app.state.prospective=ProspectiveTracker()
+            prospective_task=asyncio.create_task(app.state.prospective.run())
+        else:
+            app.state.prospective=None
+            prospective_task=None
+        from nhl_analytics.public_refresh import PublicPublisher,DEFAULT_ROOT
+        publishing=publishing_enabled if publishing_enabled is not None else not configured and enabled and (DEFAULT_ROOT/'config.json').is_file()
+        app.state.public_publishing_error=None
+        try:app.state.public_publisher=PublicPublisher() if publishing else None
+        except Exception as error:
+            app.state.public_publisher=None
+            app.state.public_publishing_error=dict(status='unavailable',error=type(error).__name__)
+            logging.getLogger(__name__).warning('Optional public publisher could not start (%s); local API remains available',type(error).__name__)
+        publishing_task=asyncio.create_task(app.state.public_publisher.run()) if app.state.public_publisher else None
         try:yield
         finally:
+            if publishing_task:
+                publishing_task.cancel()
+                with suppress(asyncio.CancelledError):await publishing_task
+            if prospective_task:
+                prospective_task.cancel()
+                with suppress(asyncio.CancelledError):await prospective_task
             if live_task:
                 live_task.cancel()
                 with suppress(asyncio.CancelledError):await live_task
@@ -285,7 +308,37 @@ def create_app(run_dir:Path|None=None,cache_dir:Path|None=None,refresh_seconds:f
     def health(store:Store,request:Request):
         hub=getattr(request.app.state,'live',None)
         return dict(status='ok',bundle_id=store.metadata['bundle_id'],as_of=store.metadata['as_of'],stale=provenance(store)['stale'],
-            live=dict(hub.health,subscribers=hub.clients,cached_games=len(hub.states)) if hub else None)
+            live=dict(hub.health,subscribers=hub.clients,cached_games=len(hub.states)) if hub else None,
+            prospective=request.app.state.prospective.cache['health'] if request.app.state.prospective else None,
+            public_publishing=request.app.state.public_publisher.health if request.app.state.public_publisher else request.app.state.public_publishing_error)
+
+    def prospective_cache(request):
+        tracker=getattr(request.app.state,'prospective',None)
+        if tracker is None:raise HTTPException(503,'Prospective tracking is disabled on this API instance')
+        if tracker.cache['performance'] is None:raise HTTPException(503,tracker.cache['health'].get('error') or 'Prospective tracking is starting')
+        return tracker.cache
+
+    @app.get('/api/prospective/performance')
+    def prospective_performance(request:Request):
+        cache=prospective_cache(request)
+        return dict(health=cache['health'],report=cache['performance'])
+
+    @app.get('/api/prospective/games')
+    def prospective_games(request:Request,season:Positive|None=None,team_id:Positive|None=None,upcoming:bool=False,limit:Limit=50,offset:Offset=0):
+        cache=prospective_cache(request)
+        items=[r for r in cache['items'] if (season is None or r['season_id']==season) and
+            (team_id is None or team_id in (r['home_team_id'],r['away_team_id']))]
+        if upcoming:
+            now=datetime.now(timezone.utc)
+            items=[r for r in items if datetime.fromisoformat(r['scheduled_start'])>=now or r.get('game_state') in ('LIVE','CRIT')]
+        return dict(health=cache['health'],total=len(items),limit=limit,offset=offset,items=items[offset:offset+limit])
+
+    @app.get('/api/prospective/games/{game_id}')
+    def prospective_game(game_id:Identifier,request:Request):
+        cache=prospective_cache(request)
+        item=next((r for r in cache['items'] if r['game_id']==game_id),None)
+        if item is None:raise HTTPException(404,'Game is outside this prospective campaign; archived forecasts remain separate')
+        return dict(health=cache['health'],item=item,revisions=[r for r in cache['revisions'] if r['game_id']==game_id])
 
     @app.get('/api/metadata',response_model=BundleInfo)
     def metadata(store:Store):return provenance(store)
@@ -401,7 +454,9 @@ def main():
     parser.add_argument('--port',type=int,default=8000)
     args=parser.parse_args()
     import uvicorn
-    uvicorn.run(create_app(args.run),host=args.host,port=args.port,workers=1,timeout_graceful_shutdown=5)
+    from nhl_analytics.power import keep_awake
+    with keep_awake():
+        uvicorn.run(create_app(args.run),host=args.host,port=args.port,workers=1,timeout_graceful_shutdown=5)
 
 
 if __name__=='__main__':main()

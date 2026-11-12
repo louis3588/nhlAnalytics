@@ -90,6 +90,17 @@ def cadence(state, start, now, active_seconds=20):
     return 60 if abs((datetime.fromisoformat(start.replace('Z', '+00:00')) - now).total_seconds()) < 900 else 300
 
 
+def poll_priority(game, requested, due, now):
+    """Confirm schedules near forecast cutoff before ordinary live detail polling."""
+    state = game.get('gameState')
+    start = game.get('startTimeUTC')
+    near_cutoff = False
+    if start and state in ('FUT', 'PRE'):
+        remaining = (datetime.fromisoformat(start.replace('Z', '+00:00')) - now).total_seconds()
+        near_cutoff = 3600 < remaining <= 4500
+    return (0 if near_cutoff else 1 if state in ACTIVE else 2 if requested else 3 if state not in FINAL else 4, due)
+
+
 class BackoffError(RuntimeError):
     pass
 
@@ -209,8 +220,7 @@ class LiveCollector:
                 self.score_due = time.monotonic() + 60
             candidates = set(self.directory) | set(requested)
             def priority(gid):
-                state = self.directory.get(gid, {}).get('gameState')
-                return (0 if state in ACTIVE else 1 if gid in requested else 2 if state not in FINAL else 3, self.due.get(gid, 0))
+                return poll_priority(self.directory.get(gid, {}), gid in requested, self.due.get(gid, 0), now)
             done = 0
             for gid in sorted(candidates, key=priority):
                 if done >= max_games:
@@ -236,9 +246,15 @@ class LiveCollector:
                         self.states[gid] = dict(game_id=gid, not_found=True, checked_at=now.isoformat())
                     else:
                         raise
+                except (requests.Timeout, requests.ConnectionError) as error:
+                    # One slow GameCenter response must not block every other game,
+                    # especially a fixture approaching its immutable forecast cutoff.
+                    self.due[gid] = time.monotonic() + 30
+                    self.error = 'Some NHL games unavailable; retrying with last saved data'
+                    LOG.warning('GameCenter game %s deferred (%s)', gid, type(error).__name__)
                 while len(self.states) > 64:
                     self.states.popitem(last=False)
-            return self.result('running')
+            return self.result('degraded' if self.error else 'running')
         except (requests.RequestException, ValueError, KeyError, TypeError, AttributeError, OSError, BackoffError, psycopg.Error) as error:
             self.failures += 1
             self.network_due = max(self.network_due, time.monotonic() + min(300, 5 * 2 ** min(self.failures, 6)))

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { STATIC } from './transport.js';
 
 // Each viewer subscribes to our shared cache, never polling GameCenter directly.
 export function useLiveFeed(path) {
   const [revision, setRevision] = useState(0);
   const [state, setState] = useState({ data: null, error: null, connected: false });
   useEffect(() => {
+    if (STATIC) { setState({ data: null, error: null, connected: false }); return; }
     let active = true, streamed = false;
     const controller = new AbortController();
     setState({ data: null, error: null, connected: false });

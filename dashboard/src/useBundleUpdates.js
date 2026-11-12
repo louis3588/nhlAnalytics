@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { fetchJSON } from './data.js';
+import { STATIC, publicationChanged } from './transport.js';
 
 // Poll our saved API, never NHL. Hidden tabs pause work; returning checks now.
-export function useBundleUpdates(hash, onChange) {
+export function useBundleUpdates(hash, onChange, publicOwner = false) {
   useEffect(() => {
     if (!hash) return;
+    if (STATIC && !publicOwner) return;
     const controller = new AbortController();
     let busy = false;
     async function check() {
       if (document.hidden || busy) return;
       busy = true;
       try {
+        if (STATIC) { if (await publicationChanged()) window.location.reload(); return; }
         const metadata = await fetchJSON('/api/metadata', controller.signal);
         if (!controller.signal.aborted && metadata.bundle_sha256 !== hash) onChange();
       } catch { /* Existing data remains usable; explicit refresh handles outages. */ }

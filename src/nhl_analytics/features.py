@@ -5,6 +5,8 @@ import csv
 import hashlib
 import json
 import logging
+import os
+import time
 from collections import defaultdict
 from datetime import date,datetime,timedelta,timezone
 from pathlib import Path
@@ -300,11 +302,23 @@ def json_default(value):
     raise TypeError(type(value).__name__)
 
 
+def atomic_replace(temporary,path):
+    # Windows readers/virus scanners can briefly deny replacement. Never delete
+    # the old pointer or fall back to an in-place write of partially visible JSON.
+    for attempt in range(9):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError as error:
+            if os.name!='nt' or getattr(error,'winerror',None) not in (5,32,33) or attempt==8:raise
+            time.sleep(min(0.025*2**attempt,0.25))
+
+
 def write_document(path,value):
     path.parent.mkdir(parents=True,exist_ok=True)
     temporary=path.with_suffix('.tmp')
     temporary.write_text(json.dumps(value,indent=2,ensure_ascii=False,default=json_default)+'\n',encoding='utf-8')
-    temporary.replace(path)
+    atomic_replace(temporary,path)
 
 
 def export_features(connection,cutoff,seasons,phase,output,publish=True):

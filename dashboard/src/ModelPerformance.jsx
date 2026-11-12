@@ -1,0 +1,40 @@
+import { useState } from 'react';
+import { STATIC } from './transport.js';
+import { gameTime, seasonLabel } from './data.js';
+import { useProspective, modelName, percent, score, label } from './ModelComparison.jsx';
+
+function CumulativeChart({ rows }) {
+  if (!rows.length) return <div className="empty-state"><h3>The forward test starts here</h3><p>No validated prospective results yet. The graph will grow as sealed games finish.</p></div>;
+  const x = n => 65 + (n - 1) / Math.max(1, rows.length - 1) * 650, y = v => 240 - v * 200;
+  return <figure className="model-chart"><svg viewBox="0 0 760 285" role="img" aria-label="Cumulative Brier score by validated game count. Lower is better.">
+    {[0, .25, .5, .75, 1].map(v => <g key={v}><line x1="65" x2="715" y1={y(v)} y2={y(v)} stroke="#dfe5df" /><text x="52" y={y(v) + 4} textAnchor="end">{v.toFixed(2)}</text></g>)}
+    <text x="65" y="20">Cumulative Brier score · lower is better</text><text x="390" y="280" textAnchor="middle">Validated games (chronological puck drop)</text>
+    {[...new Set([1, Math.ceil(rows.length / 2), rows.length])].map(n => <text key={n} x={x(n)} y="260" textAnchor="middle">{n}</text>)}
+    {['frozen_elo', 'logistic_team_context'].map((key, i) => <g key={key}><polyline fill="none" stroke={i ? '#a84b13' : '#28634b'} strokeWidth="3" points={rows.map(r => `${x(r.n)},${y(r[key])}`).join(' ')} />{rows.length === 1 && <circle cx={x(1)} cy={y(rows[0][key])} r="4" fill={i ? '#a84b13' : '#28634b'} />}</g>)}
+  </svg><figcaption><span className="elo-key">● Frozen Elo</span><span className="logistic-key">● Team-context logistic</span> · Identical validated games for both models.</figcaption></figure>;
+}
+
+export default function ModelPerformance() {
+  const { data, error } = useProspective('/api/prospective/performance');
+  const [timing, setTiming] = useState('all');
+  const report = data?.report, coverage = report?.coverage;
+  const rows = report?.metrics.filter(r => r.timing === timing && r.dimension === 'all') || [];
+  const paired = report?.paired_differences.find(r => r.timing === timing);
+  return <div className="player-workspace"><header className="player-nav"><a className="brand" href="/">rinkside<span className="brand-dot">.</span></a><nav aria-label="Model navigation"><a href="/">Forecasts</a><a href="/#live-games">GameCenter</a><a href="/teams">Teams</a></nav></header><main className="player-content model-performance">
+    <span className="eyebrow">THE FORWARD TEST</span><h1>Earn the evidence.</h1><p>Frozen Elo and team-context logistic. Predictions sealed before play, evaluated together after validated finals.</p>
+    {STATIC && <p className="public-notice">Public beta · saved evaluation snapshot. The prediction tracker and final-result validation run locally. This site updates when a new publication is deployed.</p>}
+    {(error || data?.health?.error) && <p role="status" className="live-warning">{error || data.health.error} Results may be delayed.</p>}
+    {!report ? <section className="panel"><p>{error ? 'Prospective results are unavailable. Try again when the tracking service is running.' : 'Loading model performance…'}</p></section> : <>
+      <section className="panel"><div className="section-heading"><div><span className="eyebrow">GENUINELY PROSPECTIVE</span><h2>From this point forward</h2><p>Tracking since {gameTime(report.registered_at)} · {report.campaign}</p></div><label>Forecast timing<select aria-label="Forecast timing" value={timing} onChange={e => setTiming(e.target.value)}><option value="all">All sealed forecasts</option><option value="standard">Standard cutoff window</option><option value="early">Early bootstrap only</option></select></label></div>
+        <div className="model-coverage">{[['Sealed pairs', coverage.sealed_pairs], ['Validated pairs', coverage.validated_paired], ['Missing forecasts', coverage.missing], ['Awaiting cutoff / data', coverage.pending]].map(([name, n]) => <div key={name}><strong>{n}</strong><span>{name}</span></div>)}</div>
+        <p className="game-note">{coverage.due_sealed} of {coverage.due_games} games whose cutoffs have passed have a sealed pair. Standard forecasts: {coverage.standard_pairs}; early bootstrap: {coverage.early_pairs}.</p>
+        <div className="table-scroll"><table><caption>Matched prospective scores · {label(timing)} timing</caption><thead><tr><th>Model</th><th>Games</th><th>Brier ↓</th><th>Log loss ↓</th><th>Accuracy ↑</th></tr></thead><tbody>{rows.map(row => <tr key={row.model}><td>{modelName(row.model)}</td><td>{row.n}</td><td>{score(row.brier)}</td><td>{score(row.log_loss)}</td><td>{percent(row.accuracy)}</td></tr>)}</tbody></table></div>
+        <p className="game-note">Paired Brier difference (logistic − Elo): {score(paired?.brier_delta)}. {paired?.available ? `Exploratory 95% week-block interval: ${score(paired.lower)} to ${score(paired.upper)}.` : 'Uncertainty interval awaits at least 100 games across ten calendar weeks.'} A small sample does not establish a better model.</p>
+      </section>
+      <section className="panel"><h2>How the evidence builds</h2><CumulativeChart rows={report.cumulative[timing]} /></section>
+      <section className="panel"><h2>Calibration</h2><p className="game-note">Predicted home-win probability versus observed home-win frequency. Empty bins remain blank.</p><div className="table-scroll"><table><caption>Reliability table · {label(timing)} timing · identical game cohort</caption><thead><tr><th>Home-win range</th><th>Model</th><th>Games</th><th>Mean predicted</th><th>Observed wins</th></tr></thead><tbody>{report.calibration.filter(r => r.timing === timing).map(r => <tr key={`${r.model}-${r.bin_lower}`}><td>{Math.round(r.bin_lower * 100)}–{Math.round(r.bin_upper * 100)}%{r.bin_upper === 1 ? ' inclusive' : ' (upper exclusive)'}</td><td>{modelName(r.model)}</td><td>{r.n}</td><td>{percent(r.mean_probability)}</td><td>{percent(r.observed_home_win_rate)}</td></tr>)}</tbody></table></div></section>
+      <section className="panel"><h2>Coverage and validation</h2><p>Live scores are provisional. A result must agree across the NHL box score and play-by-play and remain stable across checks at least ten minutes apart. Corrections create a new result revision; forecasts stay frozen.</p>{Object.keys(coverage.exclusions).length ? <ul>{Object.entries(coverage.exclusions).map(([reason, n]) => <li key={reason}>{label(reason)}: {n}</li>)}</ul> : <p className="game-note">No missing or unscored sealed games yet.</p>}<p className="game-note">An offline service cannot recreate a missed pregame forecast. Changed schedules create separate fixture revisions.</p></section>
+      <section className="panel historical-reference"><span className="eyebrow">SEPARATE HISTORICAL REFERENCE</span><h2>Reconstructed benchmarks</h2><p>Latest corrected historical data · {gameTime(report.historical.as_of)}. These results do not count toward the forward test.</p><div className="table-scroll"><table><caption>Frozen historical benchmarks and reconstructed monitoring</caption><thead><tr><th>Season</th><th>Role</th><th>Model</th><th>Games</th><th>Brier</th><th>Log loss</th></tr></thead><tbody>{report.historical.rows.map(row => <tr key={`${row.season_id}-${row.model}`}><td>{seasonLabel(row.season_id)}</td><td>{label(row.role)} · reconstructed</td><td>{modelName(row.model)}</td><td>{row.n}</td><td>{score(row.brier)}</td><td>{score(row.log_loss)}</td></tr>)}</tbody></table></div></section>
+    </>}
+  </main></div>;
+}

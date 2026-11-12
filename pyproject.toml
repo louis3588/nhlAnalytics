@@ -11,6 +11,7 @@ dependencies = ["requests>=2.32,<3", "psycopg[binary]>=3.2,<4", "python-dotenv>=
 
 [project.optional-dependencies]
 analysis = ["matplotlib>=3.9,<4"]
+models = ["scikit-learn>=1.6,<2"]
 api = ["fastapi>=0.162,<1", "uvicorn>=0.54,<1", "httpx2>=2.16,<3"]
 
 [project.scripts]
@@ -29,6 +30,10 @@ nhl-evaluate = "nhl_analytics.evaluation:main"
 nhl-api = "nhl_analytics.api:main"
 nhl-refresh = "nhl_analytics.refresh:main"
 nhl-live = "nhl_analytics.live:main"
+nhl-team-models = "nhl_analytics.team_models:main"
+nhl-prospective = "nhl_analytics.prospective:main"
+nhl-publish = "nhl_analytics.publication:main"
+nhl-auto-publish = "nhl_analytics.public_refresh:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

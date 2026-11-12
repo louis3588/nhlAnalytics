@@ -247,3 +247,34 @@ games** or a forecast card's **Open game center** link for scores, player stats,
 team comparisons and play-by-play pushed through Server-Sent Events. Changed
 snapshots and event corrections are saved separately in Timescale. See
 [live-game setup, endpoints, retention and tests](LIVE_GAMES.md).
+
+Compare a pregame logistic model with frozen Elo using the existing seasons:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --no-compile -e '.[models]'
+.\.venv\Scripts\python.exe -m nhl_analytics.team_models
+```
+
+See [team feature definitions, chronology and comparison results](TEAM_MODELS.md).
+The experiment keeps labels separate, uses training-only preprocessing, preserves
+the reserved benchmark and does not replace production forecasts.
+
+The unpinned API also runs the [prospective model tracker](PROSPECTIVE.md):
+both frozen models are sealed before each game's cutoff and scored only after
+validated finals. Open `/models` for the forward test, kept separate from the
+historical benchmarks. Keep the API, Docker and the computer running through
+the cutoff windows; missed predictions are recorded rather than backfilled.
+
+For the £0/month public beta, see [static publishing and Cloudflare setup](PRODUCTION.md).
+`python -m nhl_analytics.publication` exports reviewed public snapshots;
+`npm run build:public` inside `dashboard` builds the server-independent Pages site.
+Account sign-in and public deployment remain separate, explicit steps.
+
+Public beta: **https://nhl-rinkside-beta.pages.dev/**. Wrangler authentication and
+the initial deployment are complete. The website serves published snapshots;
+the local engine and prospective tracker remain responsible for new data.
+
+[Automatic publishing](AUTO_PUBLISH.md) queues daily refreshes, sealed pregame
+forecasts and validated finals, then updates Pages with batching, deduplication,
+retries and conservative free-tier caps. Keep the PC signed in, Docker available
+and the local collector running for fresh source data.

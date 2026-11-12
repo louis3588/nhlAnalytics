@@ -85,6 +85,28 @@ def fixture(root):
 
 @unittest.skipUnless(API_AVAILABLE,'Install the api extra for HTTP tests')
 class APITests(unittest.TestCase):
+    def test_optional_publisher_failure_does_not_stop_prediction_api(self):
+        with patch('nhl_analytics.public_refresh.PublicPublisher',side_effect=OSError('unavailable')):
+            app=create_app(self.run,self.cache,live_enabled=False,publishing_enabled=True)
+            with TestClient(app) as client:
+                health=client.get('/health').json()
+                self.assertEqual(health['status'],'ok')
+                self.assertEqual(health['public_publishing']['status'],'unavailable')
+                self.assertEqual(client.get('/api/predictions/players').status_code,200)
+    def test_prospective_routes_read_shared_cache_without_inference(self):
+        from types import SimpleNamespace
+        self.assertEqual(self.client.get('/api/prospective/performance').status_code,503)
+        item=dict(game_id=2026020001,season_id=20262027,home_team_id=1,away_team_id=2,status='sealed')
+        self.app.state.prospective=SimpleNamespace(cache=dict(items=[item],revisions=[dict(game_id=item['game_id'])],
+            performance=dict(data_mode='prospective_observed'),health=dict(status='running',error=None)))
+        self.assertEqual(self.client.get('/api/prospective/games?team_id=1').json()['total'],1)
+        self.assertEqual(self.client.get('/api/prospective/games?team_id=3').json()['total'],0)
+        self.assertEqual(self.client.get('/api/prospective/games?season=20252026').json()['total'],0)
+        self.assertEqual(self.client.get('/api/prospective/games/2026020001').json()['item'],item)
+        self.assertEqual(self.client.get('/api/prospective/games/2026029999').status_code,404)
+        self.assertEqual(self.client.get('/api/prospective/performance').json()['report']['data_mode'],'prospective_observed')
+        self.assertEqual(self.client.get('/api/prospective/games?limit=0').status_code,422)
+
     def test_player_history_is_chronological_paginated_and_personal(self):
         result=self.client.get('/api/predictions/players/101/history',params={'season':20262027,'limit':1}).json()
         self.assertEqual(result['total'],2)

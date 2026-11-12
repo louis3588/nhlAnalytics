@@ -13,7 +13,7 @@ import psycopg
 import requests
 
 from nhl_analytics.database import connect, migrate
-from nhl_analytics.live import BackoffError, LiveCollector, LiveHub, cadence, normalize, valid_game_id
+from nhl_analytics.live import BackoffError, LiveCollector, LiveHub, cadence, normalize, valid_game_id, poll_priority
 from nhl_analytics.live_store import LiveRepository
 from test_api import API_AVAILABLE, fixture as api_fixture
 
@@ -98,6 +98,28 @@ class LiveValidationTests(unittest.TestCase):
         collector.tick(discover=False)
         self.assertEqual(collector.get.call_count,2)
         self.assertEqual(repository.save.call_count,1)
+
+    def test_cutoff_confirmation_precedes_live_details(self):
+        now=datetime(2026,11,12,0,55,tzinfo=timezone.utc)
+        due=poll_priority(dict(gameState='FUT',startTimeUTC='2026-11-12T02:00:00Z'),False,0,now)
+        live=poll_priority(dict(gameState='LIVE'),False,0,now)
+        self.assertLess(due,live)
+        past=poll_priority(dict(gameState='FUT',startTimeUTC='2026-11-12T01:30:00Z'),False,0,now)
+        self.assertGreater(past,live)
+
+    def test_one_timeout_does_not_block_other_games(self):
+        import requests
+        collector=LiveCollector(session=Mock());self.addCleanup(collector.close)
+        box,pbp=fixture();gid=box['id'];slow=gid-1
+        repository=Mock();repository.requested.return_value=[slow,gid]
+        repository.save.return_value={'game':normalize(box,pbp)}
+        collector.repository=repository;collector.owner=True;collector.ensure_database=Mock()
+        collector.due[slow]=-1;collector.due[gid]=0
+        collector.get=Mock(side_effect=[requests.ReadTimeout(),box,pbp])
+        result=collector.tick(discover=False)
+        self.assertEqual(repository.save.call_count,1)
+        self.assertEqual(collector.network_due,0)
+        self.assertEqual(result['health']['status'],'degraded')
 
 
 class LiveStreamTests(unittest.IsolatedAsyncioTestCase):

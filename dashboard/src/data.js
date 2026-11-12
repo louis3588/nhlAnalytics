@@ -1,3 +1,4 @@
+import { requestJSON, STATIC } from './transport.js';
 export const TARGETS = {
   points: { label: 'Points', unit: 'pts', singular: 'points' },
   goals: { label: 'Goals', unit: 'goals', singular: 'goals' },
@@ -12,20 +13,8 @@ export function queryString(params) {
 }
 
 export async function fetchJSON(url, signal) {
-  let response;
-  try { response = await fetch(url, { signal }); }
-  catch (error) {
-    if (error.name === 'AbortError') throw error;
-    throw new Error('The forecast API could not be reached. Start the Python API on port 8000, then retry.');
-  }
-  if (!response.ok) {
-    let body;
-    try { body = await response.json(); } catch { /* A proxy may return a plain-text 502. */ }
-    const detail = typeof body?.detail === 'string' ? body.detail : null;
-    if (response.status >= 500) throw new Error('The forecast API is unavailable. Check that it is running on port 8000, then retry.');
-    throw new Error(detail || `The API returned HTTP ${response.status}. Try another filter or refresh the snapshot.`);
-  }
-  return response.json();
+  try { return await requestJSON(url, signal); }
+  catch (error) { if (error.name === 'AbortError' || error.message) throw error; throw new Error(STATIC ? 'Saved data is unavailable. Please retry later.' : 'The forecast service is unavailable. Please retry later.'); }
 }
 
 export function checkBundle(result, expected) {

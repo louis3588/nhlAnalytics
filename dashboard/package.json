@@ -16,7 +16,11 @@
     "test:teams": "node tests/team-pages.mjs",
     "test:players": "node tests/player-pages.mjs",
     "test:refresh": "node tests/daily-refresh.mjs",
-    "test:live": "node tests/live-games.mjs"
+    "test:live": "node tests/live-games.mjs",
+    "test:prospective": "node tests/prospective.mjs",
+    "build:public": "node scripts/build-public.mjs",
+    "preview:public": "node scripts/serve-public.mjs",
+    "test:public": "node tests/publication.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.0",
@@ -26,7 +30,10 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.3.0",
     "playwright-core": "^1.65.0",
-    "vite": "^8.3.7"
+    "vite": "^8.3.7",
+    "wrangler": "4.160.1"
   },
-  "engines": { "node": ">=22.12.0" }
+  "engines": {
+    "node": ">=22.12.0"
+  }
 }
