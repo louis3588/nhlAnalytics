@@ -1,4 +1,4 @@
-.player-workspace { --team-primary: #215b48; --team-soft: #e8efdf; --team-ink: #215b48; min-height: 100vh; border-top: 5px solid var(--team-primary); }
+.player-workspace { --team-primary: #1f395d; --team-soft: #dee6f0; --team-ink: #1f395d; min-height: 100vh; border-top: 5px solid var(--team-primary); }
 .player-nav { max-width: 1250px; margin: auto; padding: 23px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); }
 .player-nav nav { display: flex; flex-wrap: wrap; gap: 3px; }
 .player-content { max-width: 1250px; margin: auto; padding: 25px 30px 65px; }
@@ -30,13 +30,13 @@
 .history-scroll { overflow-x: auto; }
 .history-scroll:focus-visible { outline: 3px solid var(--team-primary); outline-offset: 3px; }
 .history-chart .key-projected { background: var(--team-primary); }
-.history-chart .key-observed { background: #738774; }
+.history-chart .key-observed { background: #6e7a8c; }
 .history-chart .key-interval { border-color: var(--team-primary); }
-.history-chart svg text { font: 12px 'Inter Variable', sans-serif; fill: #526359; }
-.history-chart .history-axis-title, .history-chart .history-value { font-weight: 650; fill: #24352f; }
-.history-grid { stroke: #e1e6df; stroke-dasharray: 4 4; }
+.history-chart svg text { font: 12px 'Inter Variable', sans-serif; fill: #4e5867; }
+.history-chart .history-axis-title, .history-chart .history-value { font-weight: 650; fill: #222b37; }
+.history-grid { stroke: #dee2e7; stroke-dasharray: 4 4; }
 .history-band { fill: var(--team-primary); opacity: .12; }
-.history-recorded { fill: none; stroke: #738774; stroke-width: 2; stroke-dasharray: 6 4; }
+.history-recorded { fill: none; stroke: #6e7a8c; stroke-width: 2; stroke-dasharray: 6 4; }
 .history-projected { fill: none; stroke: var(--team-primary); stroke-width: 3; }
 .history-whisker { stroke: var(--team-primary); stroke-width: 2; opacity: .45; }
 .history-dot { fill: var(--team-primary); stroke: white; stroke-width: 2; }

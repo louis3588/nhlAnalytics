@@ -332,11 +332,12 @@ class PublicPublisher:
                         job.update(attempt_id=attempt,phase='deploying',lease_until=self.clock()+390)
                         self.box.set('active_job',job)
                         self.status('uploading',release_id=job['release_id'])
-                        # Run outside the source checkout so an unrelated future
-                        # dashboard/functions directory can never be uploaded.
+                        # Run in the isolated job parent, outside both the checkout
+                        # and site. Wrangler writes .wrangler/pages.json in cwd;
+                        # that cache must not mutate the immutable site fingerprint.
                         self.command(self.node(str(self.dashboard/'node_modules/wrangler/bin/wrangler.js'),'pages','deploy',job['site'],
                             '--project-name',config['project'],'--branch','main','--commit-dirty=true','--commit-message','Automated validated NHL snapshot'),
-                            config,job,timeout=300,cwd=job['site'])
+                            config,job,timeout=300,cwd=str(Path(job['site']).parent))
                         job['phase']='verifying';self.box.set('active_job',job)
                         self.status('verifying',release_id=job['release_id'])
                         if not self.verify(config,job):raise RuntimeError('Hosted publication verification failed')

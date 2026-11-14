@@ -26,6 +26,7 @@ class FakePublisher(PublicPublisher):
     def verify(self,config,job):return self.verifications.pop(0) if self.verifications else True
     def command(self,args,config,job=None,**kwargs):
         self.uploads+=1
+        self.last_cwd=kwargs.get('cwd')
         if self.action:self.action()
         self.last_command=args
         return SimpleNamespace(returncode=0)
@@ -59,6 +60,21 @@ class PublishingTests(unittest.TestCase):
         self.event();self.publisher.verifications=[True]
         self.assertEqual(self.publisher.tick()['status'],'unchanged')
         self.assertEqual(self.publisher.uploads,0);self.assertEqual(self.publisher.box.counts(self.now)['day'],0)
+
+    def test_wrangler_cache_does_not_mutate_site_or_break_retry(self):
+        self.event();self.publisher.verifications=[False,False]
+        def cache():
+            folder=Path(self.publisher.last_cwd)/'.wrangler'
+            folder.mkdir();(folder/'pages.json').write_text('{}')
+        self.publisher.action=cache
+        self.assertEqual(self.publisher.tick()['status'],'retry_wait')
+        job=self.publisher.box.get('active_job')
+        self.assertEqual(Path(self.publisher.last_cwd),Path(job['site']).parent)
+        self.assertFalse((Path(job['site'])/'.wrangler').exists())
+        self.assertEqual(artifact_fingerprint(Path(job['site'])),job['fingerprint'])
+        self.now+=400;self.publisher.verifications=[True]
+        self.assertEqual(self.publisher.tick()['status'],'published')
+        self.assertEqual(self.publisher.uploads,1)
 
     def test_coalesces_events_but_max_wait_prevents_starvation(self):
         self.event(age=0)

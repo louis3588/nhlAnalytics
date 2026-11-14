@@ -227,7 +227,7 @@ rebuilding JavaScript. The large model/shot datasets are never sent to the brows
 As the history grows, graph axis labels stay bounded and a saved-date selector
 provides access to older snapshots; the exact data table retains every point.
 
-See [daily automation and the proposed live-game scope](../DAILY_REFRESH.md)
+See [daily automation and the proposed live-game scope](../docs/DAILY_REFRESH.md)
 for scheduled-task setup, failure recovery and the free GameCenter polling/SSE
 design. Daily forecasts are separate from the planned live score service.
 
@@ -244,4 +244,4 @@ replacement states over EventSource. Reconnects retain cached scores, missing
 pregame stats stay unavailable, and saved Elo remains explicitly pregame.
 Device-local game times still apply. `npm.cmd run test:live` covers real data,
 reloads/mobile layout and controlled SSE update/correction/recovery paths.
-See [the live-game guide](../LIVE_GAMES.md) for endpoints and retention.
+See [the live-game guide](../docs/LIVE_GAMES.md) for endpoints and retention.

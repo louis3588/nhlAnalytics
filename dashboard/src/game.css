@@ -2,11 +2,11 @@
 .game-page-heading h1 { font-size: clamp(25px, 3vw, 35px); letter-spacing: -1.3px; margin-top: 8px; }
 .live-connection { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: #806128; white-space: nowrap; }
 .live-connection::before { content: ''; width: 7px; height: 7px; background: currentColor; border-radius: 50%; }
-.live-connection.healthy { color: #256048; }
+.live-connection.healthy { color: #223d63; }
 .live-warning { padding: 14px 18px; background: #fff4dc; color: #6e5425; border: 1px solid #e9d5a8; border-radius: 10px; margin: 15px 0; font-size: 13px; }
 .game-scoreboard { overflow: hidden; border-top: 3px solid var(--team-primary); }
 .scoreboard-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 25px; padding: 20px; font-size: 12px; color: var(--muted); }
-.live-state { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 5px; background: #edf0e8; color: #53624e; font-size: 11px; font-weight: 650; }
+.live-state { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 5px; background: #e7ebf1; color: #4a5666; font-size: 11px; font-weight: 650; }
 .live-state.is-live { background: #fce6e4; color: #ab2929; }
 .live-state.is-live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; }
 .scoreboard-main { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding: 20px 35px 35px; gap: 20px; }
@@ -18,10 +18,10 @@
 .scoreboard-center { text-align: center; }
 .game-score { display: flex; align-items: center; justify-content: center; gap: 22px; }
 .game-score strong { font-size: clamp(45px, 6vw, 78px); line-height: 1.2; letter-spacing: -3px; }
-.game-score > span { color: #adb5a9; font-size: 25px; }
+.game-score > span { color: #a6adb8; font-size: 25px; }
 .scoreboard-center p { font-size: 13px; margin-top: 7px; }
 .scoreboard-center small { display: block; color: var(--muted); font-size: 10px; margin-top: 5px; }
-.scoreboard-footer { padding: 15px 22px; background: #f8faf5; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 11px; color: var(--muted); }
+.scoreboard-footer { padding: 15px 22px; background: #f5f7fa; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 11px; color: var(--muted); }
 .game-page-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin: 24px 0; }
 .game-comparison, .game-pregame, .game-player-panel, .game-timeline { padding: 28px; min-width: 0; }
 .game-comparison h2, .game-pregame h2 { margin-top: 7px; }
@@ -45,10 +45,10 @@
 .game-stats-table .table-player { min-width: 205px; }
 .live-event-list { list-style: none; padding: 0; margin: 20px 0; }
 .live-event-list li { display: grid; grid-template-columns: 65px 12px 1fr; gap: 18px; position: relative; padding: 15px 0; }
-.live-event-list li::before { content: ''; position: absolute; left: 88px; top: 0; bottom: 0; border-left: 1px solid #e0e6dd; }
+.live-event-list li::before { content: ''; position: absolute; left: 88px; top: 0; bottom: 0; border-left: 1px solid #dce1e7; }
 .event-clock { display: grid; align-content: start; gap: 4px; font-size: 13px; }
 .event-clock span { font-size: 11px; color: var(--muted); }
-.event-marker { width: 9px; height: 9px; border: 2px solid #9aa994; border-radius: 50%; background: #fff; margin-top: 5px; z-index: 1; }
+.event-marker { width: 9px; height: 9px; border: 2px solid #909cad; border-radius: 50%; background: #fff; margin-top: 5px; z-index: 1; }
 .goal-event .event-marker { background: var(--team-primary); border-color: var(--team-primary); }
 .live-event-list li > div:last-child > strong { text-transform: capitalize; font-size: 14px; }
 .live-event-list p, .live-event-list small { color: var(--muted); font-size: 12px; margin-top: 5px; }

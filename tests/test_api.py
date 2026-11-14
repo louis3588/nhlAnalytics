@@ -164,7 +164,9 @@ class APITests(unittest.TestCase):
         for item in response.json()['items']:
             self.assertFalse(item['available']);self.assertIsNone(item['lower']);self.assertIsNone(item['upper'])
 
-    def test_improved_elo_fixtures_and_filters(self):
+    @patch('nhl_analytics.api.datetime',wraps=datetime)
+    def test_improved_elo_fixtures_and_filters(self,clock):
+        clock.now.return_value=datetime(2026,11,11,12,tzinfo=timezone.utc)
         response=self.client.get('/api/predictions/games')
         self.assertEqual(response.status_code,200,response.text)
         self.assertEqual(response.json()['total'],1)
@@ -178,6 +180,12 @@ class APITests(unittest.TestCase):
         self.assertEqual(self.client.get('/api/predictions/games',params={'status':'final'}).json()['items'][0]['game_id'],2026020002)
         self.assertEqual(self.client.get('/api/predictions/games/2021020001').status_code,200)
         self.assertEqual(self.client.get('/api/predictions/games',params={'date_to':'2026-11-11'}).json()['total'],0)
+
+    @patch('nhl_analytics.api.datetime',wraps=datetime)
+    def test_elapsed_scheduled_game_is_not_upcoming(self,clock):
+        clock.now.return_value=datetime(2026,11,13,12,tzinfo=timezone.utc)
+        self.assertEqual(self.client.get('/api/predictions/games').json()['total'],0)
+        self.assertEqual(self.client.get('/api/predictions/games',params={'status':'all'}).json()['total'],2)
 
     def test_invalid_filters_and_unknown_entities(self):
         for params in ({'limit':201},{'offset':-1},{'model':'made-up'},{'team_id':"1 OR 1=1"},

@@ -1,3 +1,4 @@
+import { SiteFooter } from './SiteIdentity.jsx';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/inter';
@@ -13,8 +14,9 @@ import { pageRoute } from './teamBranding.js';
 import './styles.css';
 import './player.css';
 import './game.css';
+import './polish.css';
 
 const route = pageRoute(window.location.pathname);
 const Game = STATIC ? StaticGamePage : GamePage;
 function PublicationUpdates() { useBundleUpdates(STATIC ? 'public' : null, () => {}, true); return null; }
-createRoot(document.getElementById('root')).render(<React.StrictMode><PublicationUpdates />{route.kind === 'models' ? <ModelPerformance /> : route.kind === 'player' ? <PlayerPage playerId={route.playerId} /> : route.kind === 'game' ? <Game gameId={route.gameId} /> : <App />}</React.StrictMode>);
+createRoot(document.getElementById('root')).render(<React.StrictMode><a className="skip-link" href="#main">Skip to page content</a><PublicationUpdates />{route.kind === 'models' ? <ModelPerformance /> : route.kind === 'player' ? <PlayerPage playerId={route.playerId} /> : route.kind === 'game' ? <Game gameId={route.gameId} /> : <App />}<SiteFooter /></React.StrictMode>);

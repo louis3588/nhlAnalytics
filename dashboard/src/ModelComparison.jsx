@@ -1,3 +1,4 @@
+import { Help } from './SiteIdentity.jsx';
 import { useEffect, useState } from 'react';
 import { fetchJSON, gameTime, queryString, teamFor } from './data.js';
 import { TeamLogo } from './TeamIdentity.jsx';
@@ -37,13 +38,13 @@ export function ForecastPair({ item, catalog }) {
   const home = teamFor(catalog, item.home_team_id), away = teamFor(catalog, item.away_team_id), colors = matchupColors(away, home);
   return <div className="forecast-pair"><p className="forecast-status"><strong>{label(item.status)}</strong>{item.status === 'sealed' && <span>{item.timing === 'early' ? 'Early bootstrap' : 'Standard cutoff window'} · prospective</span>}</p>
     {item.models.map(model => <div className="model-forecast" key={model.model}>
-      <div className="model-forecast-title"><strong>{modelName(model.model)}</strong><code title={model.version}>v {model.version.slice(0, 10)}</code></div>
+      <div className="model-forecast-title"><strong>{modelName(model.model)}<Help label={modelName(model.model)}>{model.model === 'frozen_elo' ? 'Elo uses earlier results and a frozen home advantage.' : 'Logistic regression combines earlier team form, shots, save percentage and rest.'} Both forecasts stay fixed after sealing.</Help></strong><code title={model.version}>v {model.version.slice(0, 10)}</code></div>
       <div className="pregame-values"><span>{away.abbreviation}<strong>{percent(model.away_win_probability)}</strong></span><span>{home.abbreviation}<strong>{percent(model.home_win_probability)}</strong></span></div>
       <div className="probability-bar team-probabilities" role="img" aria-label={`${modelName(model.model)}: ${away.name} ${percent(model.away_win_probability)}, ${home.name} ${percent(model.home_win_probability)}`}><span style={{ width: percent(model.away_win_probability), background: colors.away }} /><span style={{ width: percent(model.home_win_probability), background: colors.home }} /></div>
       <small>Favourite: {teamFor(catalog, model.favourite_team_id).abbreviation}{model.favourite_won !== null && <> · {model.favourite_won ? 'Won' : 'Lost'} · Brier {score(model.brier)}</>}</small>
     </div>)}
     {!item.models.length && <p className="game-note">{item.reason ? label(item.reason) : 'Both models will be saved in the five minutes before the one-hour cutoff. Missed cutoffs stay missing.'}</p>}
-    <dl className="forecast-dates"><div><dt>Cutoff</dt><dd>{gameTime(item.cutoff_at)}</dd></div>{item.generated_at && <div><dt>{item.status === 'sealed' ? 'Sealed' : 'Recorded missing'}</dt><dd>{gameTime(item.generated_at)}</dd></div>}</dl>
+    <dl className="forecast-dates"><div><dt>Cutoff<Help label="prediction cutoff">One hour before scheduled puck drop. Forecasts missed before this deadline remain unavailable.</Help></dt><dd>{gameTime(item.cutoff_at)}</dd></div>{item.generated_at && <div><dt>{item.status === 'sealed' ? 'Sealed' : 'Recorded missing'}</dt><dd>{gameTime(item.generated_at)}</dd></div>}</dl>
     {item.outcome && item.outcome_status === 'validated' && <p>Validated final: {away.abbreviation} {item.outcome.away_score} – {home.abbreviation} {item.outcome.home_score}</p>}
     <p className="game-note">Outcome: {label(item.outcome_status)}. Probabilities include overtime and shootouts and stay frozen during play.</p>
   </div>;

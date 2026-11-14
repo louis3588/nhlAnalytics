@@ -3,7 +3,7 @@ import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
-const root = path.resolve('dist-public');
+const root = path.resolve(process.env.NHL_PUBLIC_BUILD_OUTPUT || 'dist-public');
 const portFlag = process.argv.indexOf('--port');
 const port = portFlag < 0 ? 4174 : Number(process.argv[portFlag + 1]);
 const rules = [];

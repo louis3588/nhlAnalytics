@@ -1,3 +1,4 @@
+import { Brand, Help } from './SiteIdentity.jsx';
 import { useEffect, useState } from 'react';
 import { useResource } from './useResource.js';
 import { useBundleUpdates } from './useBundleUpdates.js';
@@ -65,7 +66,7 @@ export default function PlayerPage({ playerId }) {
   function change(setter, value) { setter(value); setDate(null); }
   return <div className="player-workspace" style={team ? themeStyle(team) : {}}>
     <a className="skip-link" href="#player-content">Skip to player forecast</a>
-    <header className="player-nav"><a className="brand" href={`/?season=${activeSeason}`}>rinkside<span className="brand-dot">.</span></a><nav aria-label="Player navigation"><a href={`/?season=${activeSeason}`}>All projections</a><a href={`/teams?season=${activeSeason}`}>Teams</a>{team && <a href={teamPageURL(team.id, activeSeason)}>{team.name}</a>}</nav></header>
+    <header className="player-nav"><Brand href={`/?season=${activeSeason}`} /><nav aria-label="Player navigation"><a href={`/?season=${activeSeason}`}>All projections</a><a href={`/teams?season=${activeSeason}`}>Teams</a>{team && <a href={teamPageURL(team.id, activeSeason)}>{team.name}</a>}</nav></header>
     <main id="player-content" className="player-content">
       {bootstrap.error && <ErrorNote message={bootstrap.error} onRetry={retry} />}
       {bootstrap.loading && <Loading />}

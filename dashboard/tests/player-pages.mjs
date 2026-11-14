@@ -11,7 +11,7 @@ page.on('pageerror', error => errors.push(error.message));
 async function ready() { await page.locator('.player-stat').first().waitFor(); await page.waitForFunction(() => !document.querySelector('[aria-busy="true"]')); await page.evaluate(() => document.fonts.ready); }
 try {
   await page.goto(`${base}/teams/12?season=20262027`);
-  await page.getByRole('link', { name: 'View Sebastian Aho player page', exact: true }).click();
+  await page.locator('.table-player').filter({ hasText: 'Sebastian Aho' }).click();
   await ready();
   assert.match(page.url(), /\/players\/8478427/);
   assert.equal(await page.locator('h1').textContent(), 'Sebastian Aho');

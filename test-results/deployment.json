@@ -1,0 +1,16 @@
+{
+  "url": "https://nhl-rinkside-beta.pages.dev",
+  "verified_at": "2026-11-12T17:48:26.290Z",
+  "release_id": "d7f90667cce3acd8431656904071488150227fd4a0240a55eb53e3443bdd26c6",
+  "source_as_of": "2026-11-12T17:06:04.449035+00:00",
+  "player_count": 671,
+  "checks": [
+    "HTTPS",
+    "CSP",
+    "cache headers",
+    "seven core JSON hashes",
+    "four SPA deep links",
+    "JS asset hash",
+    "API absent"
+  ]
+}

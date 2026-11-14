@@ -55,6 +55,42 @@ def paired_interval(rows):
     return answer
 
 
+def forward_details(rows,now):
+    """Additive descriptive reporting. Never changes forecast eligibility/probabilities."""
+    valid=[r for r in rows if r['valid_for_scoring']]
+    rolling=[];rolling_calibration=[];disagreement=[]
+    for timing in ('all','standard','early'):
+        ordered=sorted((r for r in valid if timing=='all' or r['timing']==timing),key=lambda r:(r['scheduled_start'],r['game_id']))
+        groups=[(0,ordered)]+[(window,ordered[-window:]) for window in (20,50,100)]
+        for window,group in groups:
+            n=len(group);different=sum((r['elo_home_probability']>=.5)!=(r['logistic_home_probability']>=.5) for r in group)
+            disagreement.append(dict(timing=timing,window_games=window,n=n,disagreements=different,
+                disagreement_rate=different/n if n else None,
+                mean_absolute_probability_gap=sum(abs(r['elo_home_probability']-r['logistic_home_probability']) for r in group)/n if n else None))
+            if not window:continue
+            interval=paired_interval(group)
+            for name,column in zip(NAMES,('elo_home_probability','logistic_home_probability')):
+                rolling.append(dict(timing=timing,window_games=window,model=name,
+                    first_game_date=group[0]['game_date'] if group else None,last_game_date=group[-1]['game_date'] if group else None,
+                    **probability_metrics((r[column],int(r['winner_team_id']==r['home_team_id'])) for r in group),
+                    paired_brier_delta=interval['brier_delta'],paired_interval_available=interval['available'],
+                    paired_lower=interval['lower'],paired_upper=interval['upper']))
+                for bucket in range(10):
+                    values=[r for r in group if min(9,int(r[column]*10))==bucket]
+                    rolling_calibration.append(dict(timing=timing,window_games=window,model=name,bin_lower=bucket/10,bin_upper=(bucket+1)/10,n=len(values),
+                        mean_probability=sum(r[column] for r in values)/len(values) if values else None,
+                        observed_home_win_rate=sum(r['winner_team_id']==r['home_team_id'] for r in values)/len(values) if values else None))
+    sealed=[r for r in rows if r['status']=='sealed']
+    lags=[(r['generated_at']-r['max_source_available_at']).total_seconds()/60 for r in sealed if r.get('generated_at') and r.get('max_source_available_at')]
+    lags.sort()
+    freshness=dict(latest_sealed_at=max((r['generated_at'] for r in sealed if r.get('generated_at')),default=None),
+        latest_validated_at=max((r['result_checked_at'] for r in valid if r.get('result_checked_at')),default=None),
+        source_lag_samples=len(lags),median_source_lag_at_seal_minutes=lags[len(lags)//2] if lags else None,
+        maximum_source_lag_at_seal_minutes=max(lags,default=None),
+        meaning='Source age at sealing is distinct from age of the games summarised; no freshness claim from a new report timestamp.')
+    return dict(rolling_metrics=rolling,rolling_calibration=rolling_calibration,model_disagreement=disagreement,freshness=freshness)
+
+
 def performance(rows,campaign,now):
     paired=[r for r in rows if r['valid_for_scoring']]
     summary=[];calibration=[];curves={};comparisons=[];daily=[]
@@ -95,6 +131,7 @@ def performance(rows,campaign,now):
             exclusions=dict(Counter(r['reason'] or r['outcome_status'] for r in rows if not r['valid_for_scoring'] and (r['status']=='missing' or r['status']=='sealed')))),
         metrics=summary,paired_differences=comparisons,calibration=calibration,cumulative=curves,daily_by_game_date=daily,
         historical=dict(data_mode='reconstructed_latest_corrected',as_of=campaign['bundle']['reference_as_of'],rows=campaign['bundle']['references']),
+        **forward_details(rows,now),
         limitations=['Early bootstrap and standard-window forecasts are separately labelled and filterable.',
             'No superiority claim from a small sample. Intervals require 100 games and ten calendar weeks.',
             'Result corrections can change derived scores; sealed probabilities never change.',
@@ -107,6 +144,10 @@ def save_report(report,items,root):
     write_document(folder/'cumulative.json',report)
     save_csv(folder/'metrics.csv',report['metrics'])
     save_csv(folder/'calibration.csv',report['calibration'])
+    if report.get('rolling_metrics'):save_csv(folder/'rolling_metrics.csv',jsonable(report['rolling_metrics']))
+    if report.get('rolling_calibration'):save_csv(folder/'rolling_calibration.csv',report['rolling_calibration'])
+    if report.get('model_disagreement'):save_csv(folder/'model_disagreement.csv',report['model_disagreement'])
+    write_document(folder/'freshness.json',jsonable(report.get('freshness',{})))
     if report['daily_by_game_date']:save_csv(folder/'daily.csv',jsonable(report['daily_by_game_date']))
     forecasts=[]
     for r in items:
@@ -129,6 +170,7 @@ def save_report(report,items,root):
         lines.append(f"| {row['timing']} | {row['model']} | {row['n']} | {fmt(row['brier'])} | {fmt(row['log_loss'])} | {fmt(row['accuracy'])} |")
     lines.extend(['','Only immutable prospective forecast pairs with a matching current schedule and validated final result are scored.',
         'Early forecasts are labelled separately. Small samples do not establish a superior model. Historical benchmarks are excluded.',''])
-    (folder/'report.md').write_text('\n'.join(lines),encoding='utf-8')
+    from nhl_analytics.research_registry import run_note
+    run_note(folder,'\n'.join(lines),'prospective')
     write_document(Path(root)/'latest.json',dict(folder=str(folder.resolve()),generated_at=report['generated_at']))
     return folder

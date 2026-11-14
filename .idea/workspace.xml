@@ -4,30 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="Game centre live games">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+    <list default="true" id="a3b63f2c-8da7-4c64-8b0d-d274d26e399f" name="Changes" comment="daily auto-publish model snapshot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AUTO_PUBLISH.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAILY_REFRESH.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LIVE_GAMES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRODUCTION.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEAM_MODELS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/public/rink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/public/rink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/scripts/serve-public.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/scripts/serve-public.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/GamePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/LiveGames.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/LiveGames.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/ModelComparison.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/ModelComparison.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/ModelPerformance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/ModelPerformance.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/PlayerPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/PlayerPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/PublicSnapshot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/PublicSnapshot.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/StaticGamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/StaticGamePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/game.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/teamBranding.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/teamBranding.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/useBundleUpdates.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/useBundleUpdates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/useLiveFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/useLiveFeed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/live.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/live.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/refresh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/refresh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/models.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/models.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/player.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/tests/live-games.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/live-games.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/tests/player-pages.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/player-pages.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/tests/publication.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tests/publication.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/louis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/prospective_reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/prospective_reports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nhl_analytics/public_refresh.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nhl_analytics/public_refresh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_live.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_live.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_public_refresh.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_public_refresh.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +54,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000550079628059" />
-      <entry key="MS500" value="1.1409439145387137" />
-      <entry key="S2" value="1.7504645729057389" />
-      <entry key="S5" value="2.642769608917985" />
-      <entry key="S10" value="5.124510282376023" />
-      <entry key="S30" value="18.811075117383165" />
-      <entry key="S60" value="36.87886052922979" />
-      <entry key="M2" value="59.64412267317179" />
-      <entry key="M5" value="97.66704112856738" />
-      <entry key="M10" value="138.84367236450205" />
-      <entry key="M15" value="167.91758696456813" />
-      <entry key="M30" value="219.22677729840396" />
-      <entry key="H1" value="264.5376821452052" />
-      <entry key="H2" value="323.71348766867163" />
-      <entry key="H4" value="442.2652706465807" />
-      <entry key="D1" value="1443.4337578086854" />
-      <entry key="W1" value="2376.7563532272384" />
+      <entry key="MS100" value="1.002982790276876" />
+      <entry key="MS500" value="1.4334333667146502" />
+      <entry key="S2" value="3.3938276673792878" />
+      <entry key="S5" value="6.2079441183269015" />
+      <entry key="S10" value="9.976541151403337" />
+      <entry key="S30" value="17.82826340336281" />
+      <entry key="S60" value="26.289532971596792" />
+      <entry key="M2" value="41.40417247676145" />
+      <entry key="M5" value="71.8306256179335" />
+      <entry key="M10" value="101.85457794993162" />
+      <entry key="M15" value="118.97072082945384" />
+      <entry key="M30" value="142.4757443028337" />
+      <entry key="H1" value="158.20610775003095" />
+      <entry key="H2" value="178.16012510142102" />
+      <entry key="H4" value="258.6306347165501" />
+      <entry key="D1" value="1344.4545887479803" />
+      <entry key="W1" value="2648.5760239324336" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -68,37 +78,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="2.514546135952146E-204" />
-      <entry key="S60" value="1.5857320504902901E-102" />
-      <entry key="M2" value="1.2592585320299738E-51" />
-      <entry key="M5" value="4.365620305976236E-21" />
-      <entry key="M10" value="6.607284091043975E-11" />
-      <entry key="M15" value="1.6343634959066165E-7" />
-      <entry key="M30" value="4.042726179085863E-4" />
-      <entry key="H1" value="0.02010653172251707" />
-      <entry key="H2" value="0.14179750252566972" />
-      <entry key="H4" value="0.3765600915201564" />
-      <entry key="D1" value="0.8497784534471395" />
-      <entry key="W1" value="0.9770140664030871" />
+      <entry key="S30" value="4.354366262155115E-268" />
+      <entry key="S60" value="2.0867118301660912E-134" />
+      <entry key="M2" value="1.4445455445108312E-67" />
+      <entry key="M5" value="1.836083786692836E-27" />
+      <entry key="M10" value="4.2849548267080365E-14" />
+      <entry key="M15" value="1.2245151571101901E-9" />
+      <entry key="M30" value="3.4993083935404697E-5" />
+      <entry key="H1" value="0.005918803073136706" />
+      <entry key="H2" value="0.07873125003443646" />
+      <entry key="H4" value="0.31998030814585243" />
+      <entry key="D1" value="1.3986329568211866" />
+      <entry key="W1" value="1.8975636645634004" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.7792162608929437" />
-      <entry key="MS500" value="1.0905150346599077" />
-      <entry key="S2" value="1.7357744614165016" />
-      <entry key="S5" value="2.6358217651216793" />
-      <entry key="S10" value="5.119549311835751" />
-      <entry key="S30" value="18.80659075999719" />
-      <entry key="S60" value="36.87465628553138" />
-      <entry key="M2" value="59.64061994788291" />
-      <entry key="M5" value="97.66409155237243" />
-      <entry key="M10" value="138.84103080416568" />
-      <entry key="M15" value="167.91525357442387" />
-      <entry key="M30" value="219.2255285261077" />
-      <entry key="H1" value="264.55675320775805" />
-      <entry key="H2" value="323.8546250500319" />
-      <entry key="H4" value="442.64136960013525" />
-      <entry key="D1" value="1444.2833116367972" />
-      <entry key="W1" value="2377.733316129475" />
+      <entry key="MS100" value="0.9423251591440449" />
+      <entry key="MS500" value="1.4156898777077411" />
+      <entry key="S2" value="3.383210948889962" />
+      <entry key="S5" value="6.200097346804569" />
+      <entry key="S10" value="9.970106513488982" />
+      <entry key="S30" value="17.82424221227145" />
+      <entry key="S60" value="26.286463221813417" />
+      <entry key="M2" value="41.401691802865415" />
+      <entry key="M5" value="71.82887839559277" />
+      <entry key="M10" value="101.85333455809298" />
+      <entry key="M15" value="118.96975144001445" />
+      <entry key="M30" value="142.4751967180881" />
+      <entry key="H1" value="158.21169350577227" />
+      <entry key="H2" value="178.23862425797" />
+      <entry key="H4" value="258.9503787037643" />
+      <entry key="D1" value="1345.8530004702975" />
+      <entry key="W1" value="2650.473528126565" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -136,6 +146,7 @@
       <recent name="D:\Code\Snakes\nhlAnalytics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Snakes\nhlAnalytics\docs" />
       <recent name="D:\Code\Snakes\nhlAnalytics\data" />
     </key>
   </component>
@@ -219,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794407869007</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="daily auto-publish model snapshot">
+      <option name="closed" value="true" />
+      <created>1794504082027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1794504082027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +262,7 @@
     <MESSAGE value="setup rinkside frontend" />
     <MESSAGE value="player page" />
     <MESSAGE value="Game centre live games" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game centre live games" />
+    <MESSAGE value="daily auto-publish model snapshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="daily auto-publish model snapshot" />
   </component>
 </project>

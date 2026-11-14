@@ -38,12 +38,22 @@ try {
   await page.locator('.player-table tbody tr, #players tbody tr').first().waitFor();
   await page.getByText('Public beta · saved snapshots', { exact: true }).waitFor();
   await page.locator('.sidebar-bottom').filter({ hasText: 'Snapshot ready' }).waitFor();
-  assert.equal(await page.getByRole('link', { name: 'Open saved forecast metadata' }).getAttribute('href'), '/publication/latest.json');
-  await page.getByRole('heading', { name: 'Saved team standings' }).waitFor();
+  assert.equal(await page.getByRole('link', { name: 'Open saved forecast metadata' }).count(), 0);
+  assert.equal(await page.locator('.breadcrumb').count(), 0);
+  await page.getByText('Created by Louis Polly', { exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'Around the league' }).waitFor();
+  const help = page.getByRole('button', { name: 'About GP', exact: true });
+  await help.focus();
+  assert.equal(await help.getAttribute('aria-expanded'), 'true');
+  await page.getByRole('tooltip').filter({ hasText: 'Games played' }).waitFor();
+  await help.press('Escape');
+  assert.equal(await help.getAttribute('aria-expanded'), 'false');
+  assert.ok(await page.locator('.standings-team .team-logo img').count() > 0);
   await page.screenshot({ path: 'test-results/public-overview-desktop.png' });
   const player = players.find(p => p.model === 'prior_shrinkage');
   await page.goto(`${base}/players/${player.player_id}`);
   await page.locator('.player-hero h1').waitFor();
+  await page.locator('.brand-mark').waitFor();
   await page.locator('.player-stat-band strong').first().waitFor();
   assert.equal(await page.locator('.player-stat').count(), 4);
   await page.reload(); await page.locator('.player-hero h1').waitFor();
@@ -55,9 +65,18 @@ try {
   assert.ok(teamRows > 0);
   await page.goto(`${base}/models`);
   await page.getByRole('heading', { name: 'Reconstructed benchmarks' }).waitFor();
+  const rollingHeading = page.getByRole('heading', { name: 'Recent prospective performance' });
+  if (await rollingHeading.count()) {
+    assert.ok(await page.getByRole('region', { name: 'Rolling matched model performance' }).getByRole('row').count() > 1);
+    await page.getByLabel('Calibration window').selectOption('50');
+    assert.equal(await page.getByLabel('Calibration window').inputValue(), '50');
+    await page.getByLabel('Calibration window').selectOption('0');
+  }
+  await page.locator('.brand-mark').waitFor();
   const game = fixtures.find(g => g.snapshot_status !== 'final') || fixtures[0];
   await page.goto(`${base}/games/${game.game_id}`);
   await page.getByRole('heading', { name: 'Saved game outlook' }).waitFor();
+  await page.locator('.brand-mark').waitFor();
   await page.getByText(/Live scores, player game totals and play-by-play are available only/).waitFor();
   await page.reload(); await page.getByRole('heading', { name: 'Saved game outlook' }).waitFor();
   await page.setViewportSize({ width: 390, height: 844 });

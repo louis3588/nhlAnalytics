@@ -1,10 +1,12 @@
 import { chromium } from 'playwright-core';
 import assert from 'node:assert/strict';
+import AxeBuilder from '@axe-core/playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 const base = process.env.DASHBOARD_URL || 'http://127.0.0.1:5173';
 await mkdir('test-results', { recursive: true });
 const browser = await chromium.launch({ executablePath: process.env.BROWSER_EXECUTABLE || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', headless: true, args: ['--disable-gpu', '--renderer-process-limit=1'] });
-const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, timezoneId: 'Europe/London', locale: 'en-GB', reducedMotion: 'reduce' });
+const context = await browser.newContext({ viewport: { width: 1440, height: 1100 }, timezoneId: 'Europe/London', locale: 'en-GB', reducedMotion: 'reduce' });
+const page = await context.newPage();
 const errors = [], checks = [];
 page.on('pageerror', error => errors.push(error.message));
 try {
@@ -12,6 +14,15 @@ try {
   await page.locator('.live-game-tile').first().waitFor();
   await page.locator('.live-game-tile').filter({ hasText: 'Final' }).first().click();
   await page.locator('.game-stats-table tbody tr').first().waitFor();
+  await page.locator('.brand-mark').waitFor();
+  const help = page.getByRole('button', { name: 'About Shots on goal', exact: true });
+  await help.focus();
+  await page.getByRole('tooltip').filter({ hasText: 'Shots that reach the goal' }).waitFor();
+  await help.press('Escape');
+  assert.equal(await help.getAttribute('aria-expanded'), 'false');
+  const accessibility = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
+  await writeFile('test-results/game-accessibility.json', JSON.stringify(accessibility.violations, null, 2));
+  assert.deepEqual(accessibility.violations, []);
   const id = Number(new URL(page.url()).pathname.split('/').at(-1));
   const expected = await (await page.request.get(`${base}/api/live/games/${id}`)).json();
   assert.deepEqual(await page.locator('.game-score strong').allTextContents(), [String(expected.game.away.score), String(expected.game.home.score)]);

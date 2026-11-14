@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { browserTimeZone, chartMaximum, gameTime, nameFor, number, TARGETS, teamFor } from './data.js';
 import Icon from './Icon.jsx';
 import { PlayerHeadshot, TeamLogo } from './TeamIdentity.jsx';
@@ -20,6 +21,7 @@ export function ErrorNote({ message, onRetry }) {
 }
 
 export function ProjectionChart({ rows, selectedId, onSelect, catalog, bands, target, nominal, intervalsLoading }) {
+  const [dismissedTip, setDismissedTip] = useState(null);
   const domain = chartMaximum(rows, bands, target);
   const targetInfo = TARGETS[target];
   const percent = value => `${Math.max(0, Math.min(100, value / domain * 100))}%`;
@@ -33,8 +35,8 @@ export function ProjectionChart({ rows, selectedId, onSelect, catalog, bands, ta
         const band = bands.get(row.player_id);
         const selected = selectedId === row.player_id;
         const range = band?.available ? `${band.lower}–${band.upper}` : intervalsLoading ? 'Loading range' : 'Range unavailable';
-        return <a key={row.player_id} className={`chart-row${selected ? ' selected' : ''}`} href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })}
-          aria-label={`View ${name}: ${number(row.projected[target])} projected ${targetInfo.singular}, ${range}`}>
+        return <a key={row.player_id} className={`chart-row${selected ? ' selected' : ''}${dismissedTip === row.player_id ? ' tip-dismissed' : ''}`} href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })}
+          aria-describedby={`chart-tip-${row.player_id}`} onFocus={() => setDismissedTip(null)} onMouseEnter={() => setDismissedTip(null)} onKeyDown={e => { if (e.key === 'Escape') setDismissedTip(row.player_id); }}>
           <span className="chart-player"><span title={name}>{name}</span><small>{team.abbreviation}</small></span>
           <span className="chart-track" aria-hidden="true">
             <span className="chart-grid"><i /><i /><i /><i /><i /></span>
@@ -44,7 +46,7 @@ export function ProjectionChart({ rows, selectedId, onSelect, catalog, bands, ta
             <span className="forecast-dot" style={{ left: percent(row.projected[target]) }} />
           </span>
           <span className="chart-value"><strong>{number(row.projected[target])}</strong><small>{band?.available ? range : '—'}</small></span>
-          <span className="chart-tooltip" role="tooltip"><strong>{name}</strong><span>{row.observed[target]} recorded · {number(row.projected[target])} projected {targetInfo.unit}</span><span>{nominal * 100}% interval: {range}</span></span>
+          <span id={`chart-tip-${row.player_id}`} className="chart-tooltip" role="tooltip"><strong>{name}</strong><span>{row.observed[target]} recorded · {number(row.projected[target])} projected {targetInfo.unit}</span><span>{nominal * 100}% interval: {range}</span></span>
         </a>;
       })}
     </div>
@@ -90,7 +92,7 @@ export function PlayerTable({ rows, catalog, bands, target, nominal, selectedId,
           const team = teamFor(catalog, row.last_played_team_id);
           const band = bands.get(row.player_id);
           return <tr key={row.player_id} data-selected={row.player_id === selectedId}>
-            <td><a className="table-player" href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })} aria-label={`View ${name} player page`}><Avatar name={name} player={row} team={team} catalog={catalog} small /><span><strong>{name}</strong><small>{team.abbreviation} <span>· NHL #{row.player_id}</span></small></span></a></td>
+            <td><a className="table-player" href={playerPageURL(row.player_id, row.season_id, { model: row.model, target, nominal })}><Avatar name={name} player={row} team={team} catalog={catalog} small /><span><strong>{name}</strong><small>{team.abbreviation} <span>· NHL #{row.player_id}</span></small></span></a></td>
             {['games', 'goals', 'assists', 'points'].map(t => <td key={t} className={t === target ? 'highlight-number' : ''}>{number(row.projected[t])}</td>)}
             <td><span className={band?.available ? 'table-range' : 'muted'}>{band?.available ? `${band.lower}–${band.upper}` : intervalsLoading ? 'Loading…' : intervalsError ? 'Load failed' : 'Unavailable'}</span></td>
             <td><button className="icon-button row-action" aria-label={`View ${name} details`} onClick={() => onSelect(row.player_id)}><Icon name="arrow" size={17} /></button></td>
@@ -113,7 +115,7 @@ export function GameGrid({ data, loading, error, catalog, page, onPage, status, 
           <div className="matchup"><div><a className="game-team-link" href={teamPageURL(away.id, game.season_id)} aria-label={`Explore ${away.name} projections`}><TeamLogo team={away} season={game.season_id} /><strong>{away.name}</strong></a><small>Away</small></div><span className="matchup-at">@</span><div><a className="game-team-link" href={teamPageURL(home.id, game.season_id)} aria-label={`Explore ${home.name} projections`}><TeamLogo team={home} season={game.season_id} /><strong>{home.name}</strong></a><small>Home</small></div></div>
           <div className="probability-labels"><span style={{ '--probability-color': colors.away }}><strong>{number(a)}%</strong> {away.abbreviation}</span><span style={{ '--probability-color': colors.home }}>{home.abbreviation} <strong>{number(h)}%</strong></span></div>
           <div className="probability-bar team-probabilities" role="img" aria-label={`${away.name} ${number(a)}% win probability, ${home.name} ${number(h)}% win probability`}><span style={{ width: `${a}%`, backgroundColor: colors.away }} /><span style={{ width: `${h}%`, backgroundColor: colors.home }} /></div>
-          <div className="game-card-footer"><a href={`/games/${game.game_id}`} aria-label={`Open ${away.abbreviation} at ${home.abbreviation} game`}>Open game center <Icon name="arrow" size={13} /></a><span>{Math.abs(a - h) < 0.1 ? 'Even matchup' : `${a > h ? away.abbreviation : home.abbreviation} favoured`}</span></div>
+          <div className="game-card-footer"><a href={`/games/${game.game_id}`} aria-label={`Open game center: ${away.abbreviation} at ${home.abbreviation}`}>Open game center <Icon name="arrow" size={13} /></a><span>{Math.abs(a - h) < 0.1 ? 'Even matchup' : `${a > h ? away.abbreviation : home.abbreviation} favoured`}</span></div>
         </article>;
       })}</div>
       <div className="pagination games-pagination"><span>{page * 6 + 1}–{Math.min(page * 6 + data.items.length, data.total)} of {data.total} saved games</span><div><button disabled={page === 0} onClick={() => onPage(page - 1)} aria-label="Previous game page">Previous</button><button disabled={(page + 1) * 6 >= data.total} onClick={() => onPage(page + 1)} aria-label="Next game page">Next <Icon name="arrow" size={14} /></button></div></div>

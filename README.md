@@ -240,13 +240,13 @@ The Windows task is installed for the signed-in user. It refreshes current-seaso
 rosters, skater/goalie season stats and game logs, schedules/results, standings,
 team EDGE and display identities. Forecast archives retain previous days; the
 API follows new publications automatically when started without `--run`.
-See [daily automation, recovery and free live-data design](DAILY_REFRESH.md).
+See [daily automation, recovery and free live-data design](docs/DAILY_REFRESH.md).
 
 Live GameCenter collection now runs with the unpinned API. Open **Live & recent
 games** or a forecast card's **Open game center** link for scores, player stats,
 team comparisons and play-by-play pushed through Server-Sent Events. Changed
 snapshots and event corrections are saved separately in Timescale. See
-[live-game setup, endpoints, retention and tests](LIVE_GAMES.md).
+[live-game setup, endpoints, retention and tests](docs/LIVE_GAMES.md).
 
 Compare a pregame logistic model with frozen Elo using the existing seasons:
 
@@ -255,7 +255,7 @@ Compare a pregame logistic model with frozen Elo using the existing seasons:
 .\.venv\Scripts\python.exe -m nhl_analytics.team_models
 ```
 
-See [team feature definitions, chronology and comparison results](TEAM_MODELS.md).
+See [team feature definitions, chronology and comparison results](docs/TEAM_MODELS.md).
 The experiment keeps labels separate, uses training-only preprocessing, preserves
 the reserved benchmark and does not replace production forecasts.
 
@@ -265,7 +265,7 @@ validated finals. Open `/models` for the forward test, kept separate from the
 historical benchmarks. Keep the API, Docker and the computer running through
 the cutoff windows; missed predictions are recorded rather than backfilled.
 
-For the £0/month public beta, see [static publishing and Cloudflare setup](PRODUCTION.md).
+For the £0/month public beta, see [static publishing and Cloudflare setup](docs/PRODUCTION.md).
 `python -m nhl_analytics.publication` exports reviewed public snapshots;
 `npm run build:public` inside `dashboard` builds the server-independent Pages site.
 Account sign-in and public deployment remain separate, explicit steps.
@@ -274,7 +274,13 @@ Public beta: **https://nhl-rinkside-beta.pages.dev/**. Wrangler authentication a
 the initial deployment are complete. The website serves published snapshots;
 the local engine and prospective tracker remain responsible for new data.
 
-[Automatic publishing](AUTO_PUBLISH.md) queues daily refreshes, sealed pregame
+[Automatic publishing](docs/AUTO_PUBLISH.md) queues daily refreshes, sealed pregame
 forecasts and validated finals, then updates Pages with batching, deduplication,
 retries and conservative free-tier caps. Keep the PC signed in, Docker available
 and the local collector running for fresh source data.
+
+Daily observed team xG collection and development-only feature comparisons:
+[MONEYPUCK_DAILY.md](docs/MONEYPUCK_DAILY.md). Production models remain frozen.
+
+Fixed longer-horizon xG research result:
+[XG_STRENGTH_EXPERIMENT.md](docs/XG_STRENGTH_EXPERIMENT.md).

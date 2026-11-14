@@ -2,34 +2,34 @@
 .model-performance > h1 { font-size: clamp(2.3rem, 5vw, 4rem); margin: .4em 0; letter-spacing: -.045em; }
 .model-performance > .panel, .prospective-directory { margin: 24px 0; }
 .model-performance .panel { padding: 26px; }
-.model-performance select { display: block; margin-top: 8px; padding: 10px; background: white; border: 1px solid #ccd7ce; border-radius: 8px; max-width: 100%; }
+.model-performance select { display: block; margin-top: 8px; padding: 10px; background: white; border: 1px solid #cad0d9; border-radius: 8px; max-width: 100%; }
 .model-coverage { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 28px 0; }
 .model-coverage div { display: flex; flex-direction: column; gap: 7px; }
 .model-coverage strong { font-size: 2rem; }
-.model-coverage span, .forecast-dates, .model-forecast small { color: #526058; font-size: .8rem; }
+.model-coverage span, .forecast-dates, .model-forecast small { color: #4e5764; font-size: .8rem; }
 .forecast-status { display: flex; flex-wrap: wrap; gap: 8px; text-transform: capitalize; font-size: .8rem; }
-.model-forecast { padding: 16px 0; border-bottom: 1px solid #e2e8e2; }
+.model-forecast { padding: 16px 0; border-bottom: 1px solid #e1e4e9; }
 .model-forecast-title { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: .85rem; }
-.model-forecast code { font-size: .7rem; color: #526058; }
+.model-forecast code { font-size: .7rem; color: #4e5764; }
 .model-forecast .pregame-values { margin-top: 14px; }
 .model-forecast small { display: block; margin-top: 9px; }
 .forecast-dates div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 6px 0; }
 .forecast-dates dd { margin: 0; }
 .model-performance-link { display: inline-block; margin-top: 14px; font-weight: 600; text-decoration: underline; }
 .prospective-directory table, .model-performance table { width: 100%; min-width: 550px; border-collapse: collapse; font-size: .85rem; }
-.prospective-directory th, .prospective-directory td, .model-performance th, .model-performance td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8e2; }
-.prospective-directory caption, .model-performance caption { text-align: left; color: #526058; padding: 12px; font-size: .8rem; }
-.prospective-directory tbody tr:hover, .model-performance tbody tr:hover { background: #f1f6f1; }
-.prospective-directory td small { display: block; color: #526058; margin-top: 5px; }
+.prospective-directory th, .prospective-directory td, .model-performance th, .model-performance td { padding: 12px; text-align: left; border-bottom: 1px solid #e1e4e9; }
+.prospective-directory caption, .model-performance caption { text-align: left; color: #4e5764; padding: 12px; font-size: .8rem; }
+.prospective-directory tbody tr:hover, .model-performance tbody tr:hover { background: #f1f3f6; }
+.prospective-directory td small { display: block; color: #4e5764; margin-top: 5px; }
 .prospective-matchup { display: flex; align-items: center; gap: 9px; width: fit-content; }
 .prospective-matchup img { width: 32px; height: 32px; object-fit: contain; }
 .model-chart { margin: 15px 0; }
 .model-chart svg { width: 100%; height: auto; }
-.model-chart text { font: 12px Inter, sans-serif; fill: #46534b; }
-.model-chart figcaption { font-size: .8rem; color: #526058; }
-.elo-key { color: #28634b; margin-right: 15px; }
+.model-chart text { font: 12px Inter, sans-serif; fill: #434b56; }
+.model-chart figcaption { font-size: .8rem; color: #4e5764; }
+.elo-key { color: #254066; margin-right: 15px; }
 .logistic-key { color: #a84b13; }
-.historical-reference { border-top: 4px solid #b8b8ad; }
-.public-notice { padding: 22px; margin: 24px 0; background: #edf5ef; border-left: 4px solid #28634b; }
+.historical-reference { border-top: 4px solid #aab1bb; }
+.public-notice { padding: 22px; margin: 24px 0; background: #ecf0f6; border-left: 4px solid #254066; }
 .public-notice p { margin-bottom: 0; line-height: 1.6; }
 @media(max-width: 650px) { .model-coverage { grid-template-columns: repeat(2, 1fr); } .model-performance .panel { padding: 17px; } .prospective-directory .section-heading { flex-wrap: wrap; gap: 15px; } }
